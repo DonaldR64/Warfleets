@@ -153,6 +153,10 @@ section {
 .header h3 {
   color: black;
 }
+.header h4 {
+  color: black;
+}
+
 input[type="hidden"][name="attr_faction"]:is([value="Imperial Guard"]) ~ .header :is(h1,h3) {
   color: #ffffff;
 }
