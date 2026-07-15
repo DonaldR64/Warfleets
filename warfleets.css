@@ -46,12 +46,11 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:"flag     header    header    header  flag2"
-                      "common   common    common    att     att"
-                      "common   common    common   herotitle herotitle"
+                      "att   common    common    common     herotitle"
+                      "att   common    common   common herotitle"
                       "system   system    system    system  system"
                       "weapon   weapon    weapon    weapon  weapon";
 }
-
 
 
 
