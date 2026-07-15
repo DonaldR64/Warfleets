@@ -127,6 +127,12 @@
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                         </select></td>
+                    <td><select name="attr_system1status">
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Damaged">Damaged</option>
+                        <option value="Disabled">Disabled</option>
+                    </select></td> 
                         <td><input type="text" name="attr_system1name"></td>  
                         <td><input type="text" name="attr_system1desc"></td> 
                     </tr>
@@ -135,7 +141,12 @@
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                         </select></td>
-
+                    <td><select name="attr_system2status">
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Damaged">Damaged</option>
+                        <option value="Disabled">Disabled</option>
+                    </select></td> 
                         <td><input type="text" name="attr_system2name"></td>  
                         <td><input type="text" name="attr_system2desc"></td> 
                     </tr>
@@ -144,6 +155,12 @@
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                         </select></td>
+                    <td><select name="attr_system3status">
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Damaged">Damaged</option>
+                        <option value="Disabled">Disabled</option>
+                    </select></td> 
                         <td><input type="text" name="attr_system3name"></td>  
                         <td><input type="text" name="attr_system3desc"></td> 
                     </tr>
@@ -152,6 +169,12 @@
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                         </select></td>
+                    <td><select name="attr_system4status">
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Damaged">Damaged</option>
+                        <option value="Disabled">Disabled</option>
+                    </select></td> 
                         <td><input type="text" name="attr_system4name"></td> 
                         <td><input type="text" name="attr_system4desc"></td>  
                     </tr>
@@ -160,6 +183,12 @@
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                         </select></td>
+                    <td><select name="attr_system5status">
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Damaged">Damaged</option>
+                        <option value="Disabled">Disabled</option>
+                    </select></td> 
                         <td><input type="text" name="attr_system5name"></td> 
                         <td><input type="text" name="attr_system5desc"></td>  
                     </tr>
@@ -373,7 +402,7 @@
         <section class="system">
             <h3>Systems</h3>
             <div class="systeminfo">
-                <div><span>Damage</span></div>
+                <div><span>Status</span></div>
                 <div><span>Name</span></div>
                 <div><span>Description</span></div>
             </div>
@@ -381,7 +410,7 @@
 
             <input type="hidden" name="attr_system1equipped" class="system1-status" value="Off">
             <div class="system1">
-                <h4><span name="attr_system1damage"></span>/2</h4>
+                <h4><span name="attr_system1status"></span>/2</h4>
                 <h4><span name="attr_system1name"></span></h4>
                 <h4><span name="attr_system1desc"></span></h4>
             </div>
@@ -389,7 +418,7 @@
 
             <input type="hidden" name="attr_system2equipped" class="system2-status" value="Off">
             <div class="system2">
-                <h4><span name="attr_system2damage"></span>/2</h4>
+                <h4><span name="attr_system2status"></span>/2</h4>
                 <h4><span name="attr_system2name"></span></h4>
                 <h4><span name="attr_system2desc"></span></h4>
             </div>
@@ -397,7 +426,7 @@
 
             <input type="hidden" name="attr_system3equipped" class="system3-status" value="Off">
             <div class="system3">
-                <h4><span name="attr_system3damage"></span>/2</h4>
+                <h4><span name="attr_system3status"></span>/2</h4>
                 <h4><span name="attr_system3name"></span></h4>
                 <h4><span name="attr_system3desc"></span></h4>
             </div>
@@ -405,7 +434,7 @@
 
             <input type="hidden" name="attr_system4equipped" class="system4-status" value="Off">
             <div class="system4">
-                <h4><span name="attr_system4damage"></span>/2</h4>
+                <h4><span name="attr_system4status"></span>/2</h4>
                 <h4><span name="attr_system4name"></span></h4>
                 <h4><span name="attr_system4desc"></span></h4>
             </div>
@@ -413,7 +442,7 @@
 
             <input type="hidden" name="attr_system5equipped" class="system5-status" value="Off">
             <div class="system5">
-                <h4><span name="attr_system5damage"></span>/2</h4>
+                <h4><span name="attr_system5status"></span>/2</h4>
                 <h4><span name="attr_system5name"></span></h4>
                 <h4><span name="attr_system5desc"></span></h4>
             </div>
