@@ -218,6 +218,17 @@ input[type="hidden"][name="attr_faction"]:is([value="Imperial Guard"]) ~ .header
   align-items: left;
 }
 
+.systeminfo {
+  grid-area: systeminfo;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr 1fr 6fr;
+  grid-template-rows: auto;
+  background-color: white;
+  text-align: left;
+  align-items: left;
+}
+
 
 .systeminfo {
   grid-area: systeminfo;
