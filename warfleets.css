@@ -157,7 +157,7 @@ section {
   color: black;
 }
 
-input[type="hidden"][name="attr_faction"]:is([value="Imperial Guard"]) ~ .header :is(h1,h3) {
+input[type="hidden"][name="attr_faction"]:is([value="Imperial Navy"]) ~ .header :is(h1,h3,h4) {
   color: #ffffff;
 }
 
