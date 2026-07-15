@@ -308,7 +308,7 @@ input[type="hidden"][value="Off"].system5-status ~ .system5{
   grid-area: weaponinfo;
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 3fr;
+  grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr 6fr;
   grid-template-rows: 1fr;
   background-color: white;
   text-align: center;
@@ -323,7 +323,7 @@ input[type="hidden"][value="Off"].weapon1-status ~ .weapon1{
 .weapon1 {
     display: grid;
     grid-gap: 1px;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 10fr 2fr 2fr 2fr 2fr 6fr;
     grid-template-rows: 1;
     background-color: white;
     text-align: center;
@@ -339,7 +339,7 @@ input[type="hidden"][value="Off"].weapon2-status ~ .weapon2{
 .weapon2 {
     display: grid;
     grid-gap: 1px;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 10fr 2fr 2fr 2fr 2fr 6fr;
     grid-template-rows: 1;
     background-color: white;
     text-align: center;
@@ -358,7 +358,7 @@ input[type="hidden"][value="Equipped"].weapon3-status ~ .weapon3{
 .weapon3 {
     display: grid;
     grid-gap: 1px;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 10fr 2fr 2fr 2fr 2fr 6fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -376,7 +376,7 @@ input[type="hidden"][value="Equipped"].weapon4-status ~ .weapon4{
 .weapon4 {
     display: grid;
     grid-gap: 1px;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 10fr 2fr 2fr 2fr 2fr 6fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -394,7 +394,7 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
 .weapon5 {
     display: grid;
     grid-gap: 1px;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 10fr 2fr 2fr 2fr 2fr 6fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
