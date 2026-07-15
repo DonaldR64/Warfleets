@@ -404,7 +404,7 @@
         <section class="system">
             <h3>Systems</h3>
             <div class="systeminfo">
-                <div><span>Status</span></div>
+                <div><span>Damage</span></div>
                 <div><span>Name</span></div>
                 <div><span>Description</span></div>
             </div>
@@ -412,12 +412,7 @@
 
             <input type="hidden" name="attr_system1equipped" class="system1-status" value="Off">
             <div class="system1">
-                <h4><select name="attr_system1status">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="Normal">Normal</option>
-                        <option value="Damaged">Damaged</option>
-                        <option value="Disabled">Disabled</option>
-                    </select></h4>
+                <input type="checkbox" name="attr_system1damage" value="1">
                 <h4><span name="attr_system1name"></span></h4>
                 <h4><span name="attr_system1desc"></span></h4>
             </div>
