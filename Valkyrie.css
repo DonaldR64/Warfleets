@@ -44,7 +44,7 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:"shields    header    reserve"
-                      "shields    header    reserve"
+                      "shields    systems    reserve"
                       "engine    engine     engine"
                       "weapons   weapons    weapons"
                       "weapons   weapons    weapons";
@@ -136,6 +136,11 @@ section {
 }
 .header h4 {
   color: black;
+}
+
+.systems {
+  grid-area: systems;
+  background-color:  white;
 }
 
 
