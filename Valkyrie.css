@@ -24,7 +24,7 @@ input[type="hidden"][name="attr_faction"] ~ .mysheet {
     background-color: lightgray;
 }
 input[type="hidden"][name="attr_faction"][value="Federation"] ~ .mysheet {
-    background-color: white;
+    background-color: lightblue;
 }
 input[type="hidden"][name="attr_faction"][value="Klingon"] ~ .mysheet {
     background-color: black;
@@ -41,8 +41,8 @@ main {
   width: 800px;
   height: 800px;
   grid-gap: 4px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:"shields    header    reserve"
                       "engine    engine     engine"
                       "weapons   weapons    weapons"
