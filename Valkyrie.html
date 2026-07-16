@@ -85,7 +85,10 @@
             </thead>
             <tbody>
                <tr>
-                    <td>1</td>
+                    <td><select name="attr_weapon1equipped">
+                        <option value = "Off">Off</option>
+                        <option value = "Equipped">Equipped</option>
+                    </select></td>
                     <td><input type="text" name="attr_weapon1name"></td>
                     <td><input type="text" name="attr_weapon1type"></td>
                     <td><input type="text" name="attr_weapon1facing"></td>
@@ -94,7 +97,10 @@
                     <td><input type="text" name="attr_weapon1limits"></td>                
                 </tr>
                <tr>
-                    <td>2</td>
+                    <td><select name="attr_weapon2equipped">
+                        <option value = "Off">Off</option>
+                        <option value = "Equipped">Equipped</option>
+                    </select></td>
                     <td><input type="text" name="attr_weapon2name"></td>
                     <td><input type="text" name="attr_weapon2type"></td>
                     <td><input type="text" name="attr_weapon2facing"></td>
@@ -103,7 +109,10 @@
                     <td><input type="text" name="attr_weapon2limits"></td>                
                 </tr>
                <tr>
-                     <td>3</td>
+                    <td><select name="attr_weapon3equipped">
+                        <option value = "Off">Off</option>
+                        <option value = "Equipped">Equipped</option>
+                    </select></td>
                     <td><input type="text" name="attr_weapon3name"></td>
                     <td><input type="text" name="attr_weapon3type"></td>
                     <td><input type="text" name="attr_weapon3facing"></td>
@@ -112,7 +121,10 @@
                     <td><input type="text" name="attr_weapon3limits"></td>                 
                 </tr>
                <tr>
-                    <td>4</td>
+                    <td><select name="attr_weapon4equipped">
+                        <option value = "Off">Off</option>
+                        <option value = "Equipped">Equipped</option>
+                    </select></td>
                     <td><input type="text" name="attr_weapon4name"></td>
                     <td><input type="text" name="attr_weapon4type"></td>
                     <td><input type="text" name="attr_weapon4facing"></td>
@@ -121,7 +133,10 @@
                     <td><input type="text" name="attr_weapon4limits"></td>              
                 </tr>
                <tr>
-                    <td>5</td>
+                    <td><select name="attr_weapon5equipped">
+                        <option value = "Off">Off</option>
+                        <option value = "Equipped">Equipped</option>
+                    </select></td>
                     <td><input type="text" name="attr_weapon5name"></td>
                     <td><input type="text" name="attr_weapon5type"></td>
                     <td><input type="text" name="attr_weapon5facing"></td>
@@ -178,6 +193,8 @@
                 <div><span>Dice</span></div>
                 <div><span>Limited</span></div>
             </div>
+
+            <input type="hidden" name="attr_weapon1equipped" class="weapon1-status" value="Off">
             <div class="weapon1">
                 <h4><span>1: </span><span name="attr_weapon1name"></span></h4>
                 <h4><span name="attr_weapon1type"></span></h4>
@@ -186,6 +203,8 @@
                 <h4><span name="attr_weapon1dice"></span></h4>
                 <h4><span name="attr_weapon1limits"></span></h4>
             </div>
+
+            <input type="hidden" name="attr_weapon2equipped" class="weapon2-status" value="Off">
             <div class="weapon2">
                 <h4><span>2: </span><span name="attr_weapon2name"></span></h4>
                 <h4><span name="attr_weapon2type"></span></h4>
@@ -194,6 +213,8 @@
                 <h4><span name="attr_weapon2dice"></span></h4>
                 <h4><span name="attr_weapon2limits"></span></h4>
             </div>
+
+            <input type="hidden" name="attr_weapon3equipped" class="weapon3-status" value="Off">
             <div class="weapon3">
                 <h4><span>3: </span><span name="attr_weapon3name"></span></h4>
                 <h4><span name="attr_weapon3type"></span></h4>
@@ -202,6 +223,8 @@
                 <h4><span name="attr_weapon3dice"></span></h4>
                 <h4><span name="attr_weapon3limits"></span></h4>
             </div>
+
+            <input type="hidden" name="attr_weapon4equipped" class="weapon4-status" value="Off">
             <div class="weapon4">
                 <h4><span>4: </span><span name="attr_weapon4name"></span></h4>
                 <h4><span name="attr_weapon4type"></span></h4>
@@ -210,13 +233,16 @@
                 <h4><span name="attr_weapon4dice"></span></h4>
                 <h4><span name="attr_weapon4limits"></span></h4>
             </div>
-            <div class="weapon4">
-                <h4><span>5: </span><span name="attr_weapon4name"></span></h4>
-                <h4><span name="attr_weapon4type"></span></h4>
-                <h4><span name="attr_weapon4facing"></span></h4>
-                <h4><span name="attr_weapon4range"></span></h4>
-                <h4><span name="attr_weapon4dice"></span></h4>
-                <h4><span name="attr_weapon4limits"></span></h4>
+
+
+            <input type="hidden" name="attr_weapon5equipped" class="weapon5-status" value="Off">
+            <div class="weapon5">
+                <h4><span>5: </span><span name="attr_weapon5name"></span></h4>
+                <h4><span name="attr_weapon5type"></span></h4>
+                <h4><span name="attr_weapon5facing"></span></h4>
+                <h4><span name="attr_weapon5range"></span></h4>
+                <h4><span name="attr_weapon5dice"></span></h4>
+                <h4><span name="attr_weapon5limits"></span></h4>
             </div>
 
 
