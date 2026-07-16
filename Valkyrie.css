@@ -169,8 +169,12 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 /* Weapon 1 */
-
-
+input[type="hidden"][value="Off"].weapon1-status ~ .weapon1{
+    display: none;
+}
+input[type="hidden"][value="Equipped"].weapon1-status ~ .weapon1{
+    display: grid;
+}
 .weapon1 {
     display: grid;
     grid-gap: 1px;
@@ -183,7 +187,12 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 /* Weapon 2 */
-
+input[type="hidden"][value="Off"].weapon2-status ~ .weapon2{
+    display: none;
+}
+input[type="hidden"][value="Equipped"].weapon2-status ~ .weapon2{
+    display: grid;
+}
  
 .weapon2 {
     display: grid;
@@ -197,7 +206,12 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 /* Weapon 3 */
-
+input[type="hidden"][value="Off"].weapon3-status ~ .weapon3{
+    display: none;
+}
+input[type="hidden"][value="Equipped"].weapon3-status ~ .weapon3{
+    display: grid;
+}
   
 .weapon3 {
     display: grid;
@@ -210,7 +224,12 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 /* Weapon 4 */
-
+input[type="hidden"][value="Off"].weapon4-status ~ .weapon4{
+    display: none;
+}
+input[type="hidden"][value="Equipped"].weapon4-status ~ .weapon4{
+    display: grid;
+}
   
 .weapon4 {
     display: grid;
@@ -223,7 +242,12 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 /* Weapon 5 */
-
+input[type="hidden"][value="Off"].weapon5-status ~ .weapon5{
+    display: none;
+}
+input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
+    display: grid;
+}
   
 .weapon5 {
     display: grid;
