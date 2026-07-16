@@ -42,8 +42,9 @@ main {
   height: 800px;
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:"shields    header    reserve"
+                      "shields    header    reserve"
                       "engine    engine     engine"
                       "weapons   weapons    weapons"
                       "weapons   weapons    weapons";
@@ -151,8 +152,8 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 
-.weapon {
-  grid-area: weapon;
+.weaponw {
+  grid-area: weapons;
   background-color:  white;
 }
 
