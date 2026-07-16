@@ -142,8 +142,8 @@
                 <h3><span name="attr_class"></span> Class <span name="attr_type"></span>]</h3>
           </section>
 
-          <section class="shields" style="background-image: url('https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633')">
-
+          <section class="shields">
+            <img name="attr_shieldPic">
           </section>
           
           <section class="reserve">
@@ -255,11 +255,13 @@
 
     on("change:attrs sheet:opened", function() { 
         getAttrs(["class"], function(values) {
-
-
+            let shieldPics = {
+                "C-6A": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
+            }
+            let shieldPic = shieldPics[values.class] || ""
 
             setAttrs({
-                
+                shieldPic: shieldPic,
             });
         });    
     }); 
