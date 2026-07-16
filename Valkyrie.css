@@ -128,13 +128,16 @@ section {
   background-color:  white;
 }
 
+.header h1 {
+  color: black;
+}
+.header h3 {
+  color: black;
+}
+.header h4 {
+  color: black;
+}
 
-input[type="hidden"][name="attr_faction"]:is([value="Klingon"]) ~ .header :is(h1,h3,h4) {
-  color: #ffffff;
-}
-input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is(h1,h3,h4) {
-  color: #000000;
-}
 
 .shields {
   grid-area: shields;
