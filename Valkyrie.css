@@ -147,7 +147,8 @@ section {
 
 .shields {
   grid-area: shields;
-  background-color:  white;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .reserve {
