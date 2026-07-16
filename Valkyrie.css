@@ -152,7 +152,7 @@ input[type="hidden"][name="attr_faction"]:is([value="Federation"]) ~ .header :is
 }
 
 
-.weaponw {
+.weapons {
   grid-area: weapons;
   background-color:  white;
 }
