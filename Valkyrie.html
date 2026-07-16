@@ -21,7 +21,7 @@
         </div>
         <div class="col">
             <h3>Attributes</h3>
-            <label>Engine:</label><input type="text" name="attr_engine">
+            <label>Engine:</label><input type="number" name="attr_engine">
             <label>Reserve Track:</label><input type="text" name="attr_reservetrack">
             <label>Size:</label><input type="number" name="attr_size">
             <label>Turn Rating:</label><input type="number" name="attr_turn">
@@ -214,6 +214,7 @@
 
           <section class="engine">
             <h3>Engine Track</h3>
+            <img name="attr_enginePic">
           </section>
 
 
@@ -307,13 +308,22 @@
 
     on("change:attrs sheet:opened", function() { 
         getAttrs(["class"], function(values) {
-            let shieldPics = {
-                "C-6A": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
+            let classInfo = {
+                "C-6A": {
+                    shield: "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
+                    engine: "https://files.d20.io/images/494232757/qhyVJyX6V2f-hyU3nR4s1g/thumb.png?178424572",
+                },
+
+
+
             }
-            let shieldPic = shieldPics[values.class] || ""
+
+            let shieldPic = classInfo[values.class]["shield"] || "";
+            let enginePic = classInfo[values.class]["engine"] || "";
 
             setAttrs({
                 shieldPic: shieldPic,
+                enginePic: enginePic,
             });
         });    
     }); 
