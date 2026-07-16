@@ -214,8 +214,10 @@
 
           <section class="engine">
             <h3>Engine Track</h3>
-            <img name="attr_enginePic">
-          </section>
+
+
+
+        </section>
 
 
           <section class="weapons">
@@ -309,21 +311,16 @@
     on("change:attrs sheet:opened", function() { 
         getAttrs(["class"], function(values) {
             let classInfo = {
-                "C-6A": {
-                    shield: "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
-                    engine: "https://files.d20.io/images/494232757/qhyVJyX6V2f-hyU3nR4s1g/thumb.png?1784245727",
-                },
+                "C-6A": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
 
 
 
             }
 
-            let shieldPic = classInfo[values.class]["shield"] || "";
-            let enginePic = classInfo[values.class]["engine"] || "";
+            let shieldPic = classInfo[values.class] || "";
 
             setAttrs({
                 shieldPic: shieldPic,
-                enginePic: enginePic,
             });
         });    
     }); 
