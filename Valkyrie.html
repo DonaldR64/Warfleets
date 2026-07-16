@@ -2,7 +2,6 @@
 <div>
     <button type="action" name="act_input" >Input</button>
     <button type="action" name="act_display" >Display</button>
-    <button type="action" name="act_abilities" >Keywords</button>
 </div>
 
 <div class="sheet-input">
@@ -16,103 +15,30 @@
             <label for="attr_faction">Faction:</label>
             <select name="attr_faction">
                 <option value="" selected disabled hidden>Choose here</option>
-                <option value="Chaos">Chaos</option>
-                <option value="Imperial Navy">Imperial Navy</option>
+                <option value="Federation">Federation</option>
+                <option value="Klingon">Klingon</option>
             </select>
         </div>
         <div class="col">
             <h3>Attributes</h3>
-            <label>Move:</label><input type="number" name="attr_move">
-            <label>Cruise:</label><input type="number" name="attr_cruise">
-            <label>Evasion:</label><input type="number" name="attr_evasion">
-            <label>Toughness:</label><input type="number" name="attr_toughness">
+            <label>Engine Track:</label><input type="text" name="attr_enginetrack">
+            <label>Reserve Track:</label><input type="number" name="attr_reservetrack">
             <label>Size:</label><input type="number" name="attr_size">
+            <label>Turn Rating:</label><input type="number" name="attr_turn">
+            <label>Points:</label><input type="number" name="attr_points">
             <label for="attr_type">Type:</label>
             <select name="attr_type">
                 <option value="" selected disabled hidden>Choose here</option>
-                <option value="Squadron">Squadron</option>
-                <option value="Light Ship">Light Ship</option>
-                <option value="Medium Ship">Medium Ship</option>
-                <option value="Heavy Ship">Heavy Ship</option>
+                <option value="Heavy Cruiser">Squadron</option>
+                <option value="Light Cruiser">Light Ship</option>
+
                 <option value="Objective">Objective</option>
                 <option value="Terrain">Terrain</option>
                 <option value="System">System</option>
             </select>  
           </div>
     </div>    
-    <div class="row">
-        <h3>Special Rules</h3>
-        <div class="specials">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Special</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" name="attr_special1name"></td>  
-                        <td><input type="text" name="attr_special1desc"></td> 
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="attr_special2name"></td>  
-                        <td><input type="text" name="attr_special2desc"></td> 
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
-    <div class="row">
-        <h3>Hero</h3>
-        <div class="hero">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Active</th>
-                        <th>Hero</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><select name="attr_heroequipped">
-                            <option value = "Off">Off</option>
-                            <option value = "Equipped">Equipped</option>
-                        </select></td>
-                        <td><input type="text" name="attr_heroname"></td>  
-                        <td><input type="text" name="attr_herodesc"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="row">
-        <h3>Title</h3>
-        <div class="title">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Active</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><select name="attr_titleequipped">
-                            <option value = "Off">Off</option>
-                            <option value = "Equipped">Equipped</option>
-                        </select></td>
-                        <td><input type="text" name="attr_titlename"></td>  
-                        <td><input type="text" name="attr_titledesc"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
     <div class="row">
         <h3>Systems</h3>
@@ -123,7 +49,7 @@
                         <th>Equipped</th>
                         <th>Status</th>
                         <th>Name</th>
-                        <th>Description</th>
+                        <th>Range</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,7 +59,7 @@
                         <option value = "Equipped">Equipped</option>
                         </select></td>
                         <td><input type="text" name="attr_system1name"></td>  
-                        <td><input type="text" name="attr_system1desc"></td> 
+                        <td><input type="text" name="attr_system1range"></td> 
                     </tr>
                     <tr>
                         <td><select name="attr_system2equipped">
@@ -141,7 +67,7 @@
                         <option value = "Equipped">Equipped</option>
                         </select></td>
                         <td><input type="text" name="attr_system2name"></td>  
-                        <td><input type="text" name="attr_system2desc"></td> 
+                        <td><input type="text" name="attr_system2range"></td> 
                     </tr>
                     <tr>
                         <td><select name="attr_system3equipped">
@@ -155,7 +81,7 @@
                         <option value="Disabled">Disabled</option>
                     </select></td> 
                         <td><input type="text" name="attr_system3name"></td>  
-                        <td><input type="text" name="attr_system3desc"></td> 
+                        <td><input type="text" name="attr_system3range"></td> 
                     </tr>
                     <tr>
                         <td><select name="attr_system4equipped">
@@ -163,7 +89,7 @@
                         <option value = "Equipped">Equipped</option>
                         </select></td>
                         <td><input type="text" name="attr_system4name"></td> 
-                        <td><input type="text" name="attr_system4desc"></td>  
+                        <td><input type="text" name="attr_system4range"></td>  
                     </tr>
                     <tr>
                         <td><select name="attr_system5equipped">
@@ -171,7 +97,7 @@
                         <option value = "Equipped">Equipped</option>
                         </select></td>
                         <td><input type="text" name="attr_system5name"></td> 
-                        <td><input type="text" name="attr_system5desc"></td>  
+                        <td><input type="text" name="attr_system5range"></td>  
                     </tr>
                 </tbody>
             </table>
@@ -187,14 +113,13 @@
             <thead>
                 <tr>
                     <th>Equipped</th>
-                    <th>Weapon</th>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Type</th>
                     <th>Facing</th>
                     <th>Range</th>
-                    <th>Attacks</th>
-                    <th>Strength</th>
-                    <th>Special</th>
-                    <th>F/X</th>
-                    <th>Sound</th>
+                    <th>Dice</th>
+                    <th>Limits</th>
                 </tr>
             </thead>
             <tbody>
@@ -203,93 +128,60 @@
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                     </select></td>
+                    <td>1</td>
                     <td><input type="text" name="attr_weapon1name"></td>
-                    <td><select name="attr_weapon1facing">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="All">All</option>
-                    </select></td>      
+                    <td><input type="text" name="attr_weapon1facing"></td>
                     <td><input type="text" name="attr_weapon1range"></td>
-                    <td><input type="number" name="attr_weapon1attacks"></td>
-                    <td><input type="number" name="attr_weapon1str"></td>
-                    <td><input type="text" name="attr_weapon1special"></td>
-                    <td><input type="text" name="attr_weapon1fx"></td>
-                    <td><input type="text" name="attr_weapon1sound"></td>                
+                    <td><input type="text" name="attr_weapon1dice"></td>
+                    <td><input type="text" name="attr_weapon1limits"></td>                
                 </tr>
                <tr>
                     <td><select name="attr_weapon2equipped">
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                     </select></td>
+                    <td>1</td>
                     <td><input type="text" name="attr_weapon2name"></td>
-                    <td><select name="attr_weapon2facing">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="Front">Front</option>
-                        <option value="Sides">Sides</option>
-                        <option value="Rear">Rear</option>
-                    </select></td>      
+                    <td><input type="text" name="attr_weapon2facing"></td>
                     <td><input type="text" name="attr_weapon2range"></td>
-                    <td><input type="number" name="attr_weapon2attacks"></td>
-                    <td><input type="number" name="attr_weapon2str"></td>
-                    <td><input type="text" name="attr_weapon2special"></td>
-                    <td><input type="text" name="attr_weapon2fx"></td>
-                    <td><input type="text" name="attr_weapon2sound"></td>                
+                    <td><input type="text" name="attr_weapon2dice"></td>
+                    <td><input type="text" name="attr_weapon2limits"></td>                
                 </tr>
                <tr>
-                    <td><select name="attr_weapon3equipped">
+                     <td><select name="attr_weapon3equipped">
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                     </select></td>
+                    <td>1</td>
                     <td><input type="text" name="attr_weapon3name"></td>
-                    <td><select name="attr_weapon3facing">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="Front">Front</option>
-                        <option value="Sides">Sides</option>
-                        <option value="Rear">Rear</option>
-                    </select></td>      
+                    <td><input type="text" name="attr_weapon3facing"></td>
                     <td><input type="text" name="attr_weapon3range"></td>
-                    <td><input type="number" name="attr_weapon3attacks"></td>
-                    <td><input type="number" name="attr_weapon3str"></td>
-                    <td><input type="text" name="attr_weapon3special"></td>
-                    <td><input type="text" name="attr_weapon3fx"></td>
-                    <td><input type="text" name="attr_weapon3sound"></td>                
+                    <td><input type="text" name="attr_weapon3dice"></td>
+                    <td><input type="text" name="attr_weapon3limits"></td>                 
                 </tr>
                <tr>
                     <td><select name="attr_weapon4equipped">
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                     </select></td>
+                    <td>1</td>
                     <td><input type="text" name="attr_weapon4name"></td>
-                    <td><select name="attr_weapon4facing">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="Front">Front</option>
-                        <option value="Sides">Sides</option>
-                        <option value="Rear">Rear</option>
-                    </select></td>      
+                    <td><input type="text" name="attr_weapon4facing"></td>
                     <td><input type="text" name="attr_weapon4range"></td>
-                    <td><input type="number" name="attr_weapon4attacks"></td>
-                    <td><input type="number" name="attr_weapon4str"></td>
-                    <td><input type="text" name="attr_weapon4special"></td>
-                    <td><input type="text" name="attr_weapon4fx"></td>
-                    <td><input type="text" name="attr_weapon4sound"></td>                
+                    <td><input type="text" name="attr_weapon4dice"></td>
+                    <td><input type="text" name="attr_weapon4limits"></td>              
                 </tr>
                <tr>
                     <td><select name="attr_weapon5equipped">
                         <option value = "Off">Off</option>
                         <option value = "Equipped">Equipped</option>
                     </select></td>
+                    <td>1</td>
                     <td><input type="text" name="attr_weapon5name"></td>
-                    <td><select name="attr_weapon5facing">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="Front">Front</option>
-                        <option value="Sides">Sides</option>
-                        <option value="Rear">Rear</option>
-                    </select></td>      
+                    <td><input type="text" name="attr_weapon5facing"></td>
                     <td><input type="text" name="attr_weapon5range"></td>
-                    <td><input type="number" name="attr_weapon5attacks"></td>
-                    <td><input type="number" name="attr_weapon5str"></td>
-                    <td><input type="text" name="attr_weapon5special"></td>
-                    <td><input type="text" name="attr_weapon5fx"></td>
-                    <td><input type="text" name="attr_weapon5sound"></td>                
+                    <td><input type="text" name="attr_weapon5dice"></td>
+                    <td><input type="text" name="attr_weapon5limits"></td>               
                 </tr>
             </tbody>
             </table>    
@@ -312,106 +204,16 @@
           <section class="header f-center">
                 <h1><span name="attr_character_name"></span></h1>
                 <h3><span name="attr_class"></span> Class <span name="attr_type"></span> [Size: <span name="attr_size"></span>]</h3>
-                <h3><span name="attr_special1name"></span></h3>
-                <h4><span name="attr_special1desc"></span></h4>
-                <h3><span name="attr_special2name"></span></h3>
-                <h4><span name="attr_special2desc"></span></h4>
-
           </section>
 
-          <section class="common f-center">
-              <img alt="Character Avatar" name="attr_character_avatar"/>
-          </section>
-
-          <section class="att">
-            <h3>Speed</h3>  
-            <div class ="attinfo">
-                <h4><span>Move: </span><span name="attr_move"></span></h4>
-                <h4><span>Cruise: </span><span name="attr_cruise"></span></h4>
-            </div>
-            <h3>Defence</h3>
-            <div class="attinfo">
-                <h4><span>Evasion: </span><span name="attr_Evasion"></span></h4>
-                <h4><span>Toughness: </span><span name="attr_toughness"></span></h4>
-            </div>
-          </section>
-
-          <section class="flag">
-            <img name="attr_factionImage">
+          <section class="shields">
+            <img name="attr_shieldImage">
           </section>
           
-          <section class="flag2">
-            <img name="attr_factionImage">
-          </section>
-
-          <section class="herotitle">
-            <h4><span name="attr_heroname"></span></h4>
-            <span name="attr_herodesc"></span>
-            <h3><span> </span></h3>
-            <h4><span name="attr_titlename"></span></h4>
-            <span name="attr_titledesc"></span>
-          </section>
-
-        <section class="system">
-            <h3>Systems</h3>
-            <div class="systeminfo">
-                <div><span>Damage</span></div>
-                <div><span>Name</span></div>
-                <div><span>Description</span></div>
-            </div>
-
-
-            <input type="hidden" name="attr_system1equipped" class="system1-status" value="Off">
-            <div class="system1">
-                <input type="checkbox" name="attr_system1damage1" value="1">
-                <input type="checkbox" name="attr_system1damage2" value="1">
-                <h4><span name="attr_system1name"></span></h4>
-                <span name="attr_system1desc"></span>
-            </div>
-            
-
-            <input type="hidden" name="attr_system2equipped" class="system2-status" value="Off">
-            <div class="system2">
-                <input type="checkbox" name="attr_system2damage1" value="1">
-                <input type="checkbox" name="attr_system2damage2" value="1">                
-                <h4><span name="attr_system2name"></span></h4>
-                <span name="attr_system2desc"></span>
-            </div>
-
-
-            <input type="hidden" name="attr_system3equipped" class="system3-status" value="Off">
-            <div class="system3">
-                <input type="checkbox" name="attr_system3damage1" value="1">
-                <input type="checkbox" name="attr_system3damage2" value="1">
-                <h4><span name="attr_system3name"></span></h4>
-                <span name="attr_system3desc"></span>
-            </div>
-
-
-            <input type="hidden" name="attr_system4equipped" class="system4-status" value="Off">
-            <div class="system4">
-                <input type="checkbox" name="attr_system4damage1" value="1">
-                <input type="checkbox" name="attr_system4damage2" value="1">
-                <h4><span name="attr_system4name"></span></h4>
-                <span name="attr_system4desc"></span>
-            </div>
-
-
-            <input type="hidden" name="attr_system5equipped" class="system5-status" value="Off">
-            <div class="system5">
-                <input type="checkbox" name="attr_system5damage1" value="1">
-                <input type="checkbox" name="attr_system5damage2" value="1">
-                <h4><span name="attr_system5name"></span></h4>
-                <span name="attr_system5desc"></span>
-            </div>
-
-
-
-
 
           </section>
 
-          <section class="weapon">
+          <section class="weapons">
             <h3>Weapons</h3>
             <div class="weaponinfo">
                 <div><span>Damage</span></div>
@@ -559,7 +361,7 @@
 
 
 <script type="text/worker">
-    const buttonlist = ["input","display","abilities"];
+    const buttonlist = ["input","display"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -573,20 +375,12 @@
     });
 
     on("change:attrs sheet:opened", function() { 
-        getAttrs(["faction"], function(values) {
-            let faction = values.faction;
-            let factionImage = "";
+        getAttrs(["class"], function(values) {
 
-            if (faction === "Chaos") {
-                factionImage = "https://files.d20.io/images/426571867/0WLjVHvOG6B8PB6ZkmXDWw/thumb.png?1738025538";
-            }
-            if (faction === "Imperial Navy") {
-                factionImage = "https://files.d20.io/images/267285252/PSu77nGJ28XPj5qR8_BfEA/thumb.png?1643225709";
-            }
 
 
             setAttrs({
-                "factionImage": factionImage,
+                
             });
         });    
     }); 

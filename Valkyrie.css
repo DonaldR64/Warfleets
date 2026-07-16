@@ -1,15 +1,13 @@
 /*Configure the tab buttons*/
 .sheet-input,
-.sheet-display,
-.sheet-abilities {
+.sheet-display {
     display: none;
 }
 
 
 /* show the selected tab */
 .sheet-tabstoggle[value="input"] ~ div.sheet-input,
-.sheet-tabstoggle[value="display"] ~ div.sheet-display,
-.sheet-tabstoggle[value="abilities"] ~ div.sheet-abilities {
+.sheet-tabstoggle[value="display"] ~ div.sheet-display {
     display: block;
 }
 
@@ -25,10 +23,10 @@
 input[type="hidden"][name="attr_faction"] ~ .mysheet {
     background-color: lightgray;
 }
-input[type="hidden"][name="attr_faction"][value="Chaos"] ~ .mysheet {
-    background-color: #ff0000;
+input[type="hidden"][name="attr_faction"][value="Federation"] ~ .mysheet {
+    background-color: white;
 }
-input[type="hidden"][name="attr_faction"]:is([value="Imperial Navy"],[value="Inquisition"]) ~ .mysheet {
+input[type="hidden"][name="attr_faction"][value="Klingon"] ~ .mysheet {
     background-color: black;
 }
 
@@ -45,11 +43,10 @@ main {
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:"flag     header    header    header  flag2"
-                      "common   common    common    att     att"
-                      "common   common    common   herotitle herotitle"
-                      "system   system    system    system  system"
-                      "weapon   weapon    weapon    weapon  weapon";
+  grid-template-areas:"shields    header    reserve"
+                      "engine    engine     engine"
+                      "weapons   weapons    weapons"
+                      "weapons   weapons    weapons";
 }
 
 
@@ -123,8 +120,8 @@ section {
 /*------------- Section-specific CSS -------------*/
 
 
-.flag {
-  grid-area: flag;
+.shields {
+  grid-area: shields;
   align-items: center;
   display: block;
   margin-left: auto;
@@ -132,13 +129,10 @@ section {
   border-style: none;
 }
 
-.flag2 {
-  grid-area: flag2;
-  align-items: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: none;
+.common > img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100%;
 }
 
 .header {
@@ -157,22 +151,11 @@ section {
   color: black;
 }
 
-input[type="hidden"][name="attr_faction"]:is([value="Imperial Navy"]) ~ .header :is(h1,h3,h4) {
+input[type="hidden"][name="attr_faction"]:is([value="Klingon"]) ~ .header :is(h1,h3,h4) {
   color: #ffffff;
 }
 
 
-
-.common {
-  grid-area: common;
-  background-color: white;
-}
-
-.common > img {
-  object-fit: contain;
-  width: 100%;
-  max-height: 100%;
-}
 
 
 .att {
@@ -198,12 +181,6 @@ input[type="hidden"][name="attr_faction"]:is([value="Imperial Navy"]) ~ .header 
 
  
 
-.herotitle {
-  grid-area: herotitle;
-  place-items: center;
-  flex-direction: center;
-  background-color: white;
-}
 .system {
   grid-area: system;
   background-color:  white;
