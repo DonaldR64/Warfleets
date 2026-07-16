@@ -151,6 +151,10 @@ section {
   background-repeat: no-repeat;
 }
 
+.shieldPic {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 .checkbox { position: absolute; bottom: 0px; right: 0px; }
 
