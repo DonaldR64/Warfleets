@@ -125,7 +125,7 @@ section {
 .header {
   grid-area: header;
   flex-direction: center;
-  border-style: none;
+  background-color:  white;
 }
 
 
