@@ -170,6 +170,15 @@ section {
   background-color:  white;
 }
 
+.engineinfo {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+  align-items: center;
+  padding: 2px;  
+}
 
 
 .weapons {
@@ -299,6 +308,22 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .drones {
   display: grid;
   width: 800px;
@@ -309,8 +334,6 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
   grid-template-areas:"droneheader droneheader"
                       "droneattributes droneattributes";
 }
-
-
 
 .droneheader {
   grid-area: droneheader;
@@ -327,3 +350,5 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
   flex-direction: center;
   border-style: none;
 }
+
+
