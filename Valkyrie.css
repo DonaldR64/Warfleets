@@ -307,6 +307,7 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
     text-align: center;
     align-items: center;
     padding: 3px;
+    border: 2px solid black;
 }
 .reservelistB {
     display: grid;
@@ -316,6 +317,7 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
     text-align: center;
     align-items: center;
     padding: 3px;
+    border: 2px solid black;
 }
 
 
