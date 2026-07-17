@@ -1,13 +1,15 @@
 /*Configure the tab buttons*/
 .sheet-input,
-.sheet-display {
+.sheet-ship,
+.sheet-drone {
     display: none;
 }
 
 
 /* show the selected tab */
 .sheet-tabstoggle[value="input"] ~ div.sheet-input,
-.sheet-tabstoggle[value="display"] ~ div.sheet-display {
+.sheet-tabstoggle[value="ship"] ~ div.sheet-ship,
+.sheet-tabstoggle[value="drone"] ~ div.sheet-drone {
     display: block;
 }
 
@@ -294,4 +296,34 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
     text-align: center;
     align-items: center;
     padding: 3px;
+}
+
+
+.drones {
+  display: grid;
+  width: 800px;
+  height: 400px;
+  grid-gap: 4px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:"droneheader droneheader"
+                      "droneattributes droneattributes";
+}
+
+
+
+.droneheader {
+  grid-area: droneheader;
+  flex-direction: center;
+  border-style: none;
+}
+
+.droneheader h2 {
+  color: white;
+}
+
+.droneattributes {
+  grid-area: droneattributes;
+  flex-direction: center;
+  border-style: none;
 }

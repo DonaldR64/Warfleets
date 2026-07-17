@@ -1,7 +1,9 @@
 <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="display"  />
 <div>
     <button type="action" name="act_input" >Input</button>
-    <button type="action" name="act_display" >Display</button>
+    <button type="action" name="act_ship" >Ship</button>
+    <button type="action" name="act_drone" >Drone</button>
+
 </div>
 
 <div class="sheet-input">
@@ -58,6 +60,12 @@
             <label>6:</label><input type="text" name="attr_reservename6">
         </div>
     </div>
+
+
+
+
+
+
 
 
 
@@ -148,7 +156,7 @@
 
 
 
-<div class="sheet-display">
+<div class="sheet-ship">
     <input type="hidden" name="attr_faction"/>
 
     <div class="mysheet">
@@ -305,9 +313,27 @@
 </div>
 
 
+<div class="sheet-drone">
+    <input type="hidden" name="attr_faction"/>
+    <div class="mysheet">
+        <div class="attributes">
+            <div class="drones">
+                <div class="droneheader f-center">
+                    <h1><span name="attr_character_name"></span></h1>
+                    <h2><span name="attr_type"></span></h2>
+                </div>
+                <div class="droneattributes f-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <script type="text/worker">
-    const buttonlist = ["input","display"];
+    const buttonlist = ["input","ship","drone"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -317,22 +343,28 @@
     });
 
     on("sheet:opened", function() {
-        setAttrs({sheetTab:"display"});
+        setAttrs({sheetTab:"ship"});
     });
 
     on("change:attrs sheet:opened", function() { 
-        getAttrs(["class"], function(values) {
+        getAttrs(["class","type"], function(values) {
             let classInfo = {
                 "C-6A": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
 
 
 
             }
+            let display = "ship";
+            if (type === "Drone" || type === "Mine") {
+                display = "drone";
+            }
+
 
             let shieldPic = classInfo[values.class] || "";
 
             setAttrs({
-                shieldPic: shieldPic,
+                "shieldPic": shieldPic,
+                "sheetTab": display,
             });
         });    
     }); 
