@@ -211,8 +211,11 @@ section {
 .e1 {
     background-color: #E75801;
 }
-input.e1col [value="R"] ~ .e1 {
-   background-color: red;
+input[type="hidden"][value="O"].c1 ~ .e1{
+    background-color: #E75801;
+}
+input[type="hidden"][value="R"].c1 ~ .e1{
+    background-color: red;
 }
 
 
