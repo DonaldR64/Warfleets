@@ -511,7 +511,7 @@
 
 <script type="text/worker">
     const buttonlist = ["input","ship","drone"];
-    const checked;
+    const checked = 0;
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -531,7 +531,7 @@
         console.log(attrib)
 
         getAttrs(["fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6","currentReserve"],function(values){
-            let checked = 0;
+            checked = 0;
             let array = ["fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6"];
             for (let i=0;i<array.length;i++) {
                 let v = values[array[i]];
