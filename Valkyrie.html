@@ -523,12 +523,7 @@
         setAttrs({sheetTab:"ship"});
     });
 
-    $20('.reservecheck :checkbox').change(function () {
-        var $20cs = $20(this).closest('.reservecheck').find(':checkbox:checked');
-        if ($20cs.length > 3) {
-            this.checked = false;
-        }
-    });
+
 
     on("change:attrs sheet:opened", function() { 
         getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8"], function(values) {
