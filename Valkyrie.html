@@ -250,8 +250,35 @@
 
 
           <section class="engine">
-            <h3>Engine Track</h3>
             <div class="engineinfo">
+                <div class="top0">
+                    <h4><span name="attr_top0"></span></h4>
+                </div>
+                <div class="top1">
+                    <h4><span name="attr_top1"></span></h4>
+                </div>
+                <div class="top2">
+                    <h4><span name="attr_top2"></span></h4>
+                </div>
+                <div class="top3">
+                    <h4><span name="attr_top3"></span></h4>
+                </div>
+                <div class="top4">
+                    <h4><span name="attr_top4"></span></h4>
+                </div>
+                <div class="top5">
+                    <h4><span name="attr_top5"></span></h4>
+                </div>
+                <div class="top6">
+                    <h4><span name="attr_top6"></span></h4>
+                </div>
+                <div class="top7">
+                    <h4><span name="attr_top7"></span></h4>
+                </div>
+                <div class="top8">
+                    <h4><span name="attr_top8"></span></h4>
+                </div>
+
                 <div class="e0">
                     <h4>Engine</h4>
                 </div>
@@ -333,6 +360,36 @@
                 <div class="l8">
                     <h4><span name="attr_l8"></span></h4>
                 </div>
+
+                <div class="bot0">
+                    <h4><span name="attr_bot0"></span></h4>
+                </div>
+                <div class="bot1">
+                    <h4><span name="attr_bot1"></span></h4>
+                </div>
+                <div class="bot2">
+                    <h4><span name="attr_bot2"></span></h4>
+                </div>
+                <div class="bot3">
+                    <h4><span name="attr_bot3"></span></h4>
+                </div>
+                <div class="bot4">
+                    <h4><span name="attr_bot4"></span></h4>
+                </div>
+                <div class="bot5">
+                    <h4><span name="attr_bot5"></span></h4>
+                </div>
+                <div class="bot6">
+                    <h4><span name="attr_bot6"></span></h4>
+                </div>
+                <div class="bot7">
+                    <h4><span name="attr_bot7"></span></h4>
+                </div>
+                <div class="bot8">
+                    <h4><span name="attr_bot8"></span></h4>
+                </div>
+
+
 
             </div>
         </section>
@@ -445,7 +502,7 @@
     });
 
     on("change:attrs sheet:opened", function() { 
-        getAttrs(["class","type"], function(values) {
+        getAttrs(["class","type",engineLevel], function(values) {
             let classInfo = {
                 "Constellation": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
 
@@ -457,12 +514,48 @@
                 display = "drone";
             }
 
+            let top = [];
+            let bot = [];
+            let engine = parseInt(values.engineLevel);
+            for (let i=0;i<9;i++) {
+                if (i === engine) {
+                    top[i] = "▼";
+                    bot[i] = "▲";
+                } else {
+                    top[i] = " ";
+                    bot[i] = " ";
+                }
+            }
+
+
+
+
 
             let shieldPic = classInfo[values.class] || "";
 
             setAttrs({
                 "shieldPic": shieldPic,
                 "sheetTab": display,
+                "top0": top[0],
+                "top1": top[1],
+                "top2": top[2],
+                "top3": top[3],
+                "top4": top[4],
+                "top5": top[5],
+                "top6": top[6],
+                "top7": top[7],
+                "top8": top[8],
+                "bot0": bot[0],
+                "bot1": bot[1],
+                "bot2": bot[2],
+                "bot3": bot[3],
+                "bot4": bot[4],
+                "bot5": bot[5],
+                "bot6": bot[6],
+                "bot7": bot[7],
+                "bot8": bot[8],
+
+
             });
         });    
     }); 
