@@ -538,14 +538,15 @@
                 if (v === "1") {checked++};
             }
             const attribVal = values[attrib];
+            const setObj = {};
             console.log(attribVal)
             let currentReserve = parseInt(values.currentReserve);
             if (attribVal > 0 && checked > currentReserve) {
                 console.log("TOo Much")
-                
+                values[attrib] = "0"
+                setObj[attrib] = "0";
             }
-
-
+            setAttrs(setObj)
         })
 
 
