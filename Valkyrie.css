@@ -178,16 +178,15 @@ section {
   text-align: center;
   align-items: center;
   padding: 2px;  
+  background-color:  black;
 }
 
 
 .e0 {
     background-color: #E75801;
-    border-style: solid;
 }
 .e1 {
     background-color: #E75801;
-    border-style: solid;
 }
 
 
