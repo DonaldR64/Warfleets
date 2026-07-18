@@ -524,7 +524,7 @@
     });
 
     on("change:attrs sheet:opened", function() { 
-        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8"], function(values) {
+        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8","fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6"], function(values) {
             let classInfo = {
                 "Constellation": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
 
@@ -535,6 +535,17 @@
             if (values.type === "Drone" || values.type === "Mine") {
                 display = "drone";
             }
+
+            let checked = 0;
+            let array = ["fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6"];
+            for (let i=0;i<array.length;i++) {
+                let v = values[array[i]];
+                if (v === "1") {checked++};
+            }
+
+
+
+
 
 
 
@@ -592,7 +603,8 @@
                 "c6": c[6],
                 "c7": c[7],
                 "c8": c[8],
-                "currentReserve": reserve
+                "currentReserve": reserve,
+                "checked": checked,
             });
         });    
     }); 
