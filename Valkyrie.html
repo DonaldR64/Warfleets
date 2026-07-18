@@ -524,7 +524,7 @@
     });
 
     on("change:attrs sheet:opened", function() { 
-        getAttrs(["class","type","engineLevel","engineTrans"], function(values) {
+        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8"], function(values) {
             let classInfo = {
                 "Constellation": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
 
@@ -535,6 +535,8 @@
             if (values.type === "Drone" || values.type === "Mine") {
                 display = "drone";
             }
+
+
 
             let top = ["","","","","","","","",""];
             let bot = ["","","","","","","","",""];
@@ -550,13 +552,13 @@
                     top[i] = " ";
                     bot[i] = " ";
                 }
-
                 if (i >= trans) {
                     c[i] = "R";
                 }
-
             }
-
+            
+            let att = "r" + engine;
+            let reserve = parseInt(values[att]);
 
 
 
@@ -593,7 +595,7 @@
                 "c6": c[6],
                 "c7": c[7],
                 "c8": c[8],
-
+                "temp": reserve,
             });
         });    
     }); 
