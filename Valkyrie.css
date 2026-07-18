@@ -181,6 +181,28 @@ section {
   background-color:  black;
 }
 
+.enginetop {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+  align-items: center;
+  padding: 2px;  
+  background-color:  white;
+}
+
+.enginebot {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+  align-items: center;
+  padding: 2px;  
+  background-color:  white;
+}
+
 
 .e0 {
     background-color: #E75801;
