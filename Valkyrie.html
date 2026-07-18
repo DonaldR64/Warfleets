@@ -523,14 +523,11 @@
         setAttrs({sheetTab:"ship"});
     });
 
-    on("change:fwdshields1 change:fwdshields2",reserveChange);
-
-    const reserveChange = function(eventInfo) {
+    on("change:fwdshields1 change:fwdshields2",function(eventInfo) {
         const attrib = eventInfo.sourceAttribute;
-        setAttrs({
-            temp: attrib,
-        })
-    }
+        console.log(attrib)
+    });
+
 
 
 
