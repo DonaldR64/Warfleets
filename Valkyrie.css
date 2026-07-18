@@ -207,9 +207,15 @@ section {
 .e0 {
     background-color: #E75801;
 }
+
 .e1 {
     background-color: #E75801;
 }
+input.e1col [value=0] ~ .e1 {
+   background-color: red;
+}
+
+
 .e2 {
     background-color: #E75801;
 }
