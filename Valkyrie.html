@@ -502,7 +502,7 @@
     });
 
     on("change:attrs sheet:opened", function() { 
-        getAttrs(["class","type","engineLevel"], function(values) {
+        getAttrs(["class","type","engineLevel","engineTrans"], function(values) {
             let classInfo = {
                 "Constellation": "https://files.d20.io/images/494215991/knUuFRK23mUz6QKgiKdx5Q/thumb.png?1784235633",
 
@@ -517,6 +517,9 @@
             let top = ["","","","","","","","",""];
             let bot = ["","","","","","","","",""];
             let engine = parseInt(values.engineLevel);
+            let trans = parseInt(values.engineTrans);
+            let c = [0,0,0,0,0,0,0,0,0]
+
             for (let i=0;i<9;i++) {
                 if (i === engine) {
                     top[i] = "▼";
@@ -525,6 +528,11 @@
                     top[i] = " ";
                     bot[i] = " ";
                 }
+
+                if (i >= trans) {
+                    c[i] = 1;
+                }
+
             }
 
 
@@ -554,7 +562,15 @@
                 "bot6": bot[6],
                 "bot7": bot[7],
                 "bot8": bot[8],
-
+                "c0": c[0],
+                "c1": c[1],
+                "c2": c[2],
+                "c3": c[3],
+                "c4": c[4],
+                "c5": c[5],
+                "c6": c[6],
+                "c7": c[7],
+                "c8": c[8],
 
             });
         });    
