@@ -154,6 +154,7 @@ section {
 .shielddisplay {
     display: grid;
     place-items: center;
+    text-align: center;
     grid-gap: 4px;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr 4fr 1fr;
@@ -204,8 +205,8 @@ section {
     /* Resets any accidental alignment overrides */
     justify-self: stretch;
     align-self: stretch;
-    display: inline-block;
-    vertical-align: middle;
+    place-items: center;
+    text-align: center;
 }
 .stbd {
     grid-area: stbd;
