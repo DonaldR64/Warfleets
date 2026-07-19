@@ -388,14 +388,15 @@ input[type="hidden"][value="Off"].weapon2-status ~ .weapon2{
 input[type="hidden"][value="Normal"].weapon2-status ~ .weapon2{
     display: grid;
     background-color: green;
-
 }
 input[type="hidden"][value="Down"].weapon2-status ~ .weapon2{
     display: grid;
     background-color: red;
 }
  
-
+.weapon2 h4{
+    color: white;
+}
 .weapon2 {
     display: grid;
     grid-gap: 1px;
