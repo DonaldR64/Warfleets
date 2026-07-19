@@ -237,7 +237,7 @@ section {
     grid-row: 2/6;
 }
 .centrepic > img {
-  object-fit:contain;
+  object-fit:scale-down;
 }
 
 
