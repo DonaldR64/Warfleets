@@ -22,7 +22,7 @@
             </select>
         </div>
         <div class="col">
-            <h3>Attributes</h3>
+            <h3>Power</h3>
             <label>Engine 1:</label><input type="text" name="attr_e1">
             <label>Engine 2:</label><input type="text" name="attr_e2">
             <label>Engine 3:</label><input type="text" name="attr_e3">
@@ -42,15 +42,18 @@
             <label>Engine Transition:</label><input type="number" name="attr_engineTrans">
             <label>Current Engine:</label><input type="number" name="attr_engineLevel">
             <label>Max Engine:</label><input type="number" name="attr_engineLevel_max">
-
+        </div>
+        <div class="col">
+            <h3>Hull, Shields</h3>
             <label>Current Hull:</label><input type="number" name="attr_hull">
             <label>Max Hull:</label><input type="number" name="attr_hull_max">            
-            
-            <label>Forward Shield:</label><input type="text" name="attr_forShield">
-            <label>Port Shield:</label><input type="text" name="attr_portShield">            
-            <label>Starboard Shield:</label><input type="text" name="attr_stbdShield">
-            <label>Aft Shield:</label><input type="text" name="attr_aftShield">
-
+            <label>Forward Shield Array:</label><input type="text" name="attr_forShieldArray">
+            <label>Port Shield Array:</label><input type="text" name="attr_portShieldArray">            
+            <label>Starboard Shield Array:</label><input type="text" name="attr_stbdShieldArray">
+            <label>Aft Shield Array:</label><input type="text" name="attr_aftShieldArray">
+        </div>
+        <div class="col">
+            <h3>Stats</h3>
             <label>Size:</label><input type="number" name="attr_size">
             <label>Turn Rating:</label><input type="number" name="attr_turn">
             <label>Speed:</label><input type="number" name="attr_speed">
@@ -60,16 +63,15 @@
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="Heavy Cruiser">Heavy Cruiser</option>
                 <option value="Light Cruiser">Light Cruiser</option>
-
-
-
                 <option value="Drone">Drone</option>
                 <option value="Mine">Mine</option>
-
                 <option value="Objective">Objective</option>
                 <option value="Terrain">Terrain</option>
                 <option value="System">System</option>
             </select>  
+        </div>
+        <div class="col">
+            <h3>Systems</h3>
             <label>System 1:</label><input type="text" name="attr_system1">
             <label>System 2:</label><input type="text" name="attr_system2">
             <label>System 3:</label><input type="text" name="attr_system3">
@@ -87,13 +89,6 @@
             <label>6:</label><input type="text" name="attr_reservename6">
         </div>
     </div>
-
-
-
-
-
-
-
 
 
     <div class="row">
@@ -205,14 +200,7 @@
           </section>
 
           <section class="shields">
-            <div class="image-container">
-                <img name="attr_shieldPic">
-            </div>
-
-            <input type="hidden" name="attr_hullstatus" class="hull-status" value="Normal">
-            <div class="overlay-text">
-                <h1><span name="attr_hull"></span></h1>
-            </div>
+            <h3>Placeholder for Shields</h3>
           </section>
           
           <section class="reserve">
@@ -593,13 +581,8 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8","fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6","hull","hull_max"], function(values) {
-            let classInfo = {
-                "C6A": "https://files.d20.io/images/494517230/GZmYuGvaWfGuvkIukj6H_g/thumb.png?1784434554",
+        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8","hull","hull_max","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray"], function(values) {
 
-
-
-            }
             let display = "ship";
             if (values.type === "Drone" || values.type === "Mine") {
                 display = "drone";
@@ -607,7 +590,6 @@
 
             let hull = parseInt(values.hull);
             let hullMax = parseInt(values.hull_max);
-console.log(hullMax)
             let hullStatus = (hull === hullMax) ? "Normal":"Down";
 
             let top = ["","","","","","","","",""];
@@ -615,11 +597,17 @@ console.log(hullMax)
             let engine = parseInt(values.engineLevel);
             let trans = parseInt(values.engineTrans);
             let c = ["O","O","O","O","O","O","O","O","O",]
+            let engineStatus = 0;
 
             for (let i=0;i<9;i++) {
                 if (i === engine) {
                     top[i] = "▼";
                     bot[i] = "▲";
+                    if (i>=trans) {
+                        engineStatus = 2;
+                    } else {
+                        engineStatus = 1;
+                    }
                 } else {
                     top[i] = " ";
                     bot[i] = " ";
@@ -632,10 +620,17 @@ console.log(hullMax)
             let att = "r" + engine;
             var reserve = parseInt(values[att]);
 
-            let shieldPic = classInfo[values.class] || "";
+            let shields = [];
+            let shieldNames = ["forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray"];
+            _.each(shieldNames,shieldName => {
+                let arr = values[shieldName] + "/0";
+                arr = arr.split("/").map((e) => parseInt(e)).sort();
+                shields.push(arr[engineStatus]);
+            })
+
+            console.log(shields);
 
             setAttrs({
-                "shieldPic": shieldPic,
                 "sheetTab": display,
                 "top0": top[0],
                 "top1": top[1],
@@ -667,6 +662,10 @@ console.log(hullMax)
                 "currentReserve": reserve,
                 "checked": checked,
                 "hullstatus": hullStatus,
+                "fShield": shields[0],
+                "pShield": shields[1],
+                "sShield": shields[2],
+                "aShield": shields[3],
             });
         });    
     }); 
