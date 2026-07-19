@@ -45,9 +45,9 @@ main {
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:"shields   shields    header  header      reserve     reserve"
-                      "shields   shields    systems systems     reserve     reserve"
-                      "damage    damage     engine  engine      engine      engine"
+  grid-template-areas:"header    header    shields  shields     reserve     reserve"
+                      "systems   systems   shields  shields     reserve     reserve"
+                      "systems   systems   engine   engine      engine      engine"
                       "weapons   weapons    weapons weapons     weapons     weapons"
                       "weapons   weapons    weapons weapons     weapons     weapons";
 }
