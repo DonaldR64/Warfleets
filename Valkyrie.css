@@ -165,7 +165,7 @@ section {
 /* The text wrapper floating over the image */
 .overlay-text {
   position: absolute;
-  top: 25%;          /* Move down 50% from the top of the container */
+  top: 40%;          /* Move down 50% from the top of the container */
   left: 50%;          /* Move right 50% from the left of the container */
   transform: translate(-50%, -50%); /* Perfectly offsets the text to center it */
   /* Styling to make text readable */
