@@ -154,13 +154,9 @@ section {
 .shielddisplay {
     display: grid;
     place-items: center;
-    text-align: center;
     grid-gap: 4px;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 4fr 1fr;
-    grid-template-areas:    "blank1  fwd blank2"
-                            "port    pic stbd"
-                            "blank3  aft blank4"; 
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
     background-color: white;
 }
 
@@ -169,39 +165,51 @@ section {
 }
 
 .blank1 {
-    grid-area: blank1;
+    grid-column:1/2;
+    grid-row: 1/2;
     background-color: white;
 }
 .blank2 {
-    grid-area: blank2;
+    grid-column:6/-1;
+    grid-row: 1/2;
     background-color: white;
 }
 .blank3 {
-    grid-area: blank3;
+    grid-column:1/2;
+    grid-row: 6/-1;
     background-color: white;
 }
 .blank4 {
-    grid-area: blank4;
+    grid-column:6/-1;
+    grid-row: 6/-1;
     background-color: white;
 }
 
 .fwd {
-    grid-area: fwd;
+    grid-column:2/6;
+    grid-row: 1/2;
     background-color: green;
 }
 .port {
-    grid-area: port;
+    grid-column:1/2;
+    grid-row: 2/6;
     background-color: green;
 }
 .stbd {
-    grid-area: stbd;
+    grid-column:6/-1;
+    grid-row: 2/6;
     background-color: green;
 }
 .aft {
-    grid-area: aft;
+    grid-column:2/6;
+    grid-row: 6/-1;
     background-color: green;
 }
-
+.pic {
+    grid-column: 2/6;
+    grid-row: 2/6;
+    background-color: white;
+}
 
 
 
