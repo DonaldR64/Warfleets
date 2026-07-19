@@ -474,8 +474,30 @@ input[type="hidden"][value="Equipped"].weapon5-status ~ .weapon5{
     padding: 3px;
 }
 
-
-
+/* Shields */
+input[type="hidden"][value="None"].shield-status ~ .shieldstatus{
+    display: none;
+}
+input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus{
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+    padding: 3px;    
+    color: green;
+}
+input[type="hidden"][value="Down"].shield-status ~ .shieldstatus{
+display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+    padding: 3px;    
+    color: red;
+}
 
 
 
