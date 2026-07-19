@@ -606,7 +606,7 @@
                     if (i>=trans) {
                         engineStatus = 2;
                     } else {
-                        engineStatus = 1;
+                        engineStatus = (i===0) ? 0:1;
                     }
                 } else {
                     top[i] = " ";
