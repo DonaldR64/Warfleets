@@ -188,6 +188,13 @@ section {
     grid-column:2/6;
     grid-row: 1/2;
     background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fwdtext {
+    grid-column:2/6;
+    grid-row: 1/2;
 }
 .port {
     grid-column:1/2;
