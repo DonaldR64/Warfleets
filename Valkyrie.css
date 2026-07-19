@@ -235,9 +235,12 @@ section {
 .pic {
     grid-column: 2/6;
     grid-row: 2/6;
-    background-color: white;
 }
-
+.pic > img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100%;
+}
 
 
 
