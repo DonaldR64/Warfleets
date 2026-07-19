@@ -705,9 +705,9 @@ display: grid;
 
 .hull {
     position: absolute;
-    top: 130px;
-    left: 120px; 
+    top: 120px;
+    left: 130px; 
     
-   padding: 5px;
-   background-color: white;
+    padding: 5px;
+    background-color: white;
 }
