@@ -367,7 +367,7 @@ input[type="hidden"][value="Down"].weapon1-status ~ .weapon1{
 }
 
 .weapon1 h4{
-    color: white;
+    color: black;
 }
 
 .weapon1 {
@@ -395,7 +395,7 @@ input[type="hidden"][value="Down"].weapon2-status ~ .weapon2{
 }
  
 .weapon2 h4{
-    color: white;
+    color: black;
 }
 .weapon2 {
     display: grid;
@@ -422,7 +422,7 @@ input[type="hidden"][value="Down"].weapon3-status ~ .weapon3{
 }
 
 .weapon3 h4{
-    color: white;
+    color: black;
 }
 
 .weapon3 {
@@ -450,7 +450,7 @@ input[type="hidden"][value="Down"].weapon4-status ~ .weapon4{
 }
 
 .weapon4 h4{
-    color: white;
+    color: black;
 }
 
 .weapon4 {
@@ -478,7 +478,7 @@ input[type="hidden"][value="Down"].weapon5-status ~ .weapon5{
 }
   
 .weapon5 h4{
-    color: white;
+    color: black;
 }
 
 .weapon5 {
