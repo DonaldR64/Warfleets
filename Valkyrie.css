@@ -702,3 +702,12 @@ display: grid;
 }
 
 
+#hull {
+    position: absolute;
+    top: 130px;
+    left: 120px; 
+    
+   padding: 5px;
+   background-color: white;
+   border: 2px solid red;
+}
