@@ -238,9 +238,6 @@ section {
 }
 .pic > img {
   object-fit: contain;
-  max-height: 100%;
-  width: auto;
-  display: block;
 }
 
 
