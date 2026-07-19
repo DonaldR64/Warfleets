@@ -148,6 +148,7 @@ section {
 
 .shields {
   grid-area: shields;
+  position: absolute;
 }
 
 .shields > img {
@@ -155,6 +156,15 @@ section {
   width: 100%;
   max-height: 100%;
 }
+
+
+.hull {
+    position: relative;
+    top: 25%;
+    left: 50%;
+}
+
+
 
 .damage {
   grid-area: damage;
