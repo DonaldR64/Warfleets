@@ -481,7 +481,7 @@ input[type="hidden"][value="None"].shield-status ~ .shieldstatus{
 input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus{
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
@@ -494,9 +494,9 @@ input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus h4 {
 
 
 input[type="hidden"][value="Down"].shield-status ~ .shieldstatus{
-display: grid;
+    display: grid;
     grid-gap: 1px;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
@@ -514,7 +514,7 @@ input[type="hidden"][value="None"].thruster-status ~ .thrusterstatus{
 input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
@@ -529,7 +529,7 @@ input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus h4 {
 input[type="hidden"][value="Down"].thruster-status ~ .thrusterstatus{
 display: grid;
     grid-gap: 1px;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
