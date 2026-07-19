@@ -158,8 +158,8 @@ section {
 
 
 .hull {
-    position: relative;
-    top: 10%;
+    position: absolute;
+    top: 20%;
     left: 45%;
 }
 
