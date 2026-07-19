@@ -177,7 +177,12 @@ section {
 }
 
 
-
+input[type="hidden"][value="Normal"].hull-status ~ .overlay-text h1{
+    color: white;
+}
+input[type="hidden"][value="Down"].hull-status ~ .overlay-text h1{
+    color: red;
+}
 
 
 .damage {
