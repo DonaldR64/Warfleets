@@ -193,10 +193,7 @@ section {
     /* Resets any accidental alignment overrides */
     justify-self: stretch;
     align-self: stretch;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    height: 200px;  
+    
 }
 .port {
     grid-area: port;
@@ -207,10 +204,8 @@ section {
     /* Resets any accidental alignment overrides */
     justify-self: stretch;
     align-self: stretch;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    height: 200px;  
+    display: inline-block;
+    vertical-align: middle;
 }
 .stbd {
     grid-area: stbd;
@@ -221,10 +216,6 @@ section {
     /* Resets any accidental alignment overrides */
     justify-self: stretch;
     align-self: stretch;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    height: 200px;  
 }
 .aft {
     grid-area: aft;
@@ -235,10 +226,6 @@ section {
     /* Resets any accidental alignment overrides */
     justify-self: stretch;
     align-self: stretch;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    height: 200px;  
 }
 
 
