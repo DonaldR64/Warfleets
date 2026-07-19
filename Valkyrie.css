@@ -148,7 +148,7 @@ section {
 
 .shields {
   grid-area: shields;
-  position: relative;
+  position: absolute;
 }
 
 .shields > img {
@@ -704,10 +704,8 @@ display: grid;
 
 
 .hull {
-    position: absolute;
+    position: relative;
     top: 120px;
     left: 130px; 
-    
-    padding: 5px;
     background-color: white;
 }
