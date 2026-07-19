@@ -520,11 +520,6 @@ input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{
     padding: 3px;    
     background-color:  green;
 }
-input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus h4 { 
-    color: green;
-}
-
-
 input[type="hidden"][value="Down"].thruster-status ~ .thrusterstatus{
 display: grid;
     grid-gap: 1px;
@@ -537,14 +532,13 @@ display: grid;
 }
 
 /* System 1 */
-.system1-status h4{
-    color: black;
+.system1status h4{
+    color: white;
 }
-
-input[type="hidden"][value="None"].system1-status ~ .system1-status{
+input[type="hidden"][value="None"].system1-status ~ .system1status{
     display: none;
 }
-input[type="hidden"][value="Normal"].system1-status ~ .system1-status{
+input[type="hidden"][value="Normal"].system1-status ~ .system1status{
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 4fr 2fr;
@@ -554,7 +548,7 @@ input[type="hidden"][value="Normal"].system1-status ~ .system1-status{
     padding: 3px;    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system1-status ~ .system1-status{
+input[type="hidden"][value="Down"].system1-status ~ .system1status{
 display: grid;
     grid-gap: 1px;
     grid-template-columns: 4fr 2fr;
@@ -569,10 +563,10 @@ display: grid;
 
 
 /* System 2 */
-input[type="hidden"][value="None"].system2-status ~ .system2-status{
+input[type="hidden"][value="None"].system2-status ~ .system2status{
     display: none;
 }
-input[type="hidden"][value="Normal"].system2-status ~ .system2-status{
+input[type="hidden"][value="Normal"].system2-status ~ .system2status{
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 4fr 2fr;
@@ -580,9 +574,6 @@ input[type="hidden"][value="Normal"].system2-status ~ .system2-status{
     text-align: center;
     align-items: center;
     padding: 3px;    
-    color: green;
-}
-input[type="hidden"][value="Normal"].system2-status ~ .system2-status h4 { 
     color: green;
 }
 
