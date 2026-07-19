@@ -232,13 +232,12 @@ section {
     grid-column:2/6;
     grid-row: 1/2;
 }
-.pic {
+.centre {
     grid-column: 2/6;
     grid-row: 2/6;
 }
-.pic > img {
-  height: 100%;
-  width: auto;
+.centrepic > img {
+  object-fit:contain;
 }
 
 
