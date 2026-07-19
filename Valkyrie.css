@@ -541,7 +541,7 @@ input[type="hidden"][value="None"].system1-status ~ .system1status{
 input[type="hidden"][value="Normal"].system1-status ~ .system1status{
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
@@ -551,7 +551,7 @@ input[type="hidden"][value="Normal"].system1-status ~ .system1status{
 input[type="hidden"][value="Down"].system1-status ~ .system1status{
 display: grid;
     grid-gap: 1px;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
