@@ -581,7 +581,7 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8","hull","hull_max","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray"], function(values) {
+        getAttrs(["class","type","engineLevel","engineTrans","r1","r2","r3","r4","r5","r6","r7","r8","hull","hull_max","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus"], function(values) {
 
             let display = "ship";
             if (values.type === "Drone" || values.type === "Mine") {
@@ -597,16 +597,16 @@
             let engine = parseInt(values.engineLevel);
             let trans = parseInt(values.engineTrans);
             let c = ["O","O","O","O","O","O","O","O","O",]
-            let engineStatus = 0;
+            let shieldLevel = 0;
 
             for (let i=0;i<9;i++) {
                 if (i === engine) {
                     top[i] = "▼";
                     bot[i] = "▲";
                     if (i>=trans) {
-                        engineStatus = 2;
+                        shieldLevel = 2;
                     } else {
-                        engineStatus = (i===0) ? 0:1;
+                        shieldLevel = (i===0) ? 0:1;
                     }
                 } else {
                     top[i] = " ";
@@ -620,13 +620,22 @@
             let att = "r" + engine;
             var reserve = parseInt(values[att]);
 
+
+            let shieldStatus = values.shieldstatus;
+            if (shieldstatus === "Down") {
+                shieldLevel = Math.max(shieldLevel - 1, 0);
+            }
             let shields = [];
             let shieldNames = ["forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray"];
             _.each(shieldNames,shieldName => {
                 let arr = values[shieldName] + "/0";
                 arr = arr.split("/").map((e) => parseInt(e)).sort();
-                shields.push(arr[engineStatus]);
+                shields.push(arr[shieldLevel]);
             })
+
+
+
+
 
             console.log(shields);
 
