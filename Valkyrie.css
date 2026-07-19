@@ -165,13 +165,12 @@ section {
 /* The text wrapper floating over the image */
 .overlay-text {
   position: absolute;
-  top: 50%;          /* Move down 50% from the top of the container */
+  top: 25%;          /* Move down 50% from the top of the container */
   left: 50%;          /* Move right 50% from the left of the container */
   transform: translate(-50%, -50%); /* Perfectly offsets the text to center it */
   /* Styling to make text readable */
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   padding: 20px;
   border-radius: 8px;
   width: 80%;        /* Keeps text from hitting the image edges */
