@@ -353,15 +353,15 @@ input[type="hidden"][value="R"].c8-status ~ .e8{
 }
 
 /* Weapon 1 */
-input[type="hidden"][value="Off"].weapon1-equipped ~ .weapon1{
+input[type="hidden"][value="Off"].weapon1-status ~ .weapon1{
     display: none;
 }
-input[type="hidden"][value="Normal"].weapon1-equipped ~ .weapon1{
+input[type="hidden"][value="Normal"].weapon1-status ~ .weapon1{
     display: grid;
     background-color: green;
 
 }
-input[type="hidden"][value="Down"].weapon1-equipped ~ .weapon1{
+input[type="hidden"][value="Down"].weapon1-status ~ .weapon1{
     display: grid;
     background-color: red;
 }
@@ -385,12 +385,12 @@ input[type="hidden"][value="Down"].weapon1-equipped ~ .weapon1{
 input[type="hidden"][value="Off"].weapon2-status ~ .weapon2{
     display: none;
 }
-input[type="hidden"][value="Normal"].weapon2-equipped ~ .weapon2{
+input[type="hidden"][value="Normal"].weapon2-status ~ .weapon2{
     display: grid;
     background-color: green;
 
 }
-input[type="hidden"][value="Down"].weapon2-equipped ~ .weapon2{
+input[type="hidden"][value="Down"].weapon2-status ~ .weapon2{
     display: grid;
     background-color: red;
 }
@@ -411,12 +411,12 @@ input[type="hidden"][value="Down"].weapon2-equipped ~ .weapon2{
 input[type="hidden"][value="Off"].weapon3-status ~ .weapon3{
     display: none;
 }
-input[type="hidden"][value="Normal"].weapon3-equipped ~ .weapon3{
+input[type="hidden"][value="Normal"].weapon3-status ~ .weapon3{
     display: grid
     background-color: green;
 
 }
-input[type="hidden"][value="Down"].weapon3-equipped ~ .weapon3{
+input[type="hidden"][value="Down"].weapon3-status ~ .weapon3{
     display: grid;
     background-color: red;
 }
@@ -439,12 +439,12 @@ input[type="hidden"][value="Down"].weapon3-equipped ~ .weapon3{
 input[type="hidden"][value="Off"].weapon4-status ~ .weapon4{
     display: none;
 }
-input[type="hidden"][value="Normal"].weapon4-equipped ~ .weapon4{
+input[type="hidden"][value="Normal"].weapon4-status ~ .weapon4{
     display: grid;
     background-color: green;
 
 }
-input[type="hidden"][value="Down"].weapon4-equipped ~ .weapon4{
+input[type="hidden"][value="Down"].weapon4-status ~ .weapon4{
     display: grid;
     background-color: red;
 }
@@ -467,12 +467,12 @@ input[type="hidden"][value="Down"].weapon4-equipped ~ .weapon4{
 input[type="hidden"][value="Off"].weapon5-status ~ .weapon5{
     display: none;
 }
-input[type="hidden"][value="Normal"].weapon5-equipped ~ .weapon5{
+input[type="hidden"][value="Normal"].weapon5-status ~ .weapon5{
     display: grid;
     background-color: green;
 
 }
-input[type="hidden"][value="Down"].weapon5-equipped ~ .weapon5{
+input[type="hidden"][value="Down"].weapon5-status ~ .weapon5{
     display: grid;
     background-color: red;
 }
