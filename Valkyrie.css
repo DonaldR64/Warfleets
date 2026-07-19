@@ -163,6 +163,10 @@ section {
     background-color: white;
 }
 
+.shielddisplay h3 {
+    color: white;
+}
+
 .blank1 {
     grid-area: blank1;
     background-color: white;
