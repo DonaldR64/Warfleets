@@ -148,7 +148,6 @@ section {
 
 .shields {
   grid-area: shields;
-  position: absolute;
 }
 
 .shields > img {
