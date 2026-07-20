@@ -41,16 +41,15 @@ main {
   width: 800px;
   height: 600px;
   grid-gap: 4px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:"header   header    shields  shields shields    engine     engine"
-                      "systems   systems    shields  shields shields     engine     engine"
-                      "systems   systems    shields   shields shields     engine     engine"
-                      "weapons   weapons    weapons weapons weapons    weapons     weapons"
-                      "weapons   weapons    weapons weapons weapons    weapons     weapons";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:  "header  shields shields helm"
+                        "damage shields shields engine"
+                        "systems shields shields engine"
+                        "systems shields shields engine"
+                        "weapons weapons weapons weapons"
+                        "weapons weapons weapons weapons";
 }
-
-
 
 
 
@@ -129,7 +128,16 @@ section {
   grid-area: header;
   background-color:  white;
 }
+.helm {
+    grid-area: helm;
+    background-color:  white;
+}
 
+
+.damage {
+    grid-area: damage;
+    background-color:  white;
+}
 
 .shields {
   grid-area: shields;
