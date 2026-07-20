@@ -215,7 +215,7 @@ input[type="hidden"][value="2"].sd-status ~ .fwd{
     align-items: center;
 }
 
-input[type="hidden"][value="O"].sd-status ~ .port{
+input[type="hidden"][value=0].sd-status ~ .port{
     background-color: red;
 }
 input[type="hidden"][value="1"].sd-status ~ .port{
@@ -238,7 +238,7 @@ input[type="hidden"][value="2"].sd-status ~ .port{
     align-items: center;
 }
 
-input[type="hidden"][value="O"].sd-status ~ .stbd{
+input[type="hidden"][value=0].sd-status ~ .stbd{
     background-color: red;
 }
 input[type="hidden"][value="1"].sd-status ~ .stbd{
@@ -260,7 +260,7 @@ input[type="hidden"][value="2"].sd-status ~ .stbd{
     justify-content: center;
     align-items: center;
 }
-input[type="hidden"][value="O"].sd-status ~ .aft{
+input[type="hidden"][value=0].sd-status ~ .aft{
     background-color: red;
 }
 input[type="hidden"][value="1"].sd-status ~ .aft{
