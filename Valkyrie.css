@@ -249,8 +249,11 @@ section {
     position: absolute;
     grid-column:2/6;
     grid-row: 2/6;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 4px 8px;
     color: white;
-    font-size: 36px;
+    margin: 0;
+    font: 36px Sans-Serif;
 }
 
 
