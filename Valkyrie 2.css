@@ -440,6 +440,14 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     padding: 3px;
 }
 
+.engineeringinfo {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+    border-bottom-style: solid;
+}
+
 .reservelistA {
     display: grid;
     grid-gap: 1px;
