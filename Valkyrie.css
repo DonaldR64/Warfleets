@@ -528,6 +528,7 @@ input[type="hidden"][value="R"].c8-status ~ .e8 h4{
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   background-color: white;
+  color: red;
   text-align: center;
   align-items: center;
 }
