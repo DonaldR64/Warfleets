@@ -1,15 +1,13 @@
 /*Configure the tab buttons*/
 .sheet-input,
-.sheet-ship,
-.sheet-drone {
+.sheet-ship {
     display: none;
 }
 
 
 /* show the selected tab */
 .sheet-tabstoggle[value="input"] ~ div.sheet-input,
-.sheet-tabstoggle[value="ship"] ~ div.sheet-ship,
-.sheet-tabstoggle[value="drone"] ~ div.sheet-drone {
+.sheet-tabstoggle[value="ship"] ~ div.sheet-ship {
     display: block;
 }
 
@@ -25,10 +23,10 @@
 input[type="hidden"][name="attr_faction"] ~ .mysheet {
     background-color: lightgray;
 }
-input[type="hidden"][name="attr_faction"][value="Terran"] ~ .mysheet {
+input[type="hidden"][name="attr_faction"][value="Federation"] ~ .mysheet {
     background-color: mediumblue;
 }
-input[type="hidden"][name="attr_faction"][value="Kurgun"] ~ .mysheet {
+input[type="hidden"][name="attr_faction"][value="Klingon"] ~ .mysheet {
     background-color: black;
 }
 
@@ -43,13 +41,13 @@ main {
   width: 800px;
   height: 600px;
   grid-gap: 4px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:"header    header    shields  shields     reserve     reserve"
-                      "systems   systems   shields  shields     reserve     reserve"
-                      "systems   systems   engine   engine      engine      engine"
-                      "weapons   weapons    weapons weapons     weapons     weapons"
-                      "weapons   weapons    weapons weapons     weapons     weapons";
+  grid-template-areas:"systems   systems    shields  shields shields    engine     engine"
+                      "systems   systems    shields  shields shields     engine     engine"
+                      "systems   systems    shields   shields shields     engine     engine"
+                      "weapons   weapons    weapons weapons weapons    weapons     weapons"
+                      "weapons   weapons    weapons weapons weapons    weapons     weapons";
 }
 
 
@@ -122,29 +120,10 @@ section {
 
 /*------------- Section-specific CSS -------------*/
 
-
-
-.header {
-  grid-area: header;
-  flex-direction: center;
-  background-color:  white;
-}
-
-.header h1 {
-  color: black;
-}
-.header h3 {
-  color: black;
-}
-.header h4 {
-  color: black;
-}
-
 .systems {
   grid-area: systems;
   background-color:  white;
 }
-
 
 .shields {
   grid-area: shields;
@@ -161,27 +140,6 @@ section {
 
 .shielddisplay h3 {
     color: white;
-}
-
-.blank1 {
-    grid-column:1/2;
-    grid-row: 1/2;
-    background-color: white;
-}
-.blank2 {
-    grid-column:6/-1;
-    grid-row: 1/2;
-    background-color: white;
-}
-.blank3 {
-    grid-column:1/2;
-    grid-row: 6/-1;
-    background-color: white;
-}
-.blank4 {
-    grid-column:6/-1;
-    grid-row: 6/-1;
-    background-color: white;
 }
 
 
@@ -305,213 +263,11 @@ input[type="hidden"][value="Down"].hull-status ~ .overlay-text h1{
 }
 
 
-.damage {
-  grid-area: damage;
-  background-color:  white;
-}
-
-
-
-.reserve {
-  grid-area: reserve;
-  background-color:  white;
-}
 
 .engine {
   grid-area: engine;
   background-color:  white;
 }
-
-.engineinfo {
-  display: grid;
-  grid-gap: 1px;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  text-align: center;
-  align-items: center;
-  padding: 2px;  
-  background-color:  black;
-}
-
-.engineinfo h4{
-    color: black;
-}
-
-.enginetop {
-  display: grid;
-  grid-gap: 1px;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  text-align: center;
-  align-items: center;
-  padding: 2px;  
-  background-color:  white;
-}
-
-.enginebot {
-  display: grid;
-  grid-gap: 1px;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  text-align: center;
-  align-items: center;
-  padding: 2px;  
-  background-color:  white;
-}
-
-.eName {
-    background-color: red;
-}
-
-
-.e0 {
-    background-color: red;
-}
-
-.e1 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c1-status ~ .e1{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c1-status ~ .e1{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c1-status ~ .e1 h4{
-    color: white;
-}
-
-.e2 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c2-status ~ .e2{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c2-status ~ .e2{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c2-status ~ .e2 h4{
-    color: white;
-}
-
-.e3 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c3-status ~ .e3{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c3-status ~ .e3{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c3-status ~ .e3 h4{
-    color: white;
-}
-
-
-.e4 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c4-status ~ .e4{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c4-status ~ .e4{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c4-status ~ .e4 h4{
-    color: white;
-}
-
-
-.e5 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c5-status ~ .e5{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c5-status ~ .e5{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c5-status ~ .e5 h4{
-    color: white;
-}
-
-.e6 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c6-status ~ .e6{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c6-status ~ .e6{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c6-status ~ .e6 h4{
-    color: white;
-}
-
-.e7 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c7-status ~ .e7{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c7-status ~ .e7{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c7-status ~ .e7 h4{
-    color: white;
-}
-
-.e8 {
-    background-color: orange;
-}
-input[type="hidden"][value="O"].c8-status ~ .e8{
-    background-color: orange;
-}
-input[type="hidden"][value="R"].c8-status ~ .e8{
-    background-color: green;
-}
-input[type="hidden"][value="R"].c8-status ~ .e8 h4{
-    color: white;
-}
-
-
-
-
-.rName {
-    background-color: #FFC300;
-}
-.r0 {
-    background-color: #FFC300;
-}
-.r1 {
-    background-color: #FFC300;
-}
-.r2 {
-    background-color: #FFC300;
-}
-.r3 {
-    background-color: #FFC300;
-}
-.r4 {
-    background-color: #FFC300;
-}
-.r5 {
-    background-color: #FFC300;
-}
-.r6 {
-    background-color: #FFC300;
-}
-.r7 {
-    background-color: #FFC300;
-}
-.r8 {
-    background-color: #FFC300;
-}
-
-
-
-
-
 
 
 
@@ -525,7 +281,7 @@ input[type="hidden"][value="R"].c8-status ~ .e8 h4{
   grid-area: weaponinfo;
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   background-color: white;
   color: darkred;
@@ -554,7 +310,7 @@ input[type="hidden"][value="Down"].weapon1-status ~ .weapon1{
 .weapon1 {
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -580,7 +336,7 @@ input[type="hidden"][value="Down"].weapon2-status ~ .weapon2{
 .weapon2 {
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -607,7 +363,7 @@ input[type="hidden"][value="Down"].weapon3-status ~ .weapon3{
 .weapon3 {
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -635,7 +391,7 @@ input[type="hidden"][value="Down"].weapon4-status ~ .weapon4{
 .weapon4 {
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -663,7 +419,7 @@ input[type="hidden"][value="Down"].weapon5-status ~ .weapon5{
 .weapon5 {
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1;
     text-align: center;
     align-items: center;
@@ -701,31 +457,26 @@ input[type="hidden"][value="Down"].weapon5-status ~ .weapon5{
     padding: 3px;
 }
 
-/* Shields */
+/* Shield Status */
 .shieldstatus h4 {
     color: white;
+}
+.shieldstatus {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+    padding: 3px;   
 }
 input[type="hidden"][value="None"].shield-status ~ .shieldstatus{
     display: none;
 }
 input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus{
-    display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    text-align: center;
-    align-items: center;
-    padding: 3px;    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].shield-status ~ .shieldstatus{
-    display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    text-align: center;
-    align-items: center;
-    padding: 3px;    
+input[type="hidden"][value="Down"].shield-status ~ .shieldstatus{   
     background-color:  red;
 }
 
@@ -734,10 +485,7 @@ input[type="hidden"][value="Down"].shield-status ~ .shieldstatus{
 .thrusterstatus h4{
     color: white;
 }
-input[type="hidden"][value="None"].thruster-status ~ .thrusterstatus{
-    display: none;
-}
-input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{
+.thrusterstatus {
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 1fr;
@@ -745,16 +493,37 @@ input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{
     text-align: center;
     align-items: center;
     padding: 3px;    
+}
+input[type="hidden"][value="None"].thruster-status ~ .thrusterstatus{
+    display: none;
+}
+input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{   
     background-color:  green;
 }
-input[type="hidden"][value="Down"].thruster-status ~ .thrusterstatus{
-display: grid;
+input[type="hidden"][value="Down"].thruster-status ~ .thrusterstatus{    
+    background-color:  red;
+}
+
+/* Sensors */
+.sensorstatus h4{
+    color: white;
+}
+.sensorstatus {
+    display: grid;
     grid-gap: 1px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
     padding: 3px;    
+}
+input[type="hidden"][value="None"].sensor-status ~ .sensorstatus{
+    display: none;
+}
+input[type="hidden"][value="Normal"].sensor-status ~ .sensorstatus{   
+    background-color:  green;
+}
+input[type="hidden"][value="Down"].sensor-status ~ .sensorstatus{    
     background-color:  red;
 }
 
@@ -762,27 +531,23 @@ display: grid;
 .system1status h4{
     color: white
 }
-input[type="hidden"][value="None"].system1-status ~ .system1status{
-    display: none;
-}
-input[type="hidden"][value="Normal"].system1-status ~ .system1status{
+.system1status {
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
-    padding: 3px;    
+    padding: 3px; 
+}
+input[type="hidden"][value="None"].system1-status ~ .system1status{
+    display: none;
+}
+
+input[type="hidden"][value="Normal"].system1-status ~ .system1status{    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system1-status ~ .system1status{
-display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    text-align: center;
-    align-items: center;
-    padding: 3px;    
+input[type="hidden"][value="Down"].system1-status ~ .system1status{   
     background-color:  red;
 }
 
@@ -791,27 +556,22 @@ display: grid;
 .system2status h4{
     color: white;
 }
-input[type="hidden"][value="None"].system2-status ~ .system2status{
-    display: none;
-}
-input[type="hidden"][value="Normal"].system2-status ~ .system2status{
+.system2status {
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
-    padding: 3px;    
+    padding: 3px;   
+}
+input[type="hidden"][value="None"].system2-status ~ .system2status{
+    display: none;
+}
+input[type="hidden"][value="Normal"].system2-status ~ .system2status{    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system2-status ~ .system2status{
-display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    text-align: center;
-    align-items: center;
-    padding: 3px;    
+input[type="hidden"][value="Down"].system2-status ~ .system2status{   
     background-color:  red;
 }
 
@@ -819,27 +579,22 @@ display: grid;
 .system3status h4{
     color: white;
 }
-input[type="hidden"][value="None"].system3-status ~ .system3status{
-    display: none;
-}
-input[type="hidden"][value="Normal"].system3-status ~ .system3status{
+.system3status {
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
-    padding: 3px;    
+    padding: 3px;  
+}
+input[type="hidden"][value="None"].system3-status ~ .system3status{
+    display: none;
+}
+input[type="hidden"][value="Normal"].system3-status ~ .system3status{    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system3-status ~ .system3status{
-display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    text-align: center;
-    align-items: center;
-    padding: 3px;    
+input[type="hidden"][value="Down"].system3-status ~ .system3status{   
     background-color:  red;
 }
 
@@ -850,36 +605,5 @@ display: grid;
 
 
 
-
-
-
-
-
-.drones {
-  display: grid;
-  width: 800px;
-  height: 400px;
-  grid-gap: 4px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas:"droneheader droneheader"
-                      "droneattributes droneattributes";
-}
-
-.droneheader {
-  grid-area: droneheader;
-  flex-direction: center;
-  border-style: none;
-}
-
-.droneheader h2 {
-  color: white;
-}
-
-.droneattributes {
-  grid-area: droneattributes;
-  flex-direction: center;
-  border-style: none;
-}
 
 
