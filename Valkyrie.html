@@ -202,17 +202,22 @@
           <section class="shields">
                 <div class="shielddisplay">
                     <div class="blank1"><span> </span></div>
+
+                    <input type="hidden" name="attr_shieldLevel" class="sd-status" value="O">
                     <div class="fwd">
                         <div class="fwdtext">
                             <h3><span name="attr_fShield"></span></h3>
                         </div>
                     </div>
+
                     <div class="blank2"><span> </span></div>
+
                     <div class="port">
                         <div class="porttext">
                             <h3><span name="attr_pShield"></span></h3>
                         </div>
                     </div>
+
                     <div class="centre">
                         <div class="centrepic">
                             <img alt="Character Avatar" name="attr_character_avatar"/>
@@ -221,17 +226,21 @@
                             <span name="attr_hull"></span>
                         </div>
                     </div>
+
                     <div class="stbd">
                         <div class="stbdtext">
                             <h3><span name="attr_sShield"></span></h3>
                         </div>
                     </div>
+
                     <div class="blank3"><span> </span></div>
+
                     <div class="aft">
                         <div class="afttext">
                             <h3><span name="attr_aShield"></span></h3>
                         </div>
                     </div>
+                    
                     <div class="blank4"><span> </span></div>
                 </div>
           </section>
@@ -705,6 +714,7 @@
                 "pShield": shields[1],
                 "sShield": shields[2],
                 "aShield": shields[3],
+                "shieldLevel": shieldLevel,
             });
         });    
     }); 

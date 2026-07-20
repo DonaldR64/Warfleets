@@ -184,14 +184,27 @@ section {
     background-color: white;
 }
 
+
 .fwd {
     grid-column:2/6;
     grid-row: 1/2;
-    background-color: green;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+input[type="hidden"][value="O"].sd-status ~ .fwd{
+    background-color: white;
+}
+input[type="hidden"][value="1"].sd-status ~ .fwd{
+    background-color: orange;
+}
+input[type="hidden"][value="2"].sd-status ~ .fwd{
+    background-color: red;
+}
+
+
+
 .fwdtext {
     grid-column:2/6;
     grid-row: 1/2;
