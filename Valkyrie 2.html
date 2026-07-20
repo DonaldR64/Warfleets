@@ -455,37 +455,37 @@
 
     on("change:attrs sheet:opened", function(eventInfo) { 
         getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus"], function(values) {
-            let engine = parseInt(values.engine);
-            let engineMax = parseInt(values.engine_max);
-            let engineTrans = parseInt(values.engineTransition);
+            let engine = parseInt(values.engine) || 0;
+            let engineMax = parseInt(values.engine_max) || 0;
+            let engineTrans = parseInt(values.engineTransition) || 0;
             let engineStatus = "Red";
             if (engineStatus > 0) {engineStatus = "Orange"};
             if (engine >= engineTrans) {engineStatus = "Yellow"};
             if (engine === engineMax) {engineStatus = "Green"};
 
-            let hull = parseInt(values.hull);
-            let hullMax = parseInt(values.hull_max);
+            let hull = parseInt(values.hull) || 0;
+            let hullMax = parseInt(values.hull_max) || 0;
             let hullStatus = "Red";
             if (hull > 1) {hullStatus = "Orange"};
             if (hull > 3) {hullStatus = "Yellow"};
             if (hull === hullMax) {hullStatus = "Green"};
 
             let powerArray = values.powerArray.split("/").map((e) => parseInt(e))
-            let power = powerArray[engine];
+            let power = powerArray[engine] || 0;
 
             let shieldLevel = 0;
             let shieldStatus = values.shieldstatus;
             if (shieldStatus === "Damaged") {
-                shieldLevel = Math.max(shieldLevel - 1, 0);
+                shieldLevel = Math.min(shieldLevel + 1, 2);
             }
-            let forShieldArray = values.forShieldArray.split(/).map((e)=> parseInt(e));
-            let forShield = forShieldArray[shieldLevel];
-            let portShieldArray = values.portShieldArray.split(/).map((e)=> parseInt(e));
-            let portShield = portShieldArray[shieldLevel];
-            let stbdShieldArray = values.stbdShieldArray.split(/).map((e)=> parseInt(e));
-            let stbdShield = stbdShieldArray[shieldLevel];
-            let aftShieldArray = values.aftShieldArray.split(/).map((e)=> parseInt(e));
-            let aftShield = aftShieldArray[shieldLevel];
+            let forShieldArray = values.forShieldArray.split("/").map((e)=> parseInt(e));
+            let forShield = forShieldArray[shieldLevel] || 0;
+            let portShieldArray = values.portShieldArray.split("/").map((e)=> parseInt(e));
+            let portShield = portShieldArray[shieldLevel] || 0;
+            let stbdShieldArray = values.stbdShieldArray.split("/").map((e)=> parseInt(e));
+            let stbdShield = stbdShieldArray[shieldLevel] || 0;
+            let aftShieldArray = values.aftShieldArray.split("/").map((e)=> parseInt(e));
+            let aftShield = aftShieldArray[shieldLevel] || 0;
 
 
             setAttrs({
