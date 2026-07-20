@@ -95,7 +95,7 @@ section {
 
 .charsheet h1{
   text-align: center;
-  color: white;
+  color: black;
 }
 .charsheet h2{
   text-align: center;
@@ -129,7 +129,6 @@ section {
   grid-area: header;
   background-color:  white;
 }
-
 
 
 .shields {
