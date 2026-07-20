@@ -489,6 +489,7 @@
             if (hull === hullMax) {hullStatus = "Green"};
 
             let powerArray = values.powerArray.split("/").map((e) => parseInt(e))
+            console.log(powerArray)
             let power = powerArray[engine] || 0;
 
             let speedRating = parseInt(values.speedRating);
