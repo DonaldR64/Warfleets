@@ -390,7 +390,7 @@ input[type="hidden"][value="O"].c2-status ~ .e2{
 input[type="hidden"][value="R"].c2-status ~ .e2{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e2 h4{
+input[type="hidden"][value="R"].c2-status ~ .e2 h4{
     color: white;
 }
 
@@ -403,7 +403,7 @@ input[type="hidden"][value="O"].c3-status ~ .e3{
 input[type="hidden"][value="R"].c3-status ~ .e3{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e3 h4{
+input[type="hidden"][value="R"].c3-status ~ .e3 h4{
     color: white;
 }
 
@@ -417,7 +417,7 @@ input[type="hidden"][value="O"].c4-status ~ .e4{
 input[type="hidden"][value="R"].c4-status ~ .e4{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e4 h4{
+input[type="hidden"][value="R"].c4-status ~ .e4 h4{
     color: white;
 }
 
@@ -431,7 +431,7 @@ input[type="hidden"][value="O"].c5-status ~ .e5{
 input[type="hidden"][value="R"].c5-status ~ .e5{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e5 h4{
+input[type="hidden"][value="R"].c5-status ~ .e5 h4{
     color: white;
 }
 
@@ -444,7 +444,7 @@ input[type="hidden"][value="O"].c6-status ~ .e6{
 input[type="hidden"][value="R"].c6-status ~ .e6{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e6 h4{
+input[type="hidden"][value="R"].c6-status ~ .e6 h4{
     color: white;
 }
 
@@ -457,7 +457,7 @@ input[type="hidden"][value="O"].c7-status ~ .e7{
 input[type="hidden"][value="R"].c7-status ~ .e7{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e7 h4{
+input[type="hidden"][value="R"].c7-status ~ .e7 h4{
     color: white;
 }
 
@@ -470,7 +470,7 @@ input[type="hidden"][value="O"].c8-status ~ .e8{
 input[type="hidden"][value="R"].c8-status ~ .e8{
     background-color: green;
 }
-input[type="hidden"][value="R"].c1-status ~ .e8 h4{
+input[type="hidden"][value="R"].c8-status ~ .e8 h4{
     color: white;
 }
 
