@@ -43,8 +43,8 @@ main {
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:  "header  shields shields helm"
-                        "damage shields shields engine"
+  grid-template-areas:  "header  shields shields engine"
+                        "helm shields shields engine"
                         "systems shields shields engine"
                         "systems shields shields engine"
                         "weapons weapons weapons weapons"
