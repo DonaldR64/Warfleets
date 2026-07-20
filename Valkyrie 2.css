@@ -457,6 +457,7 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     align-items: center;
     padding: 3px;
     border-bottom-style: solid;
+    background-color: black;
 }
 .reservelistB {
     display: grid;
@@ -466,8 +467,12 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     text-align: center;
     align-items: center;
     padding: 3px;
+    background-color: black;
 }
 
+.reservechecks {
+    background-color: white;
+}
 
 .syslist {
     display: grid;
