@@ -125,6 +125,13 @@ section {
   background-color:  white;
 }
 
+.header {
+  grid-area: header;
+  background-color:  white;
+}
+
+
+
 .shields {
   grid-area: shields;
   display: grid;
