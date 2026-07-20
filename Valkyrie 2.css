@@ -258,7 +258,7 @@ input[type="hidden"][value="2"].sd-status ~ .aft{
 input[type="hidden"][value="Normal"].hull-status ~ .overlay-text h1{
     color: white;
 }
-input[type="hidden"][value="Down"].hull-status ~ .overlay-text h1{
+input[type="hidden"][value="Damaged"].hull-status ~ .overlay-text h1{
     color: red;
 }
 
@@ -298,7 +298,7 @@ input[type="hidden"][value="Normal"].weapon1-status ~ .weapon1{
     background-color: white;
 
 }
-input[type="hidden"][value="Down"].weapon1-status ~ .weapon1{
+input[type="hidden"][value="Damaged"].weapon1-status ~ .weapon1{
     display: grid;
     background-color: red;
 }
@@ -325,7 +325,7 @@ input[type="hidden"][value="Normal"].weapon2-status ~ .weapon2{
     display: grid;
     background-color: white;
 }
-input[type="hidden"][value="Down"].weapon2-status ~ .weapon2{
+input[type="hidden"][value="Damaged"].weapon2-status ~ .weapon2{
     display: grid;
     background-color: red;
 }
@@ -351,7 +351,7 @@ input[type="hidden"][value="Normal"].weapon3-status ~ .weapon3{
     display: grid;
     background-color: white;
 }
-input[type="hidden"][value="Down"].weapon3-status ~ .weapon3{
+input[type="hidden"][value="Damaged"].weapon3-status ~ .weapon3{
     display: grid;
     background-color: red;
 }
@@ -379,7 +379,7 @@ input[type="hidden"][value="Normal"].weapon4-status ~ .weapon4{
     background-color: white;
 
 }
-input[type="hidden"][value="Down"].weapon4-status ~ .weapon4{
+input[type="hidden"][value="Damaged"].weapon4-status ~ .weapon4{
     display: grid;
     background-color: red;
 }
@@ -407,7 +407,7 @@ input[type="hidden"][value="Normal"].weapon5-status ~ .weapon5{
     background-color: white;
 
 }
-input[type="hidden"][value="Down"].weapon5-status ~ .weapon5{
+input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     display: grid;
     background-color: red;
 }
@@ -476,7 +476,7 @@ input[type="hidden"][value="None"].shield-status ~ .shieldstatus{
 input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus{
     background-color:  green;
 }
-input[type="hidden"][value="Down"].shield-status ~ .shieldstatus{   
+input[type="hidden"][value="Damaged"].shield-status ~ .shieldstatus{   
     background-color:  red;
 }
 
@@ -500,7 +500,7 @@ input[type="hidden"][value="None"].thruster-status ~ .thrusterstatus{
 input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{   
     background-color:  green;
 }
-input[type="hidden"][value="Down"].thruster-status ~ .thrusterstatus{    
+input[type="hidden"][value="Damaged"].thruster-status ~ .thrusterstatus{    
     background-color:  red;
 }
 
@@ -523,7 +523,7 @@ input[type="hidden"][value="None"].sensor-status ~ .sensorstatus{
 input[type="hidden"][value="Normal"].sensor-status ~ .sensorstatus{   
     background-color:  green;
 }
-input[type="hidden"][value="Down"].sensor-status ~ .sensorstatus{    
+input[type="hidden"][value="Damaged"].sensor-status ~ .sensorstatus{    
     background-color:  red;
 }
 
@@ -547,7 +547,7 @@ input[type="hidden"][value="None"].system1-status ~ .system1status{
 input[type="hidden"][value="Normal"].system1-status ~ .system1status{    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system1-status ~ .system1status{   
+input[type="hidden"][value="Damaged"].system1-status ~ .system1status{   
     background-color:  red;
 }
 
@@ -571,7 +571,7 @@ input[type="hidden"][value="None"].system2-status ~ .system2status{
 input[type="hidden"][value="Normal"].system2-status ~ .system2status{    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system2-status ~ .system2status{   
+input[type="hidden"][value="Damaged"].system2-status ~ .system2status{   
     background-color:  red;
 }
 
@@ -594,7 +594,7 @@ input[type="hidden"][value="None"].system3-status ~ .system3status{
 input[type="hidden"][value="Normal"].system3-status ~ .system3status{    
     background-color:  green;
 }
-input[type="hidden"][value="Down"].system3-status ~ .system3status{   
+input[type="hidden"][value="Damaged"].system3-status ~ .system3status{   
     background-color:  red;
 }
 
