@@ -492,9 +492,14 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
 } 
 
 
+input[type="hidden"][value="Normal"].r1-status ~ .r1power{
+    background-color:  white;
+}
+input[type="hidden"][value="Damaged"].r1-status ~ .r1power{   
+    background-color:  red;
+}
 
 .r1power {
-    background-color: white;
     display: grid;
     grid-gap: 1px;
     text-align: center;
@@ -515,8 +520,17 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     grid-template-rows: 1fr;
 } 
 
+
+input[type="hidden"][value="None"].r3-status ~ .r3power{
+    display: none;
+}
+input[type="hidden"][value="Normal"].r3-status ~ .r3power{    
+    background-color:  white;
+}
+input[type="hidden"][value="Damaged"].r3-status ~ .r3power{   
+    background-color:  red;
+}
 .r3power {
-    background-color: white;
     display: grid;
     grid-gap: 1px;
     text-align: center;
@@ -526,8 +540,17 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     grid-template-rows: 1fr;
 } 
 
+
+input[type="hidden"][value="None"].r4-status ~ .r4power{
+    display: none;
+}
+input[type="hidden"][value="Normal"].r4-status ~ .r4power{    
+    background-color:  lightgrey;
+}
+input[type="hidden"][value="Damaged"].r4-status ~ .r4power{   
+    background-color:  red;
+}
 .r4power {
-    background-color: lightgrey;
     display: grid;
     grid-gap: 1px;
     text-align: center;
@@ -537,8 +560,18 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     grid-template-rows: 1fr;
 } 
 
+
+
+input[type="hidden"][value="None"].r5-status ~ .r5power{
+    display: none;
+}
+input[type="hidden"][value="Normal"].r5-status ~ .r5power{    
+    background-color:  white;
+}
+input[type="hidden"][value="Damaged"].r5-status ~ .r5power{   
+    background-color:  red;
+}
 .r5power {
-    background-color: white;
     display: grid;
     grid-gap: 1px;
     text-align: center;
@@ -547,9 +580,20 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     grid-template-columns: 4fr 2fr;
     grid-template-rows: 1fr;
 } 
+
+
+
+input[type="hidden"][value="None"].r6-status ~ .r6power{
+    display: none;
+}
+input[type="hidden"][value="Normal"].r6-status ~ .r6power{    
+    background-color:  lightgrey;
+}
+input[type="hidden"][value="Damaged"].r6-status ~ .r6power{   
+    background-color:  red;
+}
 
 .r6power {
-    background-color: lightgrey;
     display: grid;
     grid-gap: 1px;
     text-align: center;

@@ -70,12 +70,47 @@
     <div class="2colrow">
         <div class="col">
             <h3>Reserve Power Options</h3>
-            <label>1:</label><input type="text" name="attr_reservename1">
-            <label>2:</label><input type="text" name="attr_reservename2">
-            <label>3:</label><input type="text" name="attr_reservename3">
-            <label>4:</label><input type="text" name="attr_reservename4">
-            <label>5:</label><input type="text" name="attr_reservename5">
-            <label>6:</label><input type="text" name="attr_reservename6">
+            <label>Sensors & Movement are Auto</label>
+            <label for="attr_reserveName3">3: Power To:</label>
+            <select name="attr_reserveName3">
+                <option value="None">None</option>
+                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 1 Range">Weapon 1 Range</option>
+                <option value="Weapon 2 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 2 Range">Weapon 1 Range</option>
+                <option value="Weapon 3 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 3 Range">Weapon 1 Range</option>
+            </select>            
+            <label for="attr_reserveName4">4: Power To:</label>
+            <select name="attr_reserveName4">
+                <option value="None">None</option>
+                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 1 Range">Weapon 1 Range</option>
+                <option value="Weapon 2 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 2 Range">Weapon 1 Range</option>
+                <option value="Weapon 3 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 3 Range">Weapon 1 Range</option>
+            </select>     
+            <label for="attr_reserveName4">5: Power To:</label>
+            <select name="attr_reserveName4">
+                <option value="None">None</option>
+                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 1 Range">Weapon 1 Range</option>
+                <option value="Weapon 2 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 2 Range">Weapon 1 Range</option>
+                <option value="Weapon 3 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 3 Range">Weapon 1 Range</option>
+            </select>     
+            <label for="attr_reserveName4">6: Power To:</label>
+            <select name="attr_reserveName4">
+                <option value="None">None</option>
+                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 1 Range">Weapon 1 Range</option>
+                <option value="Weapon 2 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 2 Range">Weapon 1 Range</option>
+                <option value="Weapon 3 Damage">Weapon 1 Damage</option>
+                <option value="Weapon 3 Range">Weapon 1 Range</option>
+            </select>   
         </div>
     </div>
 
@@ -320,16 +355,14 @@
         <div>
             <h4>Power To</h4>
             <div class="reservelistB">
-
-                <input type="hidden" name="attr_r1status" class="r1-status" value="None">
+                <input type="hidden" name="attr_sensorstatus" class="r1-status" value="None">
                 <div class="r1power">
-                    <h5><span name="attr_reservename1"></span></h5>
+                    <h5>Sensors</h5>
                     <input class="reservechecks" type="checkbox" name="attr_reserve1" value="1">
                 </div>
 
-                <input type="hidden" name="attr_r2status" class="r2-status" value="None">
                 <div class="r2power">
-                    <h5><span name="attr_reservename2"></span></h5>
+                    <h5>Impulse Engines</h5>
                     <input class="reservechecks" type="checkbox" name="attr_reserve2" value="1">
                 </div>
 
@@ -540,7 +573,7 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus"], function(values) {
+        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1name","weapon2name","weapon3name","weapon1status","weapon2status","weapon3status",], function(values) {
             let engine = parseInt(values.engine) || 0;
             let engineMax = parseInt(values.engine_max) || 0;
             let engineTrans = parseInt(values.engineTransition) || 0;
@@ -563,9 +596,27 @@
             let speedRating = parseInt(values.speedRating);
             let speed = Math.round(engine * speedRating);
 
-
-
-
+            let weaponNames = [];
+            let weaponStatus = [];
+            for (let i=1;i<4;i++) {
+                weaponNames.push(values["weapon" + i + "name"]);
+                weaponStatus.push(values["weapon" + i + "status"]);
+            }
+            let reserveNames = [];
+            let reserveStatus = [];
+            for (let i=0;i<4;i++) {
+                let name = values["reserveName" + (i+3)];
+                if (name === "None") {
+                    reserveNames.push("None");
+                    reserveStatus.push("None");
+                } else {
+                    let number = parseInt(name.replace(/^\D+/g, ''));
+                    name.replace("Weapon " + number,weaponNames[number-1]);
+                    let status = weaponStatus[number-1];
+                    reserveNames.push(name);
+                    reserveStatus.push(status);
+                }
+            }
 
             let shieldLevel = 0;
             let shieldStatus = values.shieldstatus;
@@ -591,6 +642,15 @@
                 pshield: portShield,
                 sshield: stbdShield,
                 ashield: aftShield,
+                r3display: reserveNames[0],
+                r4display: reserveNames[1],
+                r5display: reserveNames[2],
+                r6display: reserveNames[3],
+                r3status: reserveStatus[0],
+                r4status: reserveStatus[1],
+                r5status: reserveStatus[2],
+                r6status: reserveStatus[3],
+
             });
         });    
     }); 
