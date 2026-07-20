@@ -194,10 +194,10 @@ section {
     background-color:red;
 }
 
-input[type="hidden"][value=1].sd-status ~ .fwd{
+input[type="hidden"][value="1"].sd-status ~ .fwd{
     background-color: orange;
 }
-input[type="hidden"][value=2].sd-status ~ .fwd{
+input[type="hidden"][value="2"].sd-status ~ .fwd{
     background-color: green;
 }
 
