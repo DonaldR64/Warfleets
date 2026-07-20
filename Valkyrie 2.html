@@ -355,7 +355,7 @@
         <div>
             <h4>Power To</h4>
             <div class="reservelistB">
-                <input type="hidden" name="attr_sensorstatus" class="r1-status" value="None">
+                <input type="hidden" name="attr_r1status" class="r1-status" value="None">
                 <div class="r1power">
                     <h5>Sensors</h5>
                     <input class="reservechecks" type="checkbox" name="attr_reserve1" value="1">
@@ -550,7 +550,7 @@
 
     on("change:fwdshields1 change:fwdshields2 change:portshields1 change:portshields2 change:stbdshields1 change:stbdshields2 change:aftshields1 change:aftshields2 change:reserve1 change:reserve2 change:reserve3 change:reserve4 change:reserve5 change:reserve6", function(eventInfo){
         const attrib = eventInfo.sourceAttribute;
-        getAttrs(["fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6","power"],function(values){
+        getAttrs(["fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6","power","r3status","r4status","r5status","r6status"],function(values){
             checked = 0;
             let array = ["fwdshields1","fwdshields2","portshields1","portshields2","stbdshields1","stbdshields2","aftshields1","aftshields2","reserve1","reserve2","reserve3","reserve4","reserve5","reserve6"];
             for (let i=0;i<array.length;i++) {
@@ -564,6 +564,33 @@
                 values[attrib] = "0"
                 setObj[attrib] = "0";
             }
+
+            if (attrib === values.reserve1 && values.r1status === "Damaged") {
+                values[attrib] = "0"
+                setObj[attrib] = "0";
+            }
+            if (attrib === values.reserve3 && values.r3status === "Damaged") {
+                values[attrib] = "0"
+                setObj[attrib] = "0";
+            }
+            if (attrib === values.reserve4 && values.r4status === "Damaged") {
+                values[attrib] = "0"
+                setObj[attrib] = "0";
+            }
+            if (attrib === values.reserve5 && values.r5status === "Damaged") {
+                values[attrib] = "0"
+                setObj[attrib] = "0";
+            }
+            if (attrib === values.reserve6 && values.r6status === "Damaged") {
+                values[attrib] = "0"
+                setObj[attrib] = "0";
+            }
+
+
+
+
+
+
             setAttrs(setObj)
         })
     });
@@ -573,7 +600,7 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1name","weapon2name","weapon3name","weapon1status","weapon2status","weapon3status",], function(values) {
+        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1name","weapon2name","weapon3name","weapon1status","weapon2status","weapon3status","sensorstatus"], function(values) {
             let engine = parseInt(values.engine) || 0;
             let engineMax = parseInt(values.engine_max) || 0;
             let engineTrans = parseInt(values.engineTransition) || 0;
@@ -618,6 +645,8 @@
                 }
             }
 
+
+
             let shieldLevel = 0;
             let shieldStatus = values.shieldstatus;
             if (shieldStatus === "Damaged") {
@@ -646,6 +675,7 @@
                 r4display: reserveNames[1],
                 r5display: reserveNames[2],
                 r6display: reserveNames[3],
+                r1status: values.sensorstatus,
                 r3status: reserveStatus[0],
                 r4status: reserveStatus[1],
                 r5status: reserveStatus[2],
