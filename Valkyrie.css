@@ -340,6 +340,10 @@ input[type="hidden"][value="Down"].hull-status ~ .overlay-text h1{
   background-color:  black;
 }
 
+.engineinfo h4{
+    color: black;
+}
+
 .enginetop {
   display: grid;
   grid-gap: 1px;
@@ -364,89 +368,89 @@ input[type="hidden"][value="Down"].hull-status ~ .overlay-text h1{
 
 
 .e0 {
-    background-color: #E75801;
+    background-color: red;
 }
 
 .e1 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c1-status ~ .e1{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c1-status ~ .e1{
-    background-color: #E75801;
+    background-color: green;
 }
 
 
 .e2 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c2-status ~ .e2{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c2-status ~ .e2{
-    background-color: #E75801;
+    background-color: green;
 }
 
 
 .e3 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c3-status ~ .e3{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c3-status ~ .e3{
-    background-color: #E75801;
+    background-color: green;
 }
 
 .e4 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c4-status ~ .e4{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c4-status ~ .e4{
-    background-color: #E75801;
+    background-color: green;
 }
 
 .e5 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c5-status ~ .e5{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c5-status ~ .e5{
-    background-color: #E75801;
+    background-color: green;
 }
 
 .e6 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c6-status ~ .e6{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c6-status ~ .e6{
-    background-color: #E75801;
+    background-color: green;
 }
 
 .e7 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c7-status ~ .e7{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c7-status ~ .e7{
-    background-color: #E75801;
+    background-color: green;
 }
 
 .e8 {
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="O"].c8-status ~ .e8{
-    background-color: #FE9100;
+    background-color: orange;
 }
 input[type="hidden"][value="R"].c8-status ~ .e8{
-    background-color: #E75801;
+    background-color: green;
 }
 
 
