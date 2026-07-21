@@ -427,13 +427,13 @@ input[type="hidden"][value="Green"].as-status ~ .aft{
     align-items: center;
     background-color: white;
 }
-input[type="hidden"][value="Red"].hull-status ~ .hulldamage{
+input[type="hidden"][value="Red"].hull-status ~ .hulldamage h3{
     color: red;
 }
-input[type="hidden"][value="Orange"].hull-status ~ .hulldamage{
+input[type="hidden"][value="Orange"].hull-status ~ .hulldamage h3{
     color: orange;
 }
-input[type="hidden"][value="Green"].hull-status ~ .hulldamage{
+input[type="hidden"][value="Green"].hull-status ~ .hulldamage h3{
     color: green;
 }
 
@@ -445,13 +445,13 @@ input[type="hidden"][value="Green"].hull-status ~ .hulldamage{
     align-items: center;
     background-color: white;
 }
-input[type="hidden"][value="Red"].engine-status ~ .enginedamage{
+input[type="hidden"][value="Red"].engine-status ~ .enginedamage h3{
     color: red;
 }
-input[type="hidden"][value="Orange"].engine-status ~ .enginedamage{
+input[type="hidden"][value="Orange"].engine-status ~ .enginedamage h3{
     color: orange;
 }
-input[type="hidden"][value="Green"].engine-status ~ .enginedamage{
+input[type="hidden"][value="Green"].engine-status ~ .enginedamage h3{
     color: green;
 }
 
