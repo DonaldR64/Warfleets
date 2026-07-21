@@ -188,7 +188,7 @@ input[type="hidden"][value="Green"].fs-status ~ .fwd{
 
 .port {
     grid-column:2/3;
-    grid-row: 3/7;
+    grid-row: 3/8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,11 +202,29 @@ input[type="hidden"][value="Orange"].ps-status ~ .port{
 input[type="hidden"][value="Green"].ps-status ~ .port{
     background-color: green;
 }
-
 .porttext h3{
     color:white;
 }
 
+.stbd {
+    grid-column:7/8;
+    grid-row: 3/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="hidden"][value="Red"].ss-status ~ .stbd{
+    background-color: red;
+}
+input[type="hidden"][value="Orange"].ss-status ~ .stbd{
+    background-color: orange;
+}
+input[type="hidden"][value="Green"].ss-status ~ .stbd{
+    background-color: green;
+}
+.stbdtext h3{
+    color:white;
+}
 
 
 
