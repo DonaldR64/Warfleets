@@ -156,7 +156,13 @@ section {
     align-items: center;
 }
 
-
+.shippic {
+    grid-column: 3/7;
+    grid-row: 2/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
