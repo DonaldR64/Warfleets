@@ -165,7 +165,7 @@ section {
 }
 .shippic img{
     object-fit: fill;
-    max-height: 240px;
+    max-height: 90%;
 }
 
 
