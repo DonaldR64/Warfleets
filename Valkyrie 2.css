@@ -43,10 +43,10 @@ main {
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:  "header  ship ship engine"
-                        "helm   ship ship engine"
-                        "systems ship ship engine"
-                        "systems ship ship engine"
+  grid-template-areas:  "header  ship ship power"
+                        "helm   ship ship power"
+                        "systems ship ship power"
+                        "systems ship ship power"
                         "weapons weapons weapons weapons"
                         "weapons weapons weapons weapons";
 }
@@ -289,7 +289,10 @@ input[type="hidden"][value="Green"].engine-status ~ .engineinfo{
     color: green;
 }
 
-
+.power {
+    grid-area: power;
+    background-color:  white;
+}
 
 
 
