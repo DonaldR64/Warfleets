@@ -164,7 +164,7 @@ section {
     align-items: center;
 }
 .shippic img{
-    object-fit: contain;
+    object-fit: fill;
     max-height: 240px;
 }
 
@@ -257,22 +257,6 @@ input[type="hidden"][value="Green"].as-status ~ .aft{
 
 
 
-
-
-
-.centre {
-    grid-column: 2/6;
-    grid-row: 2/6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.centrepic img{
-    object-fit: contain;
-    max-height: 200px;
-}
 .centretext {
     position: absolute;
     grid-column:2/6;
