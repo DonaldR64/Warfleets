@@ -677,7 +677,9 @@ console.log(name)
                     reserveStatus.push("None");
                 } else {
                     let number = parseInt(name.replace(/^\D+/g, ''));
+console.log(number)
                     name.replace("Weapon " + number,weaponNames[number-1]);
+console.log(name)
                     let status = weaponStatus[number-1];
                     reserveNames.push(name);
                     reserveStatus.push(status);
