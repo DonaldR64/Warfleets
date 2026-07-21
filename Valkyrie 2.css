@@ -43,7 +43,7 @@ main {
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:  "header  ship ship power"
+  grid-template-areas:  "class  ship ship power"
                         "helm   ship ship power"
                         "systems ship ship power"
                         "systems ship ship power"
@@ -120,8 +120,8 @@ section {
 /*------------- Section-specific CSS -------------*/
 
 /* Main Grid */
-.header {
-  grid-area: header;
+.class {
+  grid-area: class;
   background-color:  white;
 }
 .helm {
@@ -160,7 +160,6 @@ section {
     text-align: center;
     align-items: center;
     padding: 3px;
-    border-bottom-style: solid;
 }
 
 .reservelistA {
