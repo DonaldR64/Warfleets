@@ -74,42 +74,55 @@
             <label for="attr_reserveName3">3: Power To:</label>
             <select name="attr_reserveName3">
                 <option value="None">None</option>
-                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
-                <option value="Weapon 1 Range">Weapon 1 Range</option>
-                <option value="Weapon 2 Damage">Weapon 2 Damage</option>
-                <option value="Weapon 2 Range">Weapon 2 Range</option>
-                <option value="Weapon 3 Damage">Weapon 3 Damage</option>
-                <option value="Weapon 3 Range">Weapon 3 Range</option>
+                <option value="Wpn 1 Damage">Weapon 1 Damage</option>
+                <option value="Wpn 1 Range">Weapon 1 Range</option>
+                <option value="Wpn 2 Damage">Weapon 2 Damage</option>
+                <option value="Wpn 2 Range">Weapon 2 Range</option>
+                <option value="Wpn 3 Damage">Weapon 3 Damage</option>
+                <option value="Wpn 3 Range">Weapon 3 Range</option>
+                <option value="Cloaking Device">Weapon 3 Range</option>
+
+
+
+
+
             </select>            
             <label for="attr_reserveName4">4: Power To:</label>
             <select name="attr_reserveName4">
                 <option value="None">None</option>
-                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
-                <option value="Weapon 1 Range">Weapon 1 Range</option>
-                <option value="Weapon 2 Damage">Weapon 2 Damage</option>
-                <option value="Weapon 2 Range">Weapon 2 Range</option>
-                <option value="Weapon 3 Damage">Weapon 3 Damage</option>
-                <option value="Weapon 3 Range">Weapon 3 Range</option>
+                <option value="Wpn 1 Damage">Weapon 1 Damage</option>
+                <option value="Wpn 1 Range">Weapon 1 Range</option>
+                <option value="Wpn 2 Damage">Weapon 2 Damage</option>
+                <option value="Wpn 2 Range">Weapon 2 Range</option>
+                <option value="Wpn 3 Damage">Weapon 3 Damage</option>
+                <option value="Wpn 3 Range">Weapon 3 Range</option>
+                <option value="Cloaking Device">Weapon 3 Range</option>
             </select>     
             <label for="attr_reserveName5">5: Power To:</label>
             <select name="attr_reserveName5">
                 <option value="None">None</option>
-                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
-                <option value="Weapon 1 Range">Weapon 1 Range</option>
-                <option value="Weapon 2 Damage">Weapon 2 Damage</option>
-                <option value="Weapon 2 Range">Weapon 2 Range</option>
-                <option value="Weapon 3 Damage">Weapon 3 Damage</option>
-                <option value="Weapon 3 Range">Weapon 3 Range</option>
+                <option value="Wpn 1 Damage">Weapon 1 Damage</option>
+                <option value="Wpn 1 Range">Weapon 1 Range</option>
+                <option value="Wpn 2 Damage">Weapon 2 Damage</option>
+                <option value="Wpn 2 Range">Weapon 2 Range</option>
+                <option value="Wpn 3 Damage">Weapon 3 Damage</option>
+                <option value="Wpn 3 Range">Weapon 3 Range</option>
+
+
+
             </select>     
             <label for="attr_reservename6">6: Power To:</label>
             <select name="attr_reserveName6">
                 <option value="None">None</option>
-                <option value="Weapon 1 Damage">Weapon 1 Damage</option>
-                <option value="Weapon 1 Range">Weapon 1 Range</option>
-                <option value="Weapon 2 Damage">Weapon 2 Damage</option>
-                <option value="Weapon 2 Range">Weapon 2 Range</option>
-                <option value="Weapon 3 Damage">Weapon 3 Damage</option>
-                <option value="Weapon 3 Range">Weapon 3 Range</option>
+                <option value="Wpn 1 Damage">Weapon 1 Damage</option>
+                <option value="Wpn 1 Range">Weapon 1 Range</option>
+                <option value="Wpn 2 Damage">Weapon 2 Damage</option>
+                <option value="Wpn 2 Range">Weapon 2 Range</option>
+                <option value="Wpn 3 Damage">Weapon 3 Damage</option>
+                <option value="Wpn 3 Range">Weapon 3 Range</option>
+
+
+
             </select>   
         </div>
     </div>
@@ -367,25 +380,25 @@
 
                 <input type="hidden" name="attr_r3status" class="r3-status" value="None">
                 <div class="r3power">
-                    <h5><span name="attr_r3display"></span></h5>
+                    <h5><span name="attr_reserveName3"></span></h5>
                     <input class="reservechecks"type="checkbox" name="attr_reserve3" value="1">
                 </div>
 
                 <input type="hidden" name="attr_r4status" class="r4-status" value="None">
                 <div class="r4power">
-                    <h5><span name="attr_r4display"></span></h5>
+                    <h5><span name="attr_reserveName4"></span></h5>
                     <input class="reservechecks" type="checkbox" name="attr_reserve4" value="1">
                 </div>
 
                 <input type="hidden" name="attr_r5status" class="r5-status" value="None">
                 <div class="r5power">
-                    <h5><span name="attr_r5display"></span></h5>
+                    <h5><span name="attr_reserveName5"></span></h5>
                     <input class="reservechecks" type="checkbox"name="attr_reserve5" value="1">
                 </div>
 
                 <input type="hidden" name="attr_r6status" class="r6-status" value="None">
                 <div class="r6power">
-                    <h5><span name="attr_r6display"></span></h5>
+                    <h5><span name="attr_reserveName6"></span></h5>
                     <input class="reservechecks" type="checkbox" name="attr_reserve6" value="1">
                 </div>
             </div>
@@ -633,7 +646,7 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1name","weapon2name","weapon3name","weapon1status","weapon2status","weapon3status","sensorstatus"], function(values) {
+        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1name","weapon2name","weapon3name","weapon1status","weapon2status","weapon3status","sensorstatus","system1status"], function(values) {
             let engine = parseInt(values.engine) || 0;
             let engineMax = parseInt(values.engine_max) || 0;
             let engineTrans = parseInt(values.engineTransition) || 0;
@@ -655,38 +668,20 @@
             let speedRating = parseInt(values.speedRating);
             let speed = Math.round(engine * speedRating);
 
-            let weaponNames = [];
-            let weaponStatus = [];
-            for (let i=1;i<4;i++) {
-                weaponNames.push(values["weapon" + i + "name"]);
-                weaponStatus.push(values["weapon" + i + "status"]);
-            }
-
-console.log(weaponNames)
-console.log(weaponStatus)
-
-
-            let reserveNames = [];
             let reserveStatus = [];
             for (let i=0;i<4;i++) {
                 let name = values["reserveName" + (i+3)];
-console.log(name)
-
                 if (name === "None") {
-                    reserveNames.push("None");
                     reserveStatus.push("None");
-                } else {
+                } else if (name.includes("Weapon")) {
                     let number = parseInt(name.replace(/^\D+/g, ''));
-console.log(number)
-                    name = name.replace("Weapon " + number,weaponNames[number-1]);
-console.log(name)
-                    let status = weaponStatus[number-1];
-                    reserveNames.push(name);
-                    reserveStatus.push(status);
+                    reserveStatus.push(values["weapon" + number + "status"]);
+                } else if (name.includes("Cloaking")) {
+                    reserveStatus.push(values.system1status);
+                } else {
+                    //placeholder
                 }
             }
-
-
 
             let shieldLevel = 0;
             let shieldStatus = values.shieldstatus;
