@@ -598,7 +598,7 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
 
 /* System Sub Sections */
 .shieldstatus h4 {
-    color: white;
+    color: black;
 }
 .shieldstatus {
     display: grid;
@@ -610,14 +610,17 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     padding: 3px;   
 }
 input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus{
-    background-color:  green;
+    background-color:  lightgrey;
 }
 input[type="hidden"][value="Damaged"].shield-status ~ .shieldstatus{   
     background-color:  red;
 }
+input[type="hidden"][value="Damaged"].shield-status ~ .shieldstatus h4{   
+    color:  white;
+}
 
 .thrusterstatus h4{
-    color: white;
+    color: black;
 }
 .thrusterstatus {
     display: grid;
@@ -629,14 +632,18 @@ input[type="hidden"][value="Damaged"].shield-status ~ .shieldstatus{
     padding: 3px;    
 }
 input[type="hidden"][value="Normal"].thruster-status ~ .thrusterstatus{   
-    background-color:  green;
+    background-color:  white;
 }
 input[type="hidden"][value="Damaged"].thruster-status ~ .thrusterstatus{    
     background-color:  red;
 }
+input[type="hidden"][value="Damaged"].thruster-status ~ .thrusterstatus h4{    
+    color:  white;
+}
+
 
 .sensorstatus h4{
-    color: white;
+    color: black;
 }
 .sensorstatus {
     display: grid;
@@ -648,10 +655,13 @@ input[type="hidden"][value="Damaged"].thruster-status ~ .thrusterstatus{
     padding: 3px;    
 }
 input[type="hidden"][value="Normal"].sensor-status ~ .sensorstatus{   
-    background-color:  green;
+    background-color:  lightgrey;
 }
 input[type="hidden"][value="Damaged"].sensor-status ~ .sensorstatus{    
     background-color:  red;
+}
+input[type="hidden"][value="Damaged"].sensor-status ~ .sensorstatus h4{    
+    color:  white;
 }
 
 .system1status h4{
