@@ -699,17 +699,19 @@
             let aftShield = aftShieldArray[shieldLevel] || 0;
 
             let fsStatus = "Green";
-            if (shieldLevel === 2 || forShield === 0) {fsStatus = "Red"};
             if (shieldLevel === 1) {fsStatus = "Orange"};
+            if (shieldLevel === 2 || forShield === 0) {fsStatus = "Red"};
             let psStatus = "Green";
-            if (shieldLevel === 2 || portShield === 0) {psStatus = "Red"};
             if (shieldLevel === 1) {psStatus = "Orange"};
+            if (shieldLevel === 2 || portShield === 0) {psStatus = "Red"};
             let ssStatus = "Green";
-            if (shieldLevel === 2 || stbdShield === 0) {ssStatus = "Red"};
             if (shieldLevel === 1) {ssStatus = "Orange"};
+            if (shieldLevel === 2 || stbdShield === 0) {ssStatus = "Red"};
             let asStatus = "Green";
-            if (shieldLevel === 2 || aftShield === 0) {asStatus = "Red"};
             if (shieldLevel === 1) {asStatus = "Orange"};
+            if (shieldLevel === 2 || aftShield === 0) {asStatus = "Red"};
+
+
 
             setAttrs({
                 enginestatus: engineStatus,
