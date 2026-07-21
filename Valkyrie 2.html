@@ -661,7 +661,7 @@
                 weaponNames.push(values["weapon" + i + "name"]);
                 weaponStatus.push(values["weapon" + i + "status"]);
             }
-            
+
 console.log(weaponNames)
 console.log(weaponStatus)
 
@@ -670,6 +670,8 @@ console.log(weaponStatus)
             let reserveStatus = [];
             for (let i=0;i<4;i++) {
                 let name = values["reserveName" + (i+3)];
+console.log(name)
+
                 if (name === "None") {
                     reserveNames.push("None");
                     reserveStatus.push("None");
