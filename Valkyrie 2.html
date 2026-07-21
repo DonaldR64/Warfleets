@@ -686,6 +686,9 @@
             let shieldLevel = 0;
             let shieldStatus = values.shieldstatus;
             if (shieldStatus === "Damaged") {
+                shieldLevel = 1;
+            }
+            if (engineStatus !== "Green") {
                 shieldLevel = Math.min(shieldLevel + 1, 2);
             }
             let forShieldArray = values.forShieldArray.split("/").map((e)=> parseInt(e));
