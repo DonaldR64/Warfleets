@@ -437,6 +437,16 @@
                 </div>
             </div>
 
+            <input type="hidden" name="attr_hullstatus" class="hull-status" value="Red">
+            <div class="hull">
+                <h3>Hull: <span name="attr_hull"></span></h3>
+            </div>
+
+            <input type="hidden" name="attr_enginestatus" class="engine-status" value="Red">
+            <div class="engine">
+                <h3>Engine: <span name="attr_engine"></span></h3>
+            </div>
+
 
 
 
@@ -713,8 +723,6 @@
             if (shieldLevel === 1) {asStatus = "Orange"};
             if (shieldLevel === 2 || aftShield === 0) {asStatus = "Red"};
 
-console.log(shieldLevel)
-console.log(fsStatus)
 
             setAttrs({
                 enginestatus: engineStatus,

@@ -252,20 +252,40 @@ input[type="hidden"][value="Green"].as-status ~ .aft{
     color:white;
 }
 
+.hull {
+    grid-column: 1/6;
+    grid-row: 10/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+input[type="hidden"][value="Red"].hull-status ~ .hull{
+    color: red;
+}
+input[type="hidden"][value="Orange"].hull-status ~ .hull{
+    color: orange;
+}
+input[type="hidden"][value="Green"].hull-status ~ .hull{
+    color: green;
+}
 
-
-
-
-
-.centretext {
-    position: absolute;
-    grid-column:2/6;
-    grid-row: 2/6;
-    padding: 4px 8px;
-    background: rgba(255, 255, 255, 0.75);
-    color: black;    
-    margin: 0;
-    font: 36px Sans-Serif;
+.engine {
+    grid-column: 6/-1;
+    grid-row: 10/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+input[type="hidden"][value="Red"].engine-status ~ .engine{
+    color: red;
+}
+input[type="hidden"][value="Orange"].engine-status ~ .engine{
+    color: orange;
+}
+input[type="hidden"][value="Green"].engine-status ~ .engine{
+    color: green;
 }
 
 
