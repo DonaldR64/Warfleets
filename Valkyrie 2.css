@@ -598,7 +598,7 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
 
 /* System Sub Sections */
 .shieldstatus h4 {
-    color: black;
+    color: green;
 }
 .shieldstatus {
     display: grid;
@@ -620,7 +620,7 @@ input[type="hidden"][value="Damaged"].shield-status ~ .shieldstatus h4{
 }
 
 .thrusterstatus h4{
-    color: black;
+    color: green;
 }
 .thrusterstatus {
     display: grid;
@@ -643,7 +643,7 @@ input[type="hidden"][value="Damaged"].thruster-status ~ .thrusterstatus h4{
 
 
 .sensorstatus h4{
-    color: black;
+    color: green;
 }
 .sensorstatus {
     display: grid;
@@ -665,7 +665,7 @@ input[type="hidden"][value="Damaged"].sensor-status ~ .sensorstatus h4{
 }
 
 .system1status h4{
-    color: white
+    color: green
 }
 .system1status {
     display: grid;
@@ -680,14 +680,19 @@ input[type="hidden"][value="None"].system1-status ~ .system1status{
     display: none;
 }
 input[type="hidden"][value="Normal"].system1-status ~ .system1status{    
-    background-color:  green;
+    background-color:  white;
 }
 input[type="hidden"][value="Damaged"].system1-status ~ .system1status{   
     background-color:  red;
 }
+input[type="hidden"][value="Damaged"].system1-status ~ .system1status h4{   
+    color:  white;
+}
+
+
 
 .system2status h4{
-    color: white;
+    color: green;
 }
 .system2status {
     display: grid;
@@ -702,14 +707,18 @@ input[type="hidden"][value="None"].system2-status ~ .system2status{
     display: none;
 }
 input[type="hidden"][value="Normal"].system2-status ~ .system2status{    
-    background-color:  green;
+    background-color:  lightgrey;
 }
 input[type="hidden"][value="Damaged"].system2-status ~ .system2status{   
     background-color:  red;
 }
+input[type="hidden"][value="Damaged"].system2-status ~ .system2status h4{   
+    color:  white;
+}
+
 
 .system3status h4{
-    color: white;
+    color: green;
 }
 .system3status {
     display: grid;
@@ -724,12 +733,14 @@ input[type="hidden"][value="None"].system3-status ~ .system3status{
     display: none;
 }
 input[type="hidden"][value="Normal"].system3-status ~ .system3status{    
-    background-color:  green;
+    background-color:  white;
 }
 input[type="hidden"][value="Damaged"].system3-status ~ .system3status{   
     background-color:  red;
 }
-
+input[type="hidden"][value="Damaged"].system3-status ~ .system3status h4{   
+    color:  white;
+}
 
 
 
