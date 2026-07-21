@@ -43,10 +43,10 @@ main {
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:  "header  shields shields engine"
-                        "helm shields shields engine"
-                        "systems shields shields engine"
-                        "systems shields shields engine"
+  grid-template-areas:  "header  ship ship engine"
+                        "helm   ship ship engine"
+                        "systems ship ship engine"
+                        "systems ship ship engine"
                         "weapons weapons weapons weapons"
                         "weapons weapons weapons weapons";
 }
@@ -139,22 +139,28 @@ section {
     background-color:  white;
 }
 
-.shields {
-  grid-area: shields;
-  display: grid;
-}
-
-.shielddisplay {
+.ship {
+    grid-area: ship;
     display: grid;
     grid-gap: 4px;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
     background-color: white;
 }
 
-.shielddisplay h3 {
-    color: white;
+.shipname {
+    grid-column:1/-1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+
+
+
+
 
 
 .fwd {
