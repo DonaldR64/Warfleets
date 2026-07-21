@@ -271,7 +271,7 @@ input[type="hidden"][value="Green"].hull-status ~ .hull{
     color: green;
 }
 
-.engine {
+.engineinfo {
     grid-column: 6/-1;
     grid-row: 10/-1;
     display: flex;
@@ -279,33 +279,18 @@ input[type="hidden"][value="Green"].hull-status ~ .hull{
     align-items: center;
     background-color: white;
 }
-input[type="hidden"][value="Red"].engine-status ~ .engine{
+input[type="hidden"][value="Red"].engine-status ~ .engineinfo{
     color: red;
 }
-input[type="hidden"][value="Orange"].engine-status ~ .engine{
+input[type="hidden"][value="Orange"].engine-status ~ .engineinfo{
     color: orange;
 }
-input[type="hidden"][value="Green"].engine-status ~ .engine{
+input[type="hidden"][value="Green"].engine-status ~ .engineinfo{
     color: green;
 }
 
 
 
-
-
-input[type="hidden"][value="Normal"].hull-status ~ .overlay-text h1{
-    color: white;
-}
-input[type="hidden"][value="Damaged"].hull-status ~ .overlay-text h1{
-    color: red;
-}
-
-
-
-.engine {
-  grid-area: engine;
-  background-color:  white;
-}
 
 
 
