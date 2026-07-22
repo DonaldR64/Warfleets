@@ -147,8 +147,8 @@ section {
     grid-area: ship;
     display: grid;
     grid-gap: 4px;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-rows: repeat(10,1fr);
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
     background-color: white;
 }
 .power {
@@ -329,30 +329,22 @@ input[type="hidden"][value="Damaged"].r6-status ~ .r6power{
 } 
 
 /* Ship Sub Areas*/
-.shipname {
-    grid-column:1/-1;
-    grid-row: 1/2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-
 .toppic {
-    grid-column: 3/9;
-    grid-row: 3/9;
+    grid-column: 2/6;
+    grid-row: 2/6;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .toppic img{
+    max-width: 95%;
+    max-height: 95%;
     object-fit: contain;
-    max-height: 90%;
 }
 
 .fwd {
-    grid-column:3/9;
-    grid-row: 2/3;
+    grid-column:1/-1;
+    grid-row: 1/2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -371,8 +363,8 @@ input[type="hidden"][value="Green"].fs-status ~ .fwd{
 }
 
 .port {
-    grid-column:2/3;
-    grid-row: 3/9;
+    grid-column:1/2;
+    grid-row: 2/6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -391,8 +383,8 @@ input[type="hidden"][value="Green"].ps-status ~ .port{
 }
 
 .stbd {
-    grid-column:9/10;
-    grid-row: 3/9;
+    grid-column:6/-1;
+    grid-row: 2/6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -411,8 +403,8 @@ input[type="hidden"][value="Green"].ss-status ~ .stbd{
 }
 
 .aft {
-    grid-column: 3/9;
-    grid-row: 9/10;
+    grid-column: 1/-1;
+    grid-row: 6/-1;
     display: flex;
     justify-content: center;
     align-items: center;
