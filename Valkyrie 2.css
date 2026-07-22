@@ -14,7 +14,7 @@
 
 .mysheet {
     width: 830;
-    height: 630px;
+    height: 830px;
 }
 .attributes {
     padding: 15px 0px 0px 15px;
@@ -39,11 +39,13 @@ input[type="hidden"][name="attr_faction"][value="Klingon"] ~ .mysheet {
 main {
   display: grid;
   width: 800px;
-  height: 600px;
+  height: 800px;
   grid-gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:  "class  ship ship power"
+  grid-template-rows: repeat(8,1fr);
+  grid-template-areas:  "top    top  top top"
+                        "top    top  top top"
+                        "class  ship ship power"
                         "helm   ship ship power"
                         "systems ship ship power"
                         "systems ship ship power"
@@ -120,6 +122,10 @@ section {
 /*------------- Section-specific CSS -------------*/
 
 /* Main Grid */
+.top {
+    grid-area: class;
+    background-color:  white;
+}
 .class {
   grid-area: class;
   background-color:  white;
