@@ -644,7 +644,7 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1name","weapon2name","weapon3name","weapon1status","weapon2status","weapon3status","sensorstatus","system1status"], function(values) {
+        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1status","weapon2status","weapon3status","sensorstatus","system1status"], function(values) {
             let engine = parseInt(values.engine) || 0;
             let engineMax = parseInt(values.engine_max) || 0;
             let engineTrans = parseInt(values.engineTransition) || 0;
@@ -672,8 +672,13 @@
                 if (name === "None") {
                     reserveStatus.push("None");
                 } else if (name.includes("Weapon")) {
-                    let number = parseInt(name.replace(/^\D+/g, ''));
-                    reserveStatus.push(values["weapon" + number + "status"]);
+                    if (name.includes("Weapon A")) {
+                        reserveStatus.push(values.weapon1status);
+                    } else if (name.includes("Weapon B")) {
+                        reserveStatus.push(values.weapon2status);
+                    } else if (name.includes("Weapon C")) {
+                        reserveStatus.push(values.weapon3status);
+                    }
                 } else if (name.includes("Cloaking")) {
                     reserveStatus.push(values.system1status);
                 } else {
