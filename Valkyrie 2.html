@@ -669,6 +669,8 @@
             let reserveStatus = [];
             for (let i=0;i<4;i++) {
                 let name = values["reserveName" + (i+3)];
+console.log(i)
+console.log(name)
                 if (name === "None") {
                     reserveStatus.push("None");
                 } else if (name.includes("Weapon")) {
