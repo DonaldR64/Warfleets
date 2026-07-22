@@ -45,10 +45,10 @@ main {
   grid-template-rows: repeat(8,1fr);
   grid-template-areas:  "top    top  top top"
                         "top    top  top top"
-                        "damage  ship ship power"
-                        "helm   ship ship power"
-                        "systems ship ship power"
-                        "systems ship ship power"
+                        "ops  ship ship power"
+                        "ops   ship ship power"
+                        "ops ship ship power"
+                        "helm ship ship power"
                         "weapons weapons weapons weapons"
                         "weapons weapons weapons weapons";
 }
@@ -139,8 +139,8 @@ section {
     grid-area: helm;
     background-color:  white;
 }
-.systems {
-  grid-area: systems;
+.ops {
+  grid-area: ops;
   background-color:  white;
 }
 .ship {
@@ -430,44 +430,8 @@ input[type="hidden"][value="Green"].as-status ~ .aft{
     color:white;
 }
 
-.hulldamage {
-    grid-column: 1/6;
-    grid-row: 10/-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-input[type="hidden"][value="Red"].hull-status ~ .hulldamage h3{
-    color: red;
-}
-input[type="hidden"][value="Orange"].hull-status ~ .hulldamage h3{
-    color: orange;
-}
-input[type="hidden"][value="Green"].hull-status ~ .hulldamage h3{
-    color: green;
-}
 
-.enginedamage {
-    grid-column: 6/-1;
-    grid-row: 10/-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-input[type="hidden"][value="Red"].engine-status ~ .enginedamage h3{
-    color: red;
-}
-input[type="hidden"][value="Orange"].engine-status ~ .enginedamage h3{
-    color: orange;
-}
-input[type="hidden"][value="Green"].engine-status ~ .enginedamage h3{
-    color: green;
-}
-
-
-/* Weapon Sub sections */
+/* Tactical Sub sections */
 
 .weaponheader {
     background-color: white;
@@ -611,7 +575,51 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
 }
 
 
-/* System Sub Sections */
+/* Ops Sub Sections */
+.hulldamage {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+    padding: 3px;   
+}
+input[type="hidden"][value="Red"].hull-status ~ .hulldamage h4{
+    color: red;
+}
+input[type="hidden"][value="Orange"].hull-status ~ .hulldamage h4{
+    color: orange;
+}
+input[type="hidden"][value="Green"].hull-status ~ .hulldamage h4{
+    color: green;
+}
+
+.enginedamage {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+    padding: 3px;   
+}
+input[type="hidden"][value="Red"].engine-status ~ .enginedamage h4{
+    color: red;
+}
+input[type="hidden"][value="Orange"].engine-status ~ .enginedamage h4{
+    color: orange;
+}
+input[type="hidden"][value="Green"].engine-status ~ .enginedamage h4{
+    color: green;
+}
+
+
+
+
+
+
+
 .shieldstatus h4 {
     color: green;
 }
