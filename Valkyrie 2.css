@@ -614,12 +614,6 @@ input[type="hidden"][value="Green"].engine-status ~ .enginedamage h3{
     color: green;
 }
 
-
-
-
-
-
-
 .shieldstatus h4 {
     color: green;
 }
@@ -633,7 +627,7 @@ input[type="hidden"][value="Green"].engine-status ~ .enginedamage h3{
     padding: 3px;   
 }
 input[type="hidden"][value="Normal"].shield-status ~ .shieldstatus{
-    background-color:  lightgrey;
+    background-color:  white;
 }
 input[type="hidden"][value="Damaged"].shield-status ~ .shieldstatus{   
     background-color:  red;
@@ -678,7 +672,7 @@ input[type="hidden"][value="Damaged"].thruster-status ~ .thrusterstatus h4{
     padding: 3px;    
 }
 input[type="hidden"][value="Normal"].sensor-status ~ .sensorstatus{   
-    background-color:  lightgrey;
+    background-color:  white;
 }
 input[type="hidden"][value="Damaged"].sensor-status ~ .sensorstatus{    
     background-color:  red;
@@ -730,7 +724,7 @@ input[type="hidden"][value="None"].system2-status ~ .system2status{
     display: none;
 }
 input[type="hidden"][value="Normal"].system2-status ~ .system2status{    
-    background-color:  lightgrey;
+    background-color:  white;
 }
 input[type="hidden"][value="Damaged"].system2-status ~ .system2status{   
     background-color:  red;
