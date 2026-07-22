@@ -646,7 +646,7 @@
 
 
     on("change:attrs sheet:opened", function(eventInfo) { 
-        getAttrs(["hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1status","weapon2status","weapon3status","sensorstatus","system1status"], function(values) {
+        getAttrs(["faction","hull","hull_max","engine","engine_max","engineTransition","powerArray","speedRating","forShieldArray","portShieldArray","stbdShieldArray","aftShieldArray","shieldstatus","reserveName3","reserveName4","reserveName5","reserveName6","weapon1status","weapon2status","weapon3status","sensorstatus","system1status"], function(values) {
             let engine = parseInt(values.engine) || 0;
             let engineMax = parseInt(values.engine_max) || 0;
             let engineTrans = parseInt(values.engineTransition) || 0;
@@ -719,6 +719,16 @@ console.log(name)
             let asStatus = "Green";
             if (shieldLevel === 1) {asStatus = "Orange"};
             if (shieldLevel === 2 || aftShield === 0) {asStatus = "Red"};
+
+            let faction = values.faction;
+            let factionsymbol = "";
+            if (faction === "Klingon") {
+                factionsymbol = "https://files.d20.io/images/494930546/SF-JENKKaOuBpp5dWovcvg/thumb.png?1784753648";
+            }
+            if (faction === "Federation") {
+                factionsymbol = "https://files.d20.io/images/494930545/G5EU2au1JrmMIsakv1_2nA/thumb.png?1784753648";
+            }
+
 
 
             setAttrs({
