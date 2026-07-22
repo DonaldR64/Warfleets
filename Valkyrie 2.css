@@ -45,7 +45,7 @@ main {
   grid-template-rows: repeat(8,1fr);
   grid-template-areas:  "top    top  top top"
                         "top    top  top top"
-                        "class  ship ship power"
+                        "damage  ship ship power"
                         "helm   ship ship power"
                         "systems ship ship power"
                         "systems ship ship power"
@@ -124,7 +124,11 @@ section {
 /* Main Grid */
 .top {
     grid-area: top;
-    background-color:  white;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 4fr;
+    grid-template-rows: repeat(4,1fr);
+    background-color: white;
 }
 .class {
   grid-area: class;
@@ -752,21 +756,41 @@ input[type="hidden"][value="Damaged"].system3-status ~ .system3status h4{
     color:  white;
 }
 
-
+/* Top Sub Areas */
 .sidepic {
-    display: flex;
-    justify-content: center;
+    grid-row: 2/-1;
+    grid-column: 1/-1;
     align-items: center;
+    padding: 3px;
 }
+
 .sidepic img{
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
-
 }
 
-
-
+.namearea {
+    grid-row: 1/2;
+    grid-column: 2/4;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+}
+.classarea {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+}
+.typearea {
+    grid-row: 1/2;
+    grid-column: 4/-1;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+}
 
 
 
