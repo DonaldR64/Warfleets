@@ -779,9 +779,11 @@ input[type="hidden"][value="Damaged"].system3-status ~ .system3status h4{
     align-items: center;
     padding: 3px;
 }
-.namearea h1,h3 {
+.namearea h1{
     color: white;
 }
-
+.namearea h3{
+    color: white;
+}
 
 
