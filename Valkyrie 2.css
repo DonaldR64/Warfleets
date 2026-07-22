@@ -753,6 +753,15 @@ input[type="hidden"][value="Damaged"].system3-status ~ .system3status h4{
 }
 
 
+.sidepic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidepic img{
+    object-fit: contain;
+    max-width: 90%;
+}
 
 
 
