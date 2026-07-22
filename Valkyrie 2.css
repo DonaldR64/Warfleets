@@ -333,14 +333,14 @@ input[type="hidden"][value="Damaged"].r6-status ~ .r6power{
     background-color: white;
 }
 
-.shippic {
+.toppic {
     grid-column: 3/9;
     grid-row: 3/9;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.shippic img{
+.toppic img{
     object-fit: contain;
     max-height: 90%;
 }
