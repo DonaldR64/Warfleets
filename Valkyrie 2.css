@@ -585,13 +585,13 @@ input[type="hidden"][value="Damaged"].weapon5-status ~ .weapon5{
     align-items: center;
     padding: 3px;   
 }
-input[type="hidden"][value="Red"].hull-status ~ .hulldamage h4{
+input[type="hidden"][value="Red"].hull-status ~ .hulldamage h3{
     color: red;
 }
-input[type="hidden"][value="Orange"].hull-status ~ .hulldamage h4{
+input[type="hidden"][value="Orange"].hull-status ~ .hulldamage h3{
     color: orange;
 }
-input[type="hidden"][value="Green"].hull-status ~ .hulldamage h4{
+input[type="hidden"][value="Green"].hull-status ~ .hulldamage h3{
     color: green;
 }
 
@@ -604,13 +604,13 @@ input[type="hidden"][value="Green"].hull-status ~ .hulldamage h4{
     align-items: center;
     padding: 3px;   
 }
-input[type="hidden"][value="Red"].engine-status ~ .enginedamage h4{
+input[type="hidden"][value="Red"].engine-status ~ .enginedamage h3{
     color: red;
 }
-input[type="hidden"][value="Orange"].engine-status ~ .enginedamage h4{
+input[type="hidden"][value="Orange"].engine-status ~ .enginedamage h3{
     color: orange;
 }
-input[type="hidden"][value="Green"].engine-status ~ .enginedamage h4{
+input[type="hidden"][value="Green"].engine-status ~ .enginedamage h3{
     color: green;
 }
 
