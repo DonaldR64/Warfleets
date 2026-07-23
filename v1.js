@@ -1,6 +1,6 @@
 const Main = (() => {
-    const version = '2026.7.11';
-    if (!state.Epic) {state.Epic = {}};
+    const version = '2026.7.22';
+    if (!state.Valkyrie) {state.Valkyrie = {}};
 
     const pageInfo = {};
     const rowLabels = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AA","AB","AC","AD","AE","AF","AG","AH","AI","AJ","AK","AL","AM","AN","AO","AP","AQ","AR","AS","AT","AU","AV","AW","AX","AY","AZ","BA","BB","BC","BD","BE","BF","BG","BH","BI"];
@@ -71,12 +71,7 @@ const Main = (() => {
         }
     }
 
-    let UnitArray = {};
-    let saveTypes = [];
-    let spellCasterAssistIDs = [];
-    let spellCast = {};
-
-    const LargeUnits = ["Vehicle/Monster","Artillery","Titan"]
+    let ShipArray = {};
 
     let outputCard = {title: "",subtitle: "",side: "",body: [],buttons: [],};
 
@@ -91,120 +86,30 @@ const Main = (() => {
             "borderStyle": "5px ridge",
             "objColour": "#ffffff",
         },
-        "Plague Disciples": {
-            "image": "https://s3.amazonaws.com/files.d20.io/images/353239057/GIITPAhD-JdRRD2D6BREWw/thumb.png?1691112406",
-            "dice": "Deathguard",
-            "backgroundColour": "#B3CF99",
-            "objColour": "#ffff00",
-            "titlefont": "Anton",
-            "fontColour": "#000000",
-            "borderColour": "#000000",
-            "borderStyle": "5px ridge",
-            "spells": ["Aura of Pestilence","Rapid Putrefaction","Blessed Virus","Plague Malediction","Plague Boon","Rot Wave"],
-            "logo": "https://files.d20.io/images/489765576/2x9rlPhZ-M0TwguakuET_w/thumb.png?1780790327",
-        },
-        "Alien Hives": {
-            "image": "https://s3.amazonaws.com/files.d20.io/images/362007142/CjTYql17F5VDkqGlW_yorg/thumb.png?1696555948",
-            "dice": "Tyranids",
-            "backgroundColour": "#800080",
-            "objColour": "#8000809d",
-            "titlefont": "Goblin One",
-            "fontColour": "#f9b822",
-            "borderColour": "#f9b822",
-            "borderStyle": "5px ridge",
-        },
-        "Dao Union": {
-            "image": "https://s3.amazonaws.com/files.d20.io/images/354348305/k_izI31oM8lRsHHma1xfag/thumb.png?1691855991",
-            "dice": "Tau",
-            "backgroundColour": "#ffffff",
-            "objColour": "#be0b07",
-            "titlefont": "Arial",
-            "fontColour": "#000000",
-            "borderColour": "#be0b07",
-            "borderStyle": "5px groove",
-        },
-        "Imperial Guard": {
-            "image": "https://s3.amazonaws.com/files.d20.io/images/354557308/CrRWn51EJHMtijUM1wqB-g/thumb.webp?1691958030",
-            "dice": "IG",
-            "backgroundColour": "#ffffff",
+        "Klingon": {
+            "image": "",
+            "dice": "Klingon",
+            "backgroundColour": "#000000",
             "objColour": "#000000",
-            "titlefont": "Arial",
-            "fontColour": "#000000",
-            "borderColour": "#000000",
-            "borderStyle": "5px groove",
-        },
-        "Blessed Sisters": {
-            "image": "https://s3.amazonaws.com/files.d20.io/images/378405665/zZCv4Z4TRaEkLeveAhLAiQ/thumb.png?1706900477",
-            "dice": "Sororitas",
-            "backgroundColour": "#0072bb",
-            "objColour": "#0072bb",
-            "titlefont": "Arial",
-            "fontColour": "#FFFFFF",
-            "borderColour": "#be0b07",
-            "borderStyle": "3px groove",
-        },
-        "Adeptus Custodes": {
-            "image": "https://files.d20.io/images/487769356/hvkxqPn9i5zD5TDnhrEoeg/thumb.png?1779330819",
-            "dice": "Custodes",
-            "backgroundColour": "#d4af37",
-            "objColour": "#d4af37",
-            "titlefont": "Arial",
-            "fontColour": "#000000",
+            "titlefont": "Anton",
+            "fontColour": "#ffffff",
             "borderColour": "#000000",
             "borderStyle": "5px ridge",
         },
-        "Orks": {
-            "image": "https://s3.amazonaws.com/files.d20.io/images/366987627/gNuK1M5Vx2b-oNvQ4kSQOg/thumb.png?1699583671",
-            "dice": "Orks",
-            "backgroundColour": "#3a8000",
-            "objColour": "#00ff00",
-            "titlefont": "Goblin One",
+        "Federation": {
+            "image": "",
+            "dice": "Federation",
+            "backgroundColour": "#0000CD",
+            "objColour": "#0000CD",
+            "titlefont": "Arial",
             "fontColour": "#ffffff",
-            "borderColour": "#3a8000",
+            "borderColour": "#0000CD",
             "borderStyle": "5px ridge",  
-            "spells": ["Elder Protection","Death Bolt","Path of War","Psychic Vomit","Head Bang", "Crackling Bolt"],
-            "logo": "https://files.d20.io/images/489765569/c3KYx0PXMmAnha-SDtmopQ/thumb.png?1780790325",
         },
-
-
-
     };
 
 
     const SM = {
-        fatigue: "status_Unconscious::168879",
-        halfStr: "status_Blood::2006465",
-        evade: "status_Disadvantage-or-Down::2006464",
-        laststand: "status_radioactive",
-    }
-
-    const Buffs = {
-        AP1: "status_Green-01::2006603", //+1 AP
-        TH1: "status_Red-01::2006626", //+1 TH
-        speedFeat: "status_Fast-or-Haste::2006485",
-        Resistance: "status_bolt-shield",
-        "Ferocious Boost": "status_strong",
-        "Rapid Rush": "status_half-haze",
-        "Plaguebound Boost": "status_bleeding-eye",
-
-    }
-
-    const Debuffs = {
-        dangerous: "status_Tentacle::7757514",
-        "Rending Against": "status_overdrive",
-        "Difficult Terrain": "status_tread",
-
-    }
-
-
-
-    const TT = {
-        vAAP: "Versatile Attack = +1 AP",
-        vATH: "Versatile Attack = +1 to Hit",
-        vDD: "Versatile Defense = +1 to Defense",
-        vDTH: "Versatile Defense = -1 to Be Hit",
-        steadfast: "Steadfast Buff",
-        piercing: "Piercing Shooting Mark +1 to AP",
 
     }
 
@@ -212,58 +117,6 @@ const Main = (() => {
     const Capit = (val) => {
         return String(val).charAt(0).toUpperCase() + String(val).slice(1);
     }
-
-    //cover true,false, or Infantry for infantry only
-    //building - is a building
-    //blockLOS - blocks LOS beyond
-    //height - height of terrain
-    //type - Open, Difficult, Dangerous, Impassable or Impassable to Vehicles etc
-
-    const buildingLevelHeight = 25;
-    const TerrainInfo = {
-        "Open": {name: "Open",cover: false, building: false, blockLOS: false,height: 0, type: "Open"},
-        "Woods": {name: "Woods",cover: true, building: false, blockLOS: true,height: 50, type: "Difficult",breakable: true, flammable: true},
-        "Orchards": {name: "Orchards",cover: true, building: false, blockLOS: true,height: 25, type: "Difficult",breakable: true, flammable: true},
-        "Desert Scrub": {name: "Desert Scrub",cover: true, building: false, blockLOS: true,height: 10, type: "Difficult",breakable: true, flammable: true},
-
-
-        "Brick Building 1": {name: "Brick Building 1", cover: true,building: true, blockLOS: true,height: buildingLevelHeight, type: "Difficult",breakable: true},
-        "Brick Building 2": {name: "Brick Building 2", cover: true, building: true, blockLOS: true,height: buildingLevelHeight * 2, type: "Difficult",breakable: true},
-        "Concrete Building 1": {name: "Concrete Building 1", cover: true,building: true, blockLOS: true,height: buildingLevelHeight, type: "Difficult",breakable: true},
-        "Concrete Building 2": {name: "Concrete Building 2", cover: true, building: true, blockLOS: true,height: buildingLevelHeight * 2, type: "Difficult",breakable: true},
-        "Crops": {name: "Crops", cover: "Infantry", building: false, blockLOS: false, height: 3, type: "Open",breakable: false, flammable: true},
-        "Burning Crops": {name: "Burning Crops", cover: "true", building: false, blockLOS: true, height: 10, type: "Dangerous",breakable: false, flammable: false},
-        "Burning Scrub": {name: "Burning Scrub", cover: "true", building: false, blockLOS: true, height: 10, type: "Dangerous",breakable: false, flammable: false},
-
-
-        "Water": {name: "Water", cover: false, building: false, blockLOS: false,height: 0, type: "Impassable"},
-        "Craters": {name: "Craters", cover: "Infantry",building: false, blockLOS: false,height: 0, type: "Difficult"},
-        "Artillery Craters": {name: "Artillery Craters", cover: "Infantry",building: false, blockLOS: false,height: 0, type: "Difficult"},
-        "Ruined Building": {name: "Ruined Building", cover: true,building: false, blockLOS: false,height: buildingLevelHeight * .5, type: "Dangerous"},
-        "Ruined Concrete": {name: "Ruined Concrete Building", cover: true,building: false, blockLOS: false, height: buildingLevelHeight * .5, type: "Dangerous"},
-        "Existing Ruins": {name: "Existing Ruins", cover: true,building: false, blockLOS: false, height: buildingLevelHeight * .5, type: "Difficult"},
-        "Burning Woods": {name: "Burning Woods",cover: true, building: false, blockLOS: true,height: 25, type: "Dangerous",breakable: false},
-
-        "Hill 1": {name: "Hill 1", cover: false,building: false, blockLOS: false, height: 30, type: "Open"},
-        "Hill 2": {name: "Hill 2", cover: false,building: false, blockLOS: false, height: 60, type: "Open"},
-        "Hill 3": {name: "Hill 3", cover: false,building: false, blockLOS: false, height: 90, type: "Open"},
-        "Hill 4": {name: "Hill 4", cover: false,building: false, blockLOS: false, height: 120, type: "Open"},
-
-    }
-
-    const EdgeInfo = {
-        "#00ff00": {name: "Hedge"},
-        "#980000": {name: "Wall"},
-
-
-
-    }
-
-
-
-    const RoadInfo = ["#d9d9d9"];
-
-
 
 
 
@@ -301,27 +154,6 @@ const Main = (() => {
         }
     };
 
-    const FX = (fxname,hex1,hex2) => {
-    
-        if (!fxname) {return};
-        let pt1 = hex1.centre;
-        let pt2 = hex2.centre;
-        if (fxname.includes("Custom")) {
-            fxname = fxname.replace("Custom-","");
-            let fxType =  findObjs({type: "custfx", name: fxname})[0];
-            if (fxType) {
-                spawnFxBetweenPoints(pt1, pt2, fxType.id);
-            }
-        } else {
-            let directed = ["breath","beam","missile","rocket"];
-            let points = directed.some(element => fxname.includes(element));
-            if (points === true) {
-                spawnFxBetweenPoints(pt1, pt2, fxname);
-            } else {
-                spawnFx(pt2.x,pt2.y, fxname);
-            }
-        }
-    }
 
 
 
@@ -383,13 +215,6 @@ const Main = (() => {
         })
         return num;
     }
-
-
-
-
-
-
-
 
 
     //Retrieve Values from character Sheet Attributes
@@ -720,7 +545,6 @@ const Main = (() => {
     };
 
     class Hex {
-        //hex will have its elevation and the hexes terrain which can reference TerrainInfo for other details
         constructor(point) {
             this.centre = point;
             let offset = point.toOffset();
@@ -728,25 +552,7 @@ const Main = (() => {
             this.tokenIDs = [];
             this.cube = offset.toCube();
             this.label = offset.label();
-            this.elevation = 0;
-            this.terrain = "Open";
-            this.open = true;
             this.offboard = false;
-            this.cover = false;
-            this.hill = false;
-            this.terrainHeight = 0;
-            this.blockLOS = false;
-            this.building = false;
-            this.breakable = false;
-            this.flammable = false;
-            this.terrainID = "";
-            this.ridgeline = false;
-            this.ridgelineAngles = [];
-            this.type = "Open";
-            this.edges = {};
-            _.each(DIRECTIONS,a => {
-                this.edges[a] = "Open";
-            });
             HexMap[this.label] = this;
         }
 
@@ -760,7 +566,7 @@ const Main = (() => {
 
     }
 
-    class Unit {
+    class Ship {
         constructor(id) {
             let token = findObjs({_type:"graphic", id: id})[0];
             let cube = (new Point(token.get("left"),token.get("top"))).toCube();
@@ -780,150 +586,29 @@ const Main = (() => {
             this.id = id;
             this.charID = charID;
             let faction = aa.faction || "Neutral";
-
             this.faction = faction;
-    
-            let player = (state.Epic.factions.indexOf(faction));
+            let player = (state.Valkyrie.factions.indexOf(faction));
             if (player === -1) {
                 if (faction === "Neutral") {
                     player = 2
                 } else {
-                    state.Epic.factions.push(faction);
-                    player = state.Epic.factions.length - 1;
+                    state.Valkyrie.factions.push(faction);
+                    player = state.Valkyrie.factions.length - 1;
                 }
             }
             this.player = player;
 
-            this.quality = parseInt(aa.quality);
-            this.defense = parseInt(aa.defense);
-            this.toughness = parseInt(aa.toughness) || 1;
-            this.wounds = parseInt(aa.wounds) || 1;
-            this.models = this.wounds/this.toughness;
-            let type = aa.type || "System";
-            if (type === "Core") {type = "Infantry"};
-            this.type = type;
             
-            this.moveSound = aa.movesound;            
-
-            let keywords = [];
-
-            //Unit Keywords, separated by a comma
-            let unitKey = aa.unitkeywords || " ";
-            unitKey = unitKey.split(",");
-            _.each(unitKey,key => {
-                keywords.push(key.trim());
-            })
-
-            //upgrades, which may be in [ ] with flavour text before
-            let flavours = {};
-            for (let i=1;i<11;i++) {
-                let eq = "key" + i + "equipped";
-                let k = "key" + i + "name";
-                if (aa[eq] === "Equipped") {
-                    let upgrades = aa[k].trim();
-                    let flavour;
-                    if (!upgrades) {continue};
-                    if (upgrades.includes("[")) {
-                        let i1 = upgrades.indexOf("[");
-                        let i2 = upgrades.indexOf("]");
-                        flavour = upgrades.substring(0,i1);
-                        upgrades = upgrades.substring(i1 + 1,i2);
-                    }
-                    upgrades = upgrades.split(",");
-                    _.each(upgrades,upgrade => {
-                        upgrade = upgrade.trim();
-                        keywords.push(upgrade);
-                        if (flavour !== "") {
-                            flavours[upgrade] = flavour;
-                        }
-                    })
-                }
-            }
-            this.keywords = keywords;
-            this.flavours = flavours;
-
-            this.casterLevel = this.KeyNum("Caster");
-            let weapons = [];
-            for (let i=1;i<11;i++) {
-                if (aa["weapon" + i + "equipped"] === "Equipped") {
-                    let key = (aa["weapon" + i + "special"] || " ").split(",");
-                    let keywords = key.map((e) => e.trim()) || [""];
-                    let name = aa["weapon" + i + "name"];
-                    let number = parseInt(aa["weapon" + i + "number"]) || 1;
-                    if (number > 1 && name.at(-1) !== "s") {name += "s"};
-                    let weapon = {
-                        number: number,
-                        name: name,
-                        type: aa["weapon" + i + "type"],
-                        range: parseInt(aa["weapon" + i + "range"]) || 0,
-                        attacks: parseInt(aa["weapon" + i + "attack"]) || 1,
-                        ap: parseInt(aa["weapon" + i + "ap"]) || 0,
-                        keywords: keywords,
-                        fx: aa["weapon" + i + "fx"],
-                        sound: aa["weapon" + i + "sound"],
-                    }
-                    weapons.push(weapon);
-                }
-            }
-
-            let ravage = 0;
-            let ravageKeys = keywords.filter((e) => e.includes("Ravage")) || [];
-            for (let rv = 0;rv < ravageKeys.length;rv++) {
-                ravage += parseInt(ravageKeys[rv].replace(/\D/g,''));
-            }
-            if (ravage > 0) {
-                let weapon = {name: "Ravage",number: this.models,type: "CCW",range: 0,attacks: ravage,ap: 0,keywords: [""],fx: "",sound: "Growl"};
-                weapons.push(weapon);
-            }
-
-            let impact = 0;
-            let impactKeys = keywords.filter((e) => e.includes("Impact")) || [];
-            for (let im = 0;im < impactKeys.length; im++) {
-                impact += parseInt(impactKeys[im].replace(/\D/g,''));
-            }
-            if (impact > 0) {
-                let weapon = {name: "Impact",number: this.models,type: "CCW",range: 0,attacks: impact,ap: 0,keywords: [""],fx: "",sound: ""};
-                weapons.push(weapon);
-            }
-
-
-            this.weapons = weapons;
-            this.moved = false;
-            this.hexLabel = label;
-            this.prevHexLabel = label;
-            this.order = "";
-            this.token = token;
-
-
-            if (this.type === "Terrain") {
-                if (this.name.includes("Woods") || this.name.includes("Orchard") || this.name.includes("Desert Scrub")) {
-                    this.toughness = 4;
-                    this.defense = 4;
-                    this.keywords = ["Flammable"];
-                }
-                if (this.name.includes("Crops")) {
-                    this.toughness = 3;
-                    this.defense = 5;
-                    this.keywords = ["Flammable"];
-                }
-                if (this.name.includes("Brick")) {
-                    this.toughness = 6;
-                    this.defense = 3;
-                    this.keywords = ["Protected"];
-                }
-                if (this.name.includes("Concrete")) {
-                    this.toughness = 9;
-                    this.defense = 2;
-                    this.keywords = ["Protected"];
-                }
-
-                this.wounds = parseInt(this.token.get("bar1_value")) || 1;
-                this.models = this.toughness;
-            }
 
 
 
-            UnitArray[id] = this;
+
+
+
+
+
+
+            ShipArray[id] = this;
             let index = HexMap[label].tokenIDs.indexOf(id);
             if (index < 0) {
                 HexMap[label].tokenIDs.push(id);
@@ -1056,7 +741,7 @@ const Main = (() => {
             let assoc = false;
             _.each(hex.tokenIDs,tokenID => {
                 if (tokenID !== this.id) {
-                    let unit2 = UnitArray[tokenID];
+                    let unit2 = ShipArray[tokenID];
                     if (unit2 && unit2.faction === this.faction) {
                         assoc = unit2;
                     }
@@ -1112,7 +797,7 @@ const Main = (() => {
             if (this.type === "Terrain") {
                 this.token.set("bar1_value",0);
                 DamagedTerrain(this.name,this.hexLabel);                
-                delete UnitArray[this.id];
+                delete ShipArray[this.id];
             } else {
                 this.token.set({
                     "statusmarkers": "dead",
@@ -1122,7 +807,7 @@ const Main = (() => {
                 if (index > -1) {
                     HexMap[this.hexLabel].tokenIDs.splice(index,1);
                 }
-                delete UnitArray[this.id];
+                delete ShipArray[this.id];
 
 
             }
@@ -1311,7 +996,7 @@ const Main = (() => {
     const AddAbilities = (msg) => {
         if (!msg.selected) {return};
         let id = msg.selected[0]._id;
-        let unit = UnitArray[id];  
+        let unit = ShipArray[id];  
         if (!unit) {
             unit = new Unit(id);
         }
@@ -1411,10 +1096,10 @@ const Main = (() => {
                     key: keys[i],
                     id: id,
                 }
-                if (state.Epic.limitedMacros[unit.id]) {
-                    state.Epic.limitedMacros[unit.id].push(info)
+                if (state.Valkyrie.limitedMacros[unit.id]) {
+                    state.Valkyrie.limitedMacros[unit.id].push(info)
                 } else {
-                    state.Epic.limitedMacros[unit.id] = [info];
+                    state.Valkyrie.limitedMacros[unit.id] = [info];
                 }
             }
         }
@@ -1932,7 +1617,7 @@ const Main = (() => {
     }
      
     const AddTokens = () => {
-        UnitArray = {};
+        ShipArray = {};
         //create an array of all tokens
         let start = Date.now();
         let tokens = findObjs({
@@ -1967,7 +1652,7 @@ const Main = (() => {
 
 
         let elapsed = Date.now()-start;
-        log(`${c} token${s} checked in ${elapsed/1000} seconds - ` + Object.keys(UnitArray).length + " placed in Unit Array");
+        log(`${c} token${s} checked in ${elapsed/1000} seconds - ` + Object.keys(ShipArray).length + " placed in Unit Array");
 
     }
 
@@ -1987,11 +1672,11 @@ const Main = (() => {
 
     const StartGame = () => {
         SetupCard("Start New Game","Turn 1","Neutral");
-        _.each(UnitArray,unit => {
+        _.each(ShipArray,unit => {
             if (unit.name.includes("Objective")) {
                 let tsides = [unit.token.get("imgsrc")];
-                tsides.push(tokenImage(Factions[state.Epic.factions[0]].logo));
-                tsides.push(tokenImage(Factions[state.Epic.factions[1]].logo));
+                tsides.push(tokenImage(Factions[state.Valkyrie.factions[0]].logo));
+                tsides.push(tokenImage(Factions[state.Valkyrie.factions[1]].logo));
                 tsides = tsides.toString().replaceAll(",","|");
                 unit.token.set({
                     layer: 'foreground',
@@ -2006,7 +1691,7 @@ const Main = (() => {
 
         RemoveLines(["Deploy"]);
         PrintCard();
-        state.Epic.turn = 1;
+        state.Valkyrie.turn = 1;
 
 
 
@@ -2016,7 +1701,7 @@ const Main = (() => {
 
     const NextTurn = () => {
         RemoveDead();
-        if (state.Epic.turn === 0) {
+        if (state.Valkyrie.turn === 0) {
             StartGame();
             return;
         }
@@ -2025,7 +1710,7 @@ const Main = (() => {
             let fix = [];
             let tIDs = hex.tokenIDs;
             _.each(tIDs,tID => {
-                let unit = UnitArray[tID];
+                let unit = ShipArray[tID];
                 if (unit && unit.token && unit.type !== "Terrain") {
                     fix.push(tID);
                 } 
@@ -2035,16 +1720,16 @@ const Main = (() => {
 
 
         //check if any units havent activated
-        let keys = Object.keys(UnitArray);
+        let keys = Object.keys(ShipArray);
 
         let remaining = false;
 
         for (let i=0;i<keys.length;i++) {
-            let unit = UnitArray[keys[i]];
+            let unit = ShipArray[keys[i]];
             if (unit.faction === "Neutral") {continue};
             let token = unit.token;
             if (!token) {
-                delete UnitArray[keys[i]];
+                delete ShipArray[keys[i]];
                 continue;
             }
             if (token && token.get("aura1_color") === Factions[unit.faction].objColour) {
@@ -2060,10 +1745,10 @@ const Main = (() => {
 
         //things at beginning of turn
         let notes = [];
-        keys = Object.keys(UnitArray);
+        keys = Object.keys(ShipArray);
 
         for (let i=0;i<keys.length;i++) {
-            let unit = UnitArray[keys[i]];
+            let unit = ShipArray[keys[i]];
             unit.prevHexLabel = unit.hexLabel;
             let unitTT = unit.TTip();
             let unitAuras = unit.Auras();
@@ -2101,18 +1786,18 @@ const Main = (() => {
 
         }
 
-        state.Epic.turn += 1;
+        state.Valkyrie.turn += 1;
         let gameContinues = true;
-        SetupCard("Turn " + state.Epic.turn,"","Neutral");
+        SetupCard("Turn " + state.Valkyrie.turn,"","Neutral");
         if (notes.length > 0) {
             _.each(notes,note => {
                 outputCard.body.push(note);
             })
         }
 
-        if (state.Epic.turn > 6) {
+        if (state.Valkyrie.turn > 6) {
             let roll = randomInteger(6);
-            let needed = Math.min(state.Epic.turn - 3,6);
+            let needed = Math.min(state.Valkyrie.turn - 3,6);
             outputCard.body.push("Prolonged: " + roll + " vs. " + needed + "+");                
             if (roll < needed) {
                 gameContinues = false;
@@ -2123,7 +1808,7 @@ const Main = (() => {
             outputCard.body.push("[hr]");
         } 
         if (gameContinues === true) {
-            let lastUnit = UnitArray[state.Epic.activeID];
+            let lastUnit = ShipArray[state.Valkyrie.activeID];
             if (lastUnit) {
                 outputCard.body.push(lastUnit.faction + " has the First Activation");
             } else {
@@ -2138,7 +1823,7 @@ const Main = (() => {
     const ObjectiveCheck = (objective) => {
         let factions = [];
         let objHex = HexMap[objective.hexLabel];
-        _.each(UnitArray, unit => {
+        _.each(ShipArray, unit => {
             let unitHex = HexMap[unit.hexLabel];
             if (unit.type !== "Aircraft" && unit.token.get("tint_color") !== "#ff0000" && unit.id !== objective.id && unitHex.offboard === false) {
                 let distance = objHex.distance(unitHex);
@@ -2148,7 +1833,7 @@ const Main = (() => {
             }
         })
         if (factions.length === 1) {
-            let f = state.Epic.factions.indexOf(factions[0]) + 1;
+            let f = state.Valkyrie.factions.indexOf(factions[0]) + 1;
             let img = tokenImage(objective.token.get("sides").split("|")[f]);
             objective.token.set({
                 imgsrc: img,
@@ -2181,7 +1866,7 @@ const Main = (() => {
                 }
                 terWeaponArray.push(weap);
             }
-            let defender = UnitArray[defenderHex.terrainID];
+            let defender = ShipArray[defenderHex.terrainID];
             if (!defender) {
                 defender = new Unit(defenderHex.terrainID);
             }
@@ -2234,7 +1919,7 @@ const Main = (() => {
                     apTip += "<br>Slayer +2AP vs Tough 3+";
                 }
             }
-            if (attacker.keywords.includes("Piercing Assault") && attacker.id === state.Epic.activeID && combatType === "Melee") {
+            if (attacker.keywords.includes("Piercing Assault") && attacker.id === state.Valkyrie.activeID && combatType === "Melee") {
                 weaponAP++;
                 apTip += "<br>Piercing Assault +1 AP";
             }
@@ -2245,7 +1930,7 @@ const Main = (() => {
 
 
 
-            if (weapon.keywords.includes("Thrust") && attacker.id === state.Epic.activeID && combatType === "Melee") {
+            if (weapon.keywords.includes("Thrust") && attacker.id === state.Valkyrie.activeID && combatType === "Melee") {
                 weaponAP++;
                 apTip += "<br>Thrust +1 AP";
             }
@@ -2329,7 +2014,7 @@ const Main = (() => {
                 neededTip = "<br>Fatigue: 6+";
             }
             //if shaken and attacking then is last stand (below) else if shaken and defending/attacking back is this
-            if (attacker.token.get("tint_color") === "#ff0000" && state.Epic.activeID !== attacker.id) {
+            if (attacker.token.get("tint_color") === "#ff0000" && state.Valkyrie.activeID !== attacker.id) {
                 needed = 6;
                 neededTip = "<br>Shaken and Fighting Back: 6+";
             }
@@ -2345,7 +2030,7 @@ const Main = (() => {
                 needed = 2;
                 neededTip = "<br>Reliable: 2+";
             }
-            if (attacker.token.get(SM.laststand) && state.Epic.activeID === attacker.id) {
+            if (attacker.token.get(SM.laststand) && state.Valkyrie.activeID === attacker.id) {
                 needed++;
                 neededTip += "<br>Last Stand -1";
             }
@@ -2415,12 +2100,12 @@ const Main = (() => {
                     }
                 }
             }
-            if (attacker.tokenID === state.Epic.activeID && combatType === "Melee" && weapon.keywords.includes("Thrust")) {
+            if (attacker.tokenID === state.Valkyrie.activeID && combatType === "Melee" && weapon.keywords.includes("Thrust")) {
                 notes.push("Thrust");
                 needed -= 1;
                 neededTip += "<br>Thrust/Charge +1 to Hit";
             }
-            if (attackerAuras.includes("Precision Charge") && attacker.tokenID === state.Epic.activeID && combatType === "Melee") {
+            if (attackerAuras.includes("Precision Charge") && attacker.tokenID === state.Valkyrie.activeID && combatType === "Melee") {
                 needed -= 1;
                 neededTip += "<br>Precision Charge +1 to Hit";
             }
@@ -2710,7 +2395,7 @@ const Main = (() => {
             }
 
             if (weapon.keywords.includes("Limited")) {
-                let lids = state.Epic.limitedMacros[attacker.id];
+                let lids = state.Valkyrie.limitedMacros[attacker.id];
                 for (let l=0;l<lids.length;l++) {
                     let info = lids[l];
                     if (info.key === weapon.type) {
@@ -2915,8 +2600,8 @@ const Main = (() => {
         } //end WeaponAttack
 
         let Tag = msg.content.split(";");
-        let attacker = UnitArray[Tag[1]];
-        let defender = UnitArray[Tag[2]];
+        let attacker = ShipArray[Tag[1]];
+        let defender = ShipArray[Tag[2]];
         let iconAttack = (defender.name === "Icon") ? true:false;
         let dfFlag = false;
 
@@ -2937,7 +2622,7 @@ const Main = (() => {
         if (attacker.faction === defender.faction) {
             friendly = true;
             _.each(defenderHex.tokenIDs,tokenID => {
-                let unit2 = UnitArray[tokenID];
+                let unit2 = ShipArray[tokenID];
                 if (unit2.faction !== attacker.faction) {
                     defender = unit2;
                     friendly = false;
@@ -2947,7 +2632,7 @@ const Main = (() => {
         //if hero, check if shuld be a normal unit, if so change
         if (defender.type === "Hero" && defenderHex.tokenIDs.length > 1 && weaponType.includes("Sniper") === false) {
             _.each(defenderHex.tokenIDs,tokenID => {
-                let unit2 = UnitArray[tokenID];
+                let unit2 = ShipArray[tokenID];
                 if (unit2.faction === defender.faction && unit2.id !== defender.id && unit2.type !== "Hero") {
                     defender = unit2;
                 }
@@ -3006,13 +2691,13 @@ const Main = (() => {
                 weapon = DeepCopy(attacker.weapons[i]);
                 let notE;
                 if (weapon.type !== weaponType) {continue};
-                if (weapon.name === "Impact" && attacker.id !== state.Epic.activeID) {
+                if (weapon.name === "Impact" && attacker.id !== state.Valkyrie.activeID) {
                     notE = weapon.name + " only for Charging Unit";
                 }
                 if (weapon.name === "Impact" && attacker.token.get(SM.fatigue) === true) {
                     notE = "Fatigue limits Impact";
                 }
-                if (attacker.id !== state.Epic.activeID && combatType !== "Melee" && attacker.token.get("aura1_color") !== "#ff00ff") {
+                if (attacker.id !== state.Valkyrie.activeID && combatType !== "Melee" && attacker.token.get("aura1_color") !== "#ff00ff") {
                     notE = "Can only fire Ranged Weapons if Active Unit";
                 } 
                 if (weapon.type === "CCW" && losResult.distance > 1) {
@@ -3106,7 +2791,7 @@ const Main = (() => {
         if (moraleCheck === true && (combatType === "Ranged" || combatType === "Spell")) {
             _.each(defendersAliveFlag,id => {
                 if (id !== false) {
-                    let u2 = UnitArray[id];
+                    let u2 = ShipArray[id];
                     if (u2.type !== "Hero" && u2.token.get("tint_color") !== "#ff0000") {
                         outputCard.body.push("[hr]")
                         outputCard.body.push(u2.name + " must take a Morale Check");
@@ -3138,7 +2823,7 @@ const Main = (() => {
 
         if (combatType === "Melee") {
             attacker.token.set(SM.fatigue,true);
-            if (attacker.id === state.Epic.activeID ) {
+            if (attacker.id === state.Valkyrie.activeID ) {
                 attacker.token.set("aura1_color","transparent");
             }
         }
@@ -3164,15 +2849,15 @@ const Main = (() => {
             return;
         }
         let id = msg.selected[0]._id;
-        let unit = UnitArray[id];
-        if (id !== state.Epic.activeID) {
+        let unit = ShipArray[id];
+        if (id !== state.Valkyrie.activeID) {
             sendChat("","Unit has to Activate");
             return;
         }
-        let oldTarget = UnitArray[state.Epic.targetID];
+        let oldTarget = ShipArray[state.Valkyrie.targetID];
         if (oldTarget) {
             oldTarget.token.remove();
-            delete UnitArray[state.Epic.targetID];
+            delete ShipArray[state.Valkyrie.targetID];
         }
 
         let hex = HexMap[unit.hexLabel];
@@ -3180,7 +2865,7 @@ const Main = (() => {
         let icon = summonToken(cID,hex.centre.x,hex.centre.y,105,0,"objects");
         if (icon) {
             targetUnit = new Unit(icon.get("id"));
-            state.Epic.targetID = targetUnit.id;
+            state.Valkyrie.targetID = targetUnit.id;
             AddAbilities2(targetUnit,unit);
             toFront(icon);
         }
@@ -3216,7 +2901,7 @@ const Main = (() => {
         let hexes = [hex];
         let units = [];
         _.each(hex.tokenIDs,tokenID => {
-            let unit = UnitArray[tokenID];
+            let unit = ShipArray[tokenID];
             if (unit && unit.type !== "Terrain" && unit.type !== "System" && unit.token) {
                 units.push(unit);
             }
@@ -3267,7 +2952,7 @@ const Main = (() => {
                 if (hex2.building === true) {
                     hexes.push(hex2);
                     _.each(hex2.tokenIDs,tokenID => {
-                        let unit = UnitArray[tokenID];
+                        let unit = ShipArray[tokenID];
 
                         if (unit && unit.type !== "Terrain" && unit.type !== "System" && unit.token) {
                             units.push(unit);
@@ -3342,7 +3027,7 @@ const Main = (() => {
 
     const Morale = (msg) => {
         let id = msg.content.split(";")[1];
-        let unit = UnitArray[id];
+        let unit = ShipArray[id];
         if (!unit) {return};
         unit.Morale();
     }
@@ -3354,7 +3039,7 @@ const Main = (() => {
         let Tag = msg.content.split(";"); 
         let id = Tag[1];
         let order = Tag[2];
-        let unit = UnitArray[id];
+        let unit = ShipArray[id];
         if (!unit) {return};
         if (unit.type !== "Titan") {
             toFront(unit.token);
@@ -3379,10 +3064,10 @@ const Main = (() => {
 
     const ActivateTwo = (unit,order) => {
         //clear placed target icons
-        let oldTarget = UnitArray[state.Epic.targetID];
+        let oldTarget = ShipArray[state.Valkyrie.targetID];
         if (oldTarget) {
             oldTarget.token.remove();
-            delete UnitArray[state.Epic.targetID];
+            delete ShipArray[state.Valkyrie.targetID];
         }
         
         SetupCard(unit.name,order,unit.faction);
@@ -3392,7 +3077,7 @@ const Main = (() => {
         let ignoreDifficult = false;
         let shaken = (unit.token.get("tint_color") === "#ff0000") ? true:false;
         RemoveDead();
-        state.Epic.activeID = unit.id;
+        state.Valkyrie.activeID = unit.id;
         let boundMove = false;
 
         if ((unit.keywords.includes("Bounding") || unitAuras.includes("Bounding")) && order !== "Rally") {
@@ -3662,7 +3347,7 @@ const Main = (() => {
         let Tag = msg.content.split(";");
         let id = Tag[1];
         let order = Tag[2];
-        let unit = UnitArray[id];
+        let unit = ShipArray[id];
         let prevHex = HexMap[unit.prevHexLabel];
         unit.token.set({
             left: prevHex.centre.x,
@@ -3674,7 +3359,7 @@ const Main = (() => {
     const SetTT = (msg) => {
         let Tag = msg.content.split(";");
         let id = Tag[1];
-        let unit = UnitArray[id];
+        let unit = ShipArray[id];
         if (!unit) {return};
         let tip = Tag[2];
         unit.SetTT(tip);
@@ -3684,7 +3369,7 @@ const Main = (() => {
 
     const DangerousTest = (msg) => {
         let id = msg.selected[0]._id;
-        let unit = UnitArray[id];
+        let unit = ShipArray[id];
         if (!unit) {return};
         SetupCard(unit.name,"Dangerous Test",unit.faction);
         unit.Dangerous();
@@ -3695,13 +3380,13 @@ const Main = (() => {
         let Tag = msg.content.split(";");
         let specialName = Tag[1];
         let range = Tag[2]
-        let unit = UnitArray[Tag[3]];
+        let unit = ShipArray[Tag[3]];
         let unitHex = HexMap[unit.hexLabel];
         let targets = [];
         let errorMsg = [];
         let targetHex;
         for (let i=4;i<Tag.length;i++) {
-            let target = UnitArray[Tag[i]];
+            let target = ShipArray[Tag[i]];
             if (!target) {continue};
             let losResult = LOS(unit,target);
             if (losResult.distance > range) {
@@ -3715,7 +3400,7 @@ const Main = (() => {
             if (targetHex.tokenIDs.length > 1) {
                 _.each(targetHex.tokenIDs,tokenID => {
                     if (tokenID !== target.id) {
-                        targets.push(UnitArray[tokenID]);
+                        targets.push(ShipArray[tokenID]);
                     }
                 })
             }
@@ -3802,10 +3487,10 @@ const Main = (() => {
         _.each(which,lines => {
             let array;
             if (lines === "LOS") {
-                array = state.Epic.losLines;
+                array = state.Valkyrie.losLines;
             }
             if (lines === "Deploy") {
-                array = state.Epic.deployLines;
+                array = state.Valkyrie.deployLines;
             }
             if (array) {
                 for (let i=0;i<array.length;i++) {
@@ -3850,9 +3535,9 @@ const Main = (() => {
             if (line) {
                 toFront(line);
                 if (type === "LOS") {
-                    state.Epic.losLines.push(line.get("id"))
+                    state.Valkyrie.losLines.push(line.get("id"))
                 } else {
-                    state.Epic.deployLines.push(line.get("id"));
+                    state.Valkyrie.deployLines.push(line.get("id"));
                 }
             }
         }
@@ -4014,7 +3699,7 @@ const Main = (() => {
 
         for (let i=0;i<tokens.length;i++) {
             let token = tokens[i];
-            let unit = UnitArray[token];
+            let unit = ShipArray[token];
             let character = getObj("character", token.get("represents"));   
             let name = character.get("name");
             let tsides = token.get("sides").split("|");
@@ -4124,7 +3809,7 @@ const Main = (() => {
 
 
 
-        let names = state.Epic.heroes[unit.player];
+        let names = state.Valkyrie.heroes[unit.player];
         if (names === "" || !names) {
             names = factionNames[unit.faction];
         }
@@ -4132,7 +3817,7 @@ const Main = (() => {
         let num = randomInteger(names.length) - 1;
         name += names[num];
         names.splice(num,1);
-        state.Epic.heroes[unit.player] = names;
+        state.Valkyrie.heroes[unit.player] = names;
 
         return name;
     }
@@ -4143,7 +3828,7 @@ const Main = (() => {
     const TokenInfo = (msg) => {
         let Tag = msg.content.split(";");
         let id = Tag[1];
-        let unit = UnitArray[id];
+        let unit = ShipArray[id];
         if (!unit) {return};
         let label = unit.hexLabel;
         let hex = HexMap[label];
@@ -4160,7 +3845,7 @@ const Main = (() => {
         outputCard.body.push("Unit Tips: " + unit.TTip().toString());
         let terrainID = hex.terrainID;
         if (terrainID) {
-            let terrain = UnitArray[terrainID];
+            let terrain = ShipArray[terrainID];
             if (!terrain) {
                 terrain = new Unit(terrainID);
             }
@@ -4185,20 +3870,20 @@ const Main = (() => {
             return;
         }
         if (id) {
-            unit = UnitArray[id];
+            unit = ShipArray[id];
             if (unit) {
                 faction = unit.faction;
                 player = unit.player;
             }
         }
         if ((!id || !unit) && playerID) {
-            faction = state.Epic.players[playerID];
-            player = (state.Epic.factions[0] === faction) ? 0:1;
+            faction = state.Valkyrie.players[playerID];
+            player = (state.Valkyrie.factions[0] === faction) ? 0:1;
         }
 
-        if (!state.Epic.players[playerID] || state.Epic.players[playerID] === undefined) {
+        if (!state.Valkyrie.players[playerID] || state.Valkyrie.players[playerID] === undefined) {
             if (faction !== "Neutral") {    
-                state.Epic.players[playerID] = faction;
+                state.Valkyrie.players[playerID] = faction;
             } else {
                 sendChat("","Click on one of your tokens then select Roll again");
                 return;
@@ -4278,16 +3963,16 @@ const Main = (() => {
 
         BuildMap();
 
-        let target = UnitArray[state.targetID];
+        let target = ShipArray[state.targetID];
         if (target) {
             target.token.remove();
         }
 
 
         //clear arrays
-        UnitArray = {};
+        ShipArray = {};
 
-        state.Epic = {
+        state.Valkyrie = {
             playerIDs: [],
             players: {},
             factions: [],
@@ -4311,16 +3996,16 @@ const Main = (() => {
 
     const ShowUnactivated = () => {
         let names = [[],[]];
-        let keys = Object.keys(UnitArray);
+        let keys = Object.keys(ShipArray);
 
         let remaining = false;
 
         SetupCard("Activations Remaining","","Neutral");
         for (let i=0;i<keys.length;i++) {
-            let unit = UnitArray[keys[i]];
+            let unit = ShipArray[keys[i]];
             let token = unit.token;
             if (!token) {
-                delete UnitArray[keys[i]];
+                delete ShipArray[keys[i]];
                 continue;
             }
             if (token && token.get("aura1_color") === Factions[unit.faction].objColour) {
@@ -4331,7 +4016,7 @@ const Main = (() => {
         if (remaining === true) {
             for (let p=0;p<2;p++) {
                 if (names[p].length > 0) {
-                    outputCard.body.push("[U][B]" + state.Epic.factions[p] + "[/b][/u]");
+                    outputCard.body.push("[U][B]" + state.Valkyrie.factions[p] + "[/b][/u]");
                     for (i=0;i<names[p].length;i++) {
                         outputCard.body.push(names[p][i]);
                     }
@@ -4347,8 +4032,8 @@ const Main = (() => {
 
 
     const RemoveDepLines = () => {
-        for (let i=0;i<state.Epic.deployLines.length;i++) {
-            let id = state.Epic.deployLines[i];
+        for (let i=0;i<state.Valkyrie.deployLines.length;i++) {
+            let id = state.Valkyrie.deployLines[i];
             let path = findObjs({_type: "path", id: id})[0];
             if (path) {
                 path.remove();
@@ -4385,7 +4070,7 @@ const Main = (() => {
 
     const CastSpell = (msg) => {
         let id = msg.selected[0]._id;
-        let caster = UnitArray[id];
+        let caster = ShipArray[id];
         let spells = Factions[caster.faction].spells;
         let points = parseInt(caster.token.get("bar2_value"));
         let bonusAvail = BonusSpellPoints(caster);
@@ -4455,7 +4140,7 @@ const Main = (() => {
         let casterHex = HexMap[caster.hexLabel];
         let totalAvail = 0;
 
-        _.each(UnitArray,unit => {
+        _.each(ShipArray,unit => {
             if (unit.casterLevel > 0 && unit.id !== caster.id && ((type === "Friendly" && unit.faction === caster.faction) || (type !== "Friendly" && unit.faction !== caster.faction))) {
                 let unitHex = HexMap[unit.hexLabel];
                 if (unitHex.offboard !== true) {
@@ -4477,7 +4162,7 @@ const Main = (() => {
     const Cast2 = (msg) => {
         let Tag = msg.content.split(";");
         let casterID = Tag[1];
-        let caster = UnitArray[casterID];
+        let caster = ShipArray[casterID];
         let spellName = Tag[2];
         let spellInfo = Spells[spellName];
         let extraPoints = parseInt(Tag[3]);
@@ -4485,7 +4170,7 @@ const Main = (() => {
         let errorMsg = [];
         for (let i=4;i<Tag.length;i++) {
             let id = Tag[i];
-            let targetUnit = UnitArray[id];
+            let targetUnit = ShipArray[id];
             if (!targetUnit) {
                 sendChat("","Error in Targetting of Spell")
                 continue;
@@ -4524,7 +4209,7 @@ const Main = (() => {
             let s = (opposingMax === 1) ? "":"s";
             if (opposingMax > 0) {
                 let oppPlayer = caster.player === 0 ? 1:0;
-                let oppFaction = state.Epic.factions[oppPlayer];
+                let oppFaction = state.Valkyrie.factions[oppPlayer];
                 SetupCard(oppFaction,"Spell Opposition",oppFaction);
                 outputCard.body.push("You can Oppose with " + opposingMax + " Point" + s);
                 let maxExtraQ = ";?{Opposing Points|0";
@@ -4550,7 +4235,7 @@ const Main = (() => {
     //cast4 - rolls for success, pays cost
     const Cast4 = () => {
         SpendSpellPoints();
-        let caster = UnitArray[spellCast.casterID];
+        let caster = ShipArray[spellCast.casterID];
         let spellInfo = Spells[spellCast.spellName];
         SetupCard(caster.name,spellCast.spellName,caster.faction);
         let delta = spellCast.extraPoints - spellCast.oppPoints;
@@ -4579,7 +4264,7 @@ const Main = (() => {
     const Cast5 = () => {
         //enact the spell
         //3 types - Buff, Debuff or Damage
-        let caster = UnitArray[spellCast.casterID];
+        let caster = ShipArray[spellCast.casterID];
         let spellInfo = Spells[spellCast.spellName];
         if (spellInfo.type.includes("Damage")) {
             for (let i=0;i<spellCast.targetIDs.length;i++) {
@@ -4591,14 +4276,14 @@ const Main = (() => {
         }
         if (spellInfo.type.includes("Debuff")) {
             for (let i=0;i<spellCast.targetIDs.length;i++) {
-                let enemy = UnitArray[spellCast.targetIDs[i]];
+                let enemy = ShipArray[spellCast.targetIDs[i]];
                 enemy.token.set(Debuffs[spellInfo.debuff],true);
                 outputCard.body.push(enemy.name + " has " + spellInfo.debuff);
             }
         }
         if (spellInfo.type.includes("Buff")) {
             for (let i=0;i<spellCast.targetIDs.length;i++) {
-                let friendly = UnitArray[spellCast.targetIDs[i]];
+                let friendly = ShipArray[spellCast.targetIDs[i]];
                 friendly.token.set(Buffs[spellInfo.buff],true);
                 outputCard.body.push(friendly.name + " has " + spellInfo.buff);
             }
@@ -4606,7 +4291,7 @@ const Main = (() => {
     }
 
     const SpendSpellPoints = () => {
-        let caster = UnitArray[spellCast.casterID];
+        let caster = ShipArray[spellCast.casterID];
         let spellInfo = Spells[spellCast.spellName];
         let casterSP = parseInt(caster.token.get("bar2_value"));
         //spell cost
@@ -4617,7 +4302,7 @@ const Main = (() => {
                 casterSP--;
             } else {
                 for (k=0;k<spellCasterAssistIDs.length;k++) {
-                    let unit3 = UnitArray[spellCasterAssistIDs[k]];
+                    let unit3 = ShipArray[spellCasterAssistIDs[k]];
                     let sp = parseInt(unit3.token.get("bar2_value"));
                     if (unit3.faction === caster.faction && sp > 0) {
                         sp--;
@@ -4630,7 +4315,7 @@ const Main = (() => {
         //opp points
         for (let i=0;i<spellCast.oppPoints;i++) {
             for (k=0;k<spellCasterAssistIDs.length;k++) {
-                let unit3 = UnitArray[spellCasterAssistIDs[k]];
+                let unit3 = ShipArray[spellCasterAssistIDs[k]];
                 let sp = parseInt(unit3.token.get("bar2_value"));
                 if (unit3.faction !== caster.faction && sp > 0) {
                     sp--;
@@ -4646,8 +4331,8 @@ const Main = (() => {
 
     const CheckLOS = (msg) => {
         let Tag = msg.content.split(";");
-        let shooter = UnitArray[Tag[1]];
-        let target = UnitArray[Tag[2]];
+        let shooter = ShipArray[Tag[1]];
+        let target = ShipArray[Tag[2]];
 
         if (!shooter) {
             sendChat("","Not valid shooter");
@@ -4743,7 +4428,7 @@ const Main = (() => {
     const AmbushAura = (msg) => {
         if (!msg.selected) {return};
         let id = msg.selected[0]._id;
-        let ambusher = UnitArray[id];
+        let ambusher = ShipArray[id];
         if (!ambusher) {return};
         let colour = (ambusher.token.get("aura2_color") !== "transparent" ) ? 'transparent':"#ffffff";
         ambusher.token.set({
@@ -4828,7 +4513,7 @@ const Main = (() => {
                 }
                 //Intervening Units
                 if (interHex.tokenIDs.length > 0 && interHex.label !== targetHex.label) {
-                    let u2 = UnitArray[interHex.tokenIDs[0]];
+                    let u2 = ShipArray[interHex.tokenIDs[0]];
                     if (u2.type && u2.type !== "Objective" && u2.type !== "Aircraft") {
                         let h = 1;
                         if (u2.keywords.includes("Tall")) {h = 3};
@@ -4944,7 +4629,7 @@ const Main = (() => {
     const ToBack = (msg) => {
         if (!msg.selected) {return};
         let id = msg.selected[0]._id;
-        let unit = UnitArray[id];  
+        let unit = ShipArray[id];  
         if (!unit) {return}
         toBack(unit.token);
     }
@@ -4978,7 +4663,7 @@ const Main = (() => {
 
 
     const changeGraphic = (tok,prev) => {
-        let unit = UnitArray[tok.id];
+        let unit = ShipArray[tok.id];
         if (!unit && tok.name && tok.name.includes("Objective")) {
             unit = new Unit(token.get("id"));
         }
@@ -5051,14 +4736,14 @@ const Main = (() => {
     const destroyGraphic = (obj) => {
         let id = obj.get("id");
         if (id) {
-            let unit = UnitArray[id];
+            let unit = ShipArray[id];
             if (unit) {
                 log(unit.name + " removed from Unit Array")
                 let index = HexMap[unit.hexLabel].tokenIDs.indexOf(id);
                 if (index > -1) {
                     HexMap[unit.hexLabel].tokenIDs.splice(index,1);
                 }
-                delete UnitArray[id];
+                delete ShipArray[id];
             }
         }
     }
@@ -5079,9 +4764,9 @@ const Main = (() => {
             case '!Dump':
                 log(HexMap)
                 log("State");
-                log(state.Epic);
+                log(state.Valkyrie);
                 log("Units");
-                log(UnitArray)
+                log(ShipArray)
                 break;
             case '!ClearState':
                 ClearState(msg);
@@ -5183,7 +4868,7 @@ const Main = (() => {
         on('destroy:graphic',destroyGraphic);
     };
     on('ready', () => {
-        log("===>Epic Grim Dark Future<===");
+        log("===>Valkyrie Grim Dark Future<===");
         log("===> Software Version: " + version + " <===")
         LoadPage();
         DefineHexInfo();
